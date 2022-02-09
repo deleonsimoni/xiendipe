@@ -1,0 +1,37 @@
+.card-news {
+  background: #0c2e8a;
+  color: #fff;
+  padding: 12px;
+  border-radius: 4px;
+
+  small {
+    font-weight: 300;
+    font-size: 12px;
+  }
+
+  h4 {
+    margin: 6px 0px;
+    word-break: break-word;
+    font-size: 18px;
+  }
+
+  i {
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.btn-get-started {
+  background-color: #0c2e8a;
+  color: #fff;
+  text-transform: uppercase;
+  width: 30%;
+  border: none;
+  margin: 14px 16px 0px;
+  height: calc(1.5em + 0.75rem + 2px);
+  border-radius: 4px;
+
+  i {
+    font-size: 14px;
+  }
+}

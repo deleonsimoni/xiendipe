@@ -1,0 +1,122 @@
+<!--==========================
+    Payment
+  ============================-->
+<main id="payment">
+    <div class="container payment-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="section-header">
+                        <h2>Pagamento Encerrado</h2>
+                    </div>
+                    <!--
+                    <div *ngIf="carregando">
+                        <i class="fas fa-spinner fa-pulse"></i>Aguarde...
+                    </div>
+
+                    <form [formGroup]="paymentForm" role="form" class="contactForm">
+                        <div *ngIf="!user.payment && !carregando">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    Para qual categoria gostaria de se inscrever? <br />
+                                    <select name="id" class="form-control" formControlName="categoryId">
+                                        <option *ngFor="let categoria of categorias" [ngValue]="categoria.id">
+                                            {{categoria.name}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <br />
+                            </div>
+
+                            <div class="form-row">
+                                <h3>Valor Total<strong> R${{valorTotal}}</strong></h3>
+                            </div>
+
+                            <div *ngIf="showUpload()" class="custom-file col-md-4">
+                                <input type="file" class="custom-file-input" data-max-size="2048" id="customPreReadFile"
+                                    (change)="setFileNamePDF($event.target.files)" #fileInput />
+                                <label class="custom-file-label" for="customPreReadFile">{{ getFileNamePDF() }}</label>
+                            </div>
+
+                        </div>
+                        <div *ngIf="user.payment">
+
+                            <div class="form-row" *ngIf="!user.payment.icPaid && !user.payment.icValid">
+                                <h3 style="color: rgb(161, 161, 28);">Aguarde, estamos validando seu documento de
+                                    inscrição.<br> Assim
+                                    que for validado você receberá um email e em seguida nos enviará o comprovante de
+                                    tranferência nesta mesma página</h3>
+                            </div>
+                            <div class="form-row"
+                                *ngIf="user.payment && user.payment.icValid && !user.payment.pathReceiptPayment">
+                                <h3 style="color: rgb(161, 161, 28);">Seu comprovante foi validado por nossa equipe,
+                                    após realizar a
+                                    transferência nos envie o comprovante no botão abaixo</h3>
+
+                                <div class="form-row">
+                                    <div class="custom-file col-md-12">
+                                        <input type="file" class="custom-file-input" data-max-size="2048"
+                                            id="customPreReadFile"
+                                            (change)="setFileNamePDFTransferencia($event.target.files)" #fileInput />
+                                        <label class="custom-file-label"
+                                            for="customPreReadFile">{{ getFileNamePDFTransferencia() }}</label>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <button *ngIf="!enviando" class="btn-get-started"
+                                            (click)="submeterTransferencia()">Enviar
+                                            Comprovante de Transferência</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-row"
+                                *ngIf="user.payment && user.payment.icValid && user.payment.pathReceiptPayment && !user.payment.icPaid">
+                                <h3 style="color: rgb(161, 161, 28);">Comprovante de transferência enviado com sucesso.
+                                    Nossa equipe
+                                    irá validar os dados</h3>
+                            </div>
+
+                            <div class="form-row" *ngIf="user.payment.icPaid">
+                                <h3 style="color: green;">Pagamento validado, esperamos você no XX ENDIPE RIO 2020</h3>
+                            </div>
+
+                        </div>
+                        <br /><br />
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                O pagamento deverá ser realizado via transferência bancária para a conta do congresso
+                                Endipe.<br>
+                                O prazo para verificação de comprovante de inscrição da categoria e realização da
+                                tranferência é de 5 dias.
+                                <br><br>
+                                Vale lembrar que o pagamento da inscrição é condicionado para a submissão de trabalhos.
+                                <br><br>
+
+                                Conta para transferência:<br>
+                                <b>Banco do Brasil<br>
+                                    FUNDACAO UNIVERSITARIA JOSE BONIFACIO<br>
+                                    CNPJ: 42.429.480/0001-50<br>
+                                    Agência: 2234-9<br>
+                                    Conta: 80.555-6</b>
+                            </div>
+                        </div>
+
+
+                        <div *ngIf="!user.payment" class="row justify-content-center">
+                            <button *ngIf="!enviando" class="btn-get-started" (click)="gerarPagamento()">Confirmar e
+                                Enviar
+                                Comprovante</button>
+                        </div>
+
+                        <div *ngIf="enviando" class="row justify-content-center"><button><i
+                                    class="fas fa-spinner fa-pulse"></i></button></div>
+
+                    </form>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
