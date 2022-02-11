@@ -47,7 +47,7 @@ export class PagamentoComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.authService.refresh().subscribe((res: any) => {
+    this.authService.refresh().subscribe((res: any) => {
       this.user = res.user;
       this.carregando = false;
     });
@@ -57,7 +57,7 @@ export class PagamentoComponent implements OnInit {
       } else {
         this.valorTotal = null;
       }
-    });*/
+    });
 
   }
 

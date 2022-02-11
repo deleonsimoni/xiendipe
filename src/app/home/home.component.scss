@@ -19,12 +19,12 @@
     -moz-border-radius: 16px;
     -webkit-border-radius: 16px;
     padding: 26px 20px;
-    border-color: red;
+    border-color: #2cd0ff;
     border-style: dashed;
 
     .agenda-titulo h2 {
       font-family: "Raleway", sans-serif;
-      color: #0c2e8a;
+      color: #684e43;
       font-weight: 700;
       font-size: 36px;
       text-align: center;
@@ -63,11 +63,11 @@
 }
 
 #services .red {
-  color: red;
+  color: #c08622;
 }
 
 #historico {
-  background: #50d8af;
+  background: #c08622;
   position: relative;
   border-top: 1px solid #f2f2f2;
   padding: 50px 0;
@@ -105,7 +105,7 @@
 }
 
 #modalidades {
-  background: #50d8af;
+  background: #c08622;
   position: relative;
   border-top: 1px solid #f2f2f2;
   padding: 50px 0;
@@ -164,7 +164,7 @@
 }
 
 #hospedagem {
-  background: #50d8af;
+  background: #c08622;
   position: relative;
   border-top: 1px solid #f2f2f2;
   padding: 50px 0;
@@ -292,7 +292,7 @@
 
 #pricing {
   position: relative;
-  background: #50d8af;
+  background: #c08622;
   border-top: 1px solid #f2f2f2;
   padding: 50px 0;
 
@@ -438,7 +438,7 @@
     border-radius: 3px;
     transition: 0.5s;
     margin: 10px;
-    border: 3px solid #50d8af;
+    border: 3px solid #c08622;
     color: rgb(209, 4, 4);
   }
 
@@ -503,7 +503,7 @@
     font-size: 48px;
     display: inline-block;
     margin-bottom: 10px;
-    color: #50d8af;
+    color: #c08622;
   }
 
   .contact-info address,
@@ -525,7 +525,7 @@
   }
 
   .contact-info a:hover {
-    color: #50d8af;
+    color: #c08622;
   }
 
   .contact-address,
@@ -540,8 +540,8 @@
   }
 
   .form #sendmessage {
-    color: #50d8af;
-    border: 1px solid #50d8af;
+    color: #c08622;
+    border: 1px solid #c08622;
     display: none;
     text-align: center;
     padding: 15px;
@@ -582,7 +582,7 @@
   }
 
   .form button[type="submit"] {
-    background: #50d8af;
+    background: #c08622;
     border: 0;
     border-radius: 3px;
     padding: 10px 30px;
@@ -599,7 +599,7 @@
 .back-to-top {
   position: fixed;
   display: none;
-  background: #50d8af;
+  background: #c08622;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -610,13 +610,13 @@
 }
 
 .back-to-top:focus {
-  background: #50d8af;
+  background: #c08622;
   color: #fff;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #0c2e8a;
+  background: #684e43;
   color: #fff;
 }
 
@@ -672,7 +672,7 @@
 }
 
 #parcerias .owl-dot.active {
-  background-color: #50d8af;
+  background-color: #c08622;
 }
 
 /* Testimonials Section
@@ -750,7 +750,7 @@
 }
 
 #conferencistas .owl-dot.active {
-  background-color: #50d8af;
+  background-color: #c08622;
 }
 
 #noticias a {

@@ -21,13 +21,13 @@
   <!--==========================
       Sobre Section
     ============================-->
-  <section id="about" class="wow fadeInUp">
+  <section id="about" class="wow fadeInUp mt-4">
     <div class="container">
 
       <div class="row">
         <div class="col-lg-6 content">
-          <h2>TEMAa</h2>
-          <h2 class="child"><strong style="color:red">FAZERES-SABERES PEDAGÓGICOS: diálogos, insurgências e
+          <h2>TEMA</h2>
+          <h2 class="child"><strong style="color:#c08622">FAZERES-SABERES PEDAGÓGICOS: diálogos, insurgências e
               políticas</strong></h2>
 
           <!-- <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
@@ -69,7 +69,7 @@
             <div class="col-lg-12">
               <div class="agenda-titulo">
                 <marquee>
-                  <h2 style="color:red">NOTÍCIAS</h2>
+                  <h2 style="color:#c08622">NOTÍCIAS</h2>
                 </marquee>
               </div>
             </div>
@@ -106,11 +106,11 @@
           A realização do seminário “A Didática em Questão”, em 1982, na PUC-Rio, referência
           especialmente significativa da gênese do movimento hoje materializado nos ENDIPES
           (Encontro Nacional de Didática e Prática de Ensino), estava marcada pelo contexto de forte
-          compromisso com a construção dos caminhos de redemocratização da sociedade brasileira.
+          compromisso com a construção dos caminhos de #c08622emocratização da sociedade brasileira.
           Para todos os implicados, esta era uma exigência iniludível: articular os processos
           educacionais com as dinâmicas de transformação e reconstrução do estado democrático de
           direito no país. Além disso, outro foco fundamental foi a superação da orientação tecnicista
-          então predominante na área didática.
+          então p#c08622ominante na área didática.
           Hoje: a Didática e a área de educação estão desafiadas por um contexto marcado por forte
           retrocesso nas conquistas de direitos, nas políticas sociais e educacionais; afirmam-se
           políticas neoliberais, o conservadorismo no plano político e ético, multiplicam-se as
@@ -166,7 +166,7 @@
       <div class="row">
 
         <div class="col-lg-6" *ngFor="let eixo of eixos">
-          <div style="cursor: pointer; color: #0c2e8a;" class="box wow fadeInLeft" (click)="openDialogEixo(eixo)">
+          <div style="cursor: pointer; color: #684e43;" class="box wow fadeInLeft" (click)="openDialogEixo(eixo)">
             <!-- <div class="icon"><i class="fa fa-bar-chart"></i></div> -->
             <h4 class="title"><a>{{ eixo.titulo }}</a></h4>
             <p class="description">
@@ -245,7 +245,7 @@
             <div class="row contact-info" style="cursor: pointer;">
               <div>
                 <div class="box wow fadeInLeft" (click)="openDialogApoiadores(gruposDeTrabalho, imagensApoiadores)">
-                  <h4 class="title" style="color: red"><a>+ GRUPOS DE TRABALHO</a></h4>
+                  <h4 class="title" style="color: #c08622"><a>+ GRUPOS DE TRABALHO</a></h4>
                 </div>
               </div>
             </div>
@@ -505,14 +505,14 @@
               selecionadas pelo Comitê Científico, conforme as normas definidas para a sua submissão e
               avaliação.
             </p>
-            <div class="pull-right">
+            <div class="pull-right pulse">
               <a (click)="openDialogMinicurso()" tabindex="0" alt="Normas mediador de minicurso"
-                title="Normas mediador de minicurso" style="color: #0c2e8a;cursor: pointer;">Normas</a><br />
+                title="Normas mediador de minicurso" style="color: #ffffff;cursor: pointer;">Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
               <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/minicurso00000.docx')"
-                style="color: #0c2e8a;cursor: pointer;">Download Template</a>-->
+                style="color: #684e43;cursor: pointer;">Download Template</a>-->
             </div>
           </div>
         </div>
@@ -536,12 +536,12 @@
             </p>
             <div class="pull-right">
               <a (click)="openDialogRoda()" tabindex="0" alt="Normas Roda de Conversa" title="Normas Roda de Conversa"
-                style="color: #0c2e8a;cursor: pointer;">Normas</a><br />
+                style="color: #ffffff;cursor: pointer;">Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
               <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/rodadeconversa0000.docx')"
-                style="color: #0c2e8a;cursor: pointer;">Download Template</a>-->
+                style="color: #684e43;cursor: pointer;">Download Template</a>-->
             </div>
           </div>
         </div>
@@ -564,12 +564,12 @@
             <div class="pull-right">
               <a (click)="openDialogPainel()" tabindex="0" alt="Normas Coordenador e expositor de Painel"
                 title="Normas Coordenador e expositor de Painel"
-                style="color: #0c2e8a;cursor: pointer;">Normas</a><br />
+                style="color: #ffffff;cursor: pointer;">Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
               <!--a *ngIf="!carregando" (click)="downloadTemplate('templates/painel00000.docx')"
-                style="color: #0c2e8a;cursor: pointer;">Download Template</a>-->
+                style="color: #684e43;cursor: pointer;">Download Template</a>-->
             </div>
           </div>
         </div>
@@ -592,12 +592,12 @@
               avaliação.</p>
             <div class="pull-right">
               <a (click)="openDialogPoster()" tabindex="0" alt="Normas Expositor de Pôster"
-                title="Normas Expositor de Pôster" style="color: #0c2e8a;cursor: pointer;">Normas</a><br />
+                title="Normas Expositor de Pôster" style="color: #ffffff;cursor: pointer;">Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
               <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/poster00000.docx')"
-                style="color: #0c2e8a;cursor: pointer;">Download Template</a>-->
+                style="color: #684e43;cursor: pointer;">Download Template</a>-->
             </div>
           </div>
         </div>
@@ -642,7 +642,7 @@
   <!--==========================
       Cronograma Section
     ============================-->
-  <section id="valores" class="wow fadeInUp">
+  <section id="valores" class="wow fadeInUp mt-4">
     <div class="container">
       <div class="section-header">
         <h2>Valores</h2>
@@ -704,7 +704,7 @@
                 <td style="text-align: center">R$ 375,00</td>
               </tr>
               <tr>
-                <th class="text-nowrap" scope="row">Desconto 20% para as Redes de Ensino (Pacote de 50
+                <th class="text-nowrap" scope="row">Desconto 20% para as #c08622es de Ensino (Pacote de 50
                   Inscrições)</th>
                 <td style="text-align: center">R$ 5.600,00</td>
                 <td style="text-align: center">R$ 6.400,00</td>
@@ -731,7 +731,7 @@
       <div class="row">
         <div style="cursor: pointer;" class="col-lg-6">
           <div class="box wow fadeInLeft" (click)="openDialogNormas()">
-            <h4 class="title" style="color: red; font-weight: bold;"><a>Ver Normas</a></h4>
+            <h4 class="title" style="color: #c08622; font-weight: bold;"><a>Ver Normas</a></h4>
           </div>
         </div>
 
@@ -763,14 +763,14 @@
                 <th class="text-nowrap">Submissão de Trabalhos</th>
                 <th class="text-nowrap">
                   <s>16 de outubro a 18 de dezembro de 2019</s><br />
-                  <b style="color: red;">PRORROGADA ATÉ 18/02/2020</b>
+                  <b style="color: #c08622;">PRORROGADA ATÉ 18/02/2020</b>
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Avaliação pelo Comitê Cientifico</th>
                 <th class="text-nowrap">
                   <s>Até 13 de abril de 2020</s><br />
-                  <b style="color: red;">Até 29 de abril de 2020</b>
+                  <b style="color: #c08622;">Até 29 de abril de 2020</b>
                 </th>
               </tr>
               <tr>
@@ -778,7 +778,7 @@
                 <th class="text-nowrap">
 
                   <s>14-20 de abril de 2020</s><br />
-                  <b style="color: red;">30 de abril de 2020</b>
+                  <b style="color: #c08622;">30 de abril de 2020</b>
 
                 </th>
               </tr>
@@ -786,7 +786,7 @@
                 <th class="text-nowrap">Recursos</th>
                 <th class="text-nowrap">
                   <s>20-27 de abril de 2020</s><br />
-                  <b style="color: red;">04-08 de maio de 2020</b>
+                  <b style="color: #c08622;">04-08 de maio de 2020</b>
                 </th>
               </tr>
               <tr>
@@ -794,14 +794,14 @@
                 <th class="text-nowrap">
 
                   <s>Até 15 de maio de 2020</s><br />
-                  <b style="color: red;">Até 29 de maio de 2020</b>
+                  <b style="color: #c08622;">Até 29 de maio de 2020</b>
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Divulgação da programação completa</th>
                 <th class="text-nowrap">
                   <s>Até 30 de maio de 2020</s><br />
-                  <b style="color: red;">Disponível</b>
+                  <b style="color: #c08622;">Disponível</b>
 
                 </th>
               </tr>
@@ -810,7 +810,7 @@
                 <th class="text-nowrap">
 
                   <s>01-20 de junho de 2020</s><br />
-                  <b style="color: red;">28/09 a 02/10</b>
+                  <b style="color: #c08622;">28/09 a 02/10</b>
 
                 </th>
               </tr>
@@ -827,23 +827,22 @@
   <!--==========================
       Cronograma Section
     ============================-->
-  <section id="anais" class="wow fadeInUp">
+  <!-- <section id="anais" class="wow fadeInUp">
     <div class="container">
       <div class="section-header">
         <h2>Anais</h2>
       </div>
-      <!-- <div class="row"> -->
       <a class="dropdown-item" [routerLink]="['/anais-virtual']" fragment="anais">Clique aqui para acessar</a>
 
-      <!--<p *ngIf="anais.length > 0">Confira os anais abaixo:</p>
+      <p *ngIf="anais.length > 0">Confira os anais abaixo:</p>
 
       <ul style="list-style-type: circle;" *ngFor="let anal of anais">
         <li><a href="{{anal.link}}" target="blank"><u>{{anal.name}}</u></a></li>
       </ul>-->
-      <!-- </div> -->
+  <!-- </div> 
     </div>
   </section>
-  <!-- #cronograma -->
+   #cronograma -->
 
 
   <!--==========================
@@ -1067,7 +1066,7 @@
                         <div class="validation"></div>
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required"
+                        <textarea class="form-control" name="message" rows="5" data-rule="requi#c08622"
                             data-msg="Please write something for us" placeholder="Mensagem"></textarea>
                         <div class="validation"></div>
                     </div>

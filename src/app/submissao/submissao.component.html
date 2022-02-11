@@ -25,12 +25,8 @@
               <div *ngIf="carregando"><i class="fas fa-spinner fa-pulse"></i>Aguarde...</div>
 
               <div *ngFor="let work of works; let i = index" [ngClass]="{ 'mb-3': works.length > 1 }">
-                <work-card
-                  [work]="work"
-                  [user]="user"
-                  [reviewers]="reviewers"
-                  (selected)="receiverSelectedWork($event)"
-                >
+                <work-card [work]="work" [user]="user" [reviewers]="reviewers"
+                  (selected)="receiverSelectedWork($event)">
                 </work-card>
 
                 <app-work-data [work]="work" [user]="user" *ngIf="work && work._id == workSelect"> </app-work-data>
@@ -53,7 +49,7 @@
                                         <h3>Você já submeteu {{ user.works.length }} trabalho(s)</h3>
                                         <br />
                                     </div>
-                  <h5 style="color:#50d8af; font-family: 'Montserrat', sans-serif;">
+                  <h5 style="color:#c08622; font-family: 'Montserrat', sans-serif;">
                     Certifique-se de que os dados e arquivos estão corretos, pois não será
                     possível qualquer alteração após a finalização da submissão.</h5>
                   <br />

@@ -43,8 +43,8 @@
 }
 
 #login .box .icon i:before {
-  background: #0c2e8a;
-  background: linear-gradient(45deg, #50d8af 0%, #a3ebd5 100%);
+  background: #684e43;
+  background: linear-gradient(45deg, #c08622 0%, #a3ebd5 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -84,33 +84,33 @@
 }
 
 #login .login-content .btn-get-started {
-  background: #0c2e8a;
-  border: 2px solid #0c2e8a;
+  background: #684e43;
+  border: 2px solid #684e43;
 }
 
 #login .login-content .btn-get-started:hover {
   background: none;
-  color: #0c2e8a;
+  color: #684e43;
 }
 
 #login .login-content .btn-projects {
-  background: #50d8af;
-  border: 2px solid #50d8af;
+  background: #c08622;
+  border: 2px solid #c08622;
 }
 
 #login a {
   padding: 8px;
   text-decoration: underline;
-  color: #0c2e8a;
+  color: #684e43;
 }
 
 #login a:hover {
-  color: #50d8af;
+  color: #c08622;
 }
 
 #login .login-content .btn-projects:hover {
   background: none;
-  color: #50d8af !important;
+  color: #c08622 !important;
 }
 
 @media only screen and (max-width: 576px) {
