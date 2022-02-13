@@ -305,7 +305,7 @@ export class HomeComponent implements OnInit {
   eixos = [
     {
       titulo: 'Eixo 1',
-      tema: 'Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação com <span class="red" id="red">Formação docente</span>',
+      tema: 'A Didática como campo epistemológico e disciplinar <span class="red" id="red">Formação docente</span>',
       temaCurto: 'com Formação docente',
       descricao: `Esse eixo temático prioriza as políticas de formação docente e os desafios de sua implementação,
       permanência e consolidação; concepções de formação de professores; formação centrada na escola e espaços colaborativos de formação;
@@ -324,7 +324,7 @@ export class HomeComponent implements OnInit {
     },
     {
       titulo: 'Eixo 2',
-      tema: 'Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação com <span class="red" id="red">Currículo e Avaliação</span>',
+      tema: 'A Didática e os Saberes docentes estruturantes na formação de professores <span class="red" id="red">Currículo e Avaliação</span>',
       temaCurto: 'com Currículo e Avaliação',
       descricao: `Esse eixo temático prioriza os currículos e as avaliações nos contextos históricos e contemporâneos;
       políticas curriculares, as escolas e as salas de aula; culturas, conhecimentos e currículos; aprendizagens, currículos e avaliações;
@@ -339,7 +339,7 @@ export class HomeComponent implements OnInit {
     },
     {
       titulo: 'Eixo 3',
-      tema: `Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação em <span class="red" id="red">Direitos Humanos,
+      tema: `A Didática e as tecnologias da informação e comunicação no currículo e práticas  <span class="red" id="red">Direitos Humanos,
        Interculturalidade e Religiões</span>`,
       temaCurto: `em Direitos Humanos, Interculturalidade e Religiões`,
       descricao: `Esse eixo temático prioriza as diferenças culturais que desafiam o cotidiano escolar;
@@ -356,7 +356,7 @@ export class HomeComponent implements OnInit {
     },
     {
       titulo: 'Eixo 4',
-      tema: `Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação entre <span class="red" id="red">Novas epistemologias,
+      tema: `A Didática e Práticas de Ensino na perspectiva da Educação como Direito Constitucional e os desafios políticos da atualidade <span class="red" id="red">Novas epistemologias,
        Diferença, Biodiversidade, Democracia e Inclusão</span>`,
       temaCurto: `entre Novas epistemologias, Diferença, Biodiversidade, Democracia e Inclusão`,
       descricao: `Esse eixo temático prioriza produções que, de uma perspectiva insurgente,
@@ -374,7 +374,7 @@ export class HomeComponent implements OnInit {
     },
     {
       titulo: 'Eixo 5',
-      tema: `Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação entre <span class="red" id="red">Educação,
+      tema: `A Didática e as Práticas de ensino nas políticas de formação de Pedagogos(as) <span class="red" id="red">Educação,
        Comunicação e Tecnologia</span>`,
       temaCurto: `entre Educação, Comunicação e Tecnologia`,
       descricao: `Esse eixo temático prioriza o debate sobre educar com as mídias, para as mídias e pelas mídias;
@@ -393,7 +393,61 @@ export class HomeComponent implements OnInit {
     },
     {
       titulo: 'Eixo 6',
-      tema: `Didática(s) entre diálogos, insurgências e políticas: tensões e perspectivas na relação entre <span class="red" id="red">Infâncias,
+      tema: `A Didática e as Práticas de Ensino nos cursos de Licenciatura: entre tensionamentos e perspectivas <span class="red" id="red">Infâncias,
+      Juventudes e Vida Adulta</span>`,
+      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
+      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
+      juventudes e vida adulta e sua relação com a educação; políticas públicas de educação para bebês, crianças, jovens,
+      adultos e idosos; perspectivas de futuro, garantia de direitos e vulnerabilidade das infâncias e juventudes pobres no Brasil;
+      estudantes imigrantes e filhos de mulheres e adolescentes privadas de liberdade; insurgências nas práticas pedagógicas cotidianas;
+      metodologias e práticas de ensino com crianças, jovens, adultos e idosos; conflitos nas relações intergeracionais;
+      programas de governo, movimentos sociais e a sociedade civil nas ações educativas.`,
+      coordenacao: [
+        'Anelise Nascimento – UFRRJ',
+        'Patricia Baroni – UFRJ',
+        'Wânia Gonzalez – UNESA'
+      ],
+      pareceristas: []
+    },
+    {
+      titulo: 'Eixo 7',
+      tema: `A Didática, Práticas de Ensino - Infâncias, Juventudes e Vida Adulta <span class="red" id="red">Infâncias,
+      Juventudes e Vida Adulta</span>`,
+      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
+      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
+      juventudes e vida adulta e sua relação com a educação; políticas públicas de educação para bebês, crianças, jovens,
+      adultos e idosos; perspectivas de futuro, garantia de direitos e vulnerabilidade das infâncias e juventudes pobres no Brasil;
+      estudantes imigrantes e filhos de mulheres e adolescentes privadas de liberdade; insurgências nas práticas pedagógicas cotidianas;
+      metodologias e práticas de ensino com crianças, jovens, adultos e idosos; conflitos nas relações intergeracionais;
+      programas de governo, movimentos sociais e a sociedade civil nas ações educativas.`,
+      coordenacao: [
+        'Anelise Nascimento – UFRRJ',
+        'Patricia Baroni – UFRJ',
+        'Wânia Gonzalez – UNESA'
+      ],
+      pareceristas: []
+    },
+    {
+      titulo: 'Eixo 8',
+      tema: `A Didática, Práticas de Ensino, Educação das Relações Étnico-raciais, Diversidade e Inclusão Escolar <span class="red" id="red">Infâncias,
+      Juventudes e Vida Adulta</span>`,
+      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
+      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
+      juventudes e vida adulta e sua relação com a educação; políticas públicas de educação para bebês, crianças, jovens,
+      adultos e idosos; perspectivas de futuro, garantia de direitos e vulnerabilidade das infâncias e juventudes pobres no Brasil;
+      estudantes imigrantes e filhos de mulheres e adolescentes privadas de liberdade; insurgências nas práticas pedagógicas cotidianas;
+      metodologias e práticas de ensino com crianças, jovens, adultos e idosos; conflitos nas relações intergeracionais;
+      programas de governo, movimentos sociais e a sociedade civil nas ações educativas.`,
+      coordenacao: [
+        'Anelise Nascimento – UFRRJ',
+        'Patricia Baroni – UFRJ',
+        'Wânia Gonzalez – UNESA'
+      ],
+      pareceristas: []
+    },
+    {
+      titulo: 'Eixo 9',
+      tema: `A Didática da Educação Superior <span class="red" id="red">Infâncias,
       Juventudes e Vida Adulta</span>`,
       temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
       descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,

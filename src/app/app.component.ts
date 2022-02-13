@@ -113,7 +113,7 @@ export class AppComponent implements OnInit {
     if (event.keyCode === 40 || event.keyCode === 32 || event.keyCode === 13) {
       var element = document.getElementsByClassName(classe)[0];
       const hasClass = element.classList.contains('hover');
-      if(hasClass) {
+      if (hasClass) {
         this.renderer.removeClass(element, 'hover');
         this.renderer.setStyle(element, 'display', 'none');
 
