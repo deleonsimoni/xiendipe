@@ -227,7 +227,7 @@ function getPrice(id) {
   let dateNow = new Date();
   dateNow.setHours(0, 0, 0, 0);
   let seasons = Prices.prices.filter(price => price.id == id)[0].seasons;
-
+  console.log(dateNow)
   return seasons.filter(season => dateNow.getTime() >= season.dateIni.getTime() && dateNow.getTime() <= season.dateEnd.getTime())[0].price;
 
 }

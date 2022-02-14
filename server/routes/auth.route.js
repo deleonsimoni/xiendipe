@@ -25,7 +25,9 @@ async function register(req, res, next) {
   } else {
     let user = await userCtrl.insert(req.body);
     delete user.hashedPassword;
-    emailSender.sendMail(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
+    //emailSender.sendMail(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
+    emailSender.sendMailAWS(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
+
     req.user = user;
     next()
   }
