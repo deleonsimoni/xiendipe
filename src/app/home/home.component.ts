@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
 
   coordenacoesGerais = [
     'Profa. Dra. Camila Lima Coimbra - UFU',
-    'Prof. Dr. Roberto Valdés Puentes'
+    'Prof. Dr. Roberto Valdés Puentes - UFU'
   ];
 
   imagensApoiadores = [
@@ -323,7 +323,7 @@ export class HomeComponent implements OnInit {
       coordenacao: [
         'Dulcéria Tartuci - UFCat',
         'Valéria Asniz - UFU',
-        'Priscila Ximenes - UFU',
+        'Priscila Alvarenga Cardoso Gimenes - UFU',
         'Lázara Cristina Silva - UFU',
         'Márcia Moreira Custódio - IFTM'
 
