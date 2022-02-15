@@ -16,14 +16,15 @@
             <p>{{ subscribed.createdAt | date: 'dd/MM/yyyy' }}</p>
         </div>
     </div>
-    <div  class="row align-items-center">
+    <div class="row align-items-center">
         <div class="col-12">
             <strong>Código Postal</strong>
             <p *ngIf="subscribed.address">{{ subscribed?.address?.zip | cep }}</p>
         </div>
         <div class="col-12">
             <strong>Rua</strong>
-            <p>{{ subscribed?.address?.street ? subscribed.address.street : '-----' }} - {{ subscribed?.address?.num ? subscribed.address.num : '-----' }}</p>
+            <p>{{ subscribed?.address?.street ? subscribed.address.street : '-----' }} - {{ subscribed?.address?.num ?
+                subscribed.address.num : '-----' }}</p>
         </div>
         <div class="col-6">
             <strong>Bairro</strong>
@@ -46,7 +47,7 @@
     <div class="row align-items-center">
         <div class="col-sm-4 mb-2">
             <strong>PCD</strong>
-            <p>{{ subscribed.isPCD ? subscribed.deficiencyType ? 'Sim - ' + subscribed.deficiencyType : 'Sim'  : 'Não' }}
+            <p>{{ subscribed.isPCD ? subscribed.deficiencyType ? 'Sim - ' + subscribed.deficiencyType : 'Sim' : 'Não' }}
             </p>
         </div>
         <div class="col-sm-4 mb-2">
@@ -55,7 +56,8 @@
         </div>
         <div class="col-sm-4 mb-2">
             <strong>Instituição:</strong>
-            <p>{{ subscribed.institution?.name ? subscribed.institution?.initials + '-' + subscribed.institution?.name : '----' }}
+            <p>{{ subscribed.institution?.name ? subscribed.institution?.initials + '-' + subscribed.institution?.name :
+                '----' }}
             </p>
         </div>
     </div>
@@ -63,37 +65,17 @@
         <h6>Pagamento</h6>
     </div>
     <div class="row align-items-center">
-        <div class="col-sm-4">
+        <!--<div class="col-sm-4">
             <strong>Categoria</strong>
-            <p>{{ subscribed.payment && subscribed.payment.categoryId ? retrieveCategories(subscribed.payment.categoryId).name : '----' }}
+            <p>{{ subscribed.payment && subscribed.payment.categoryId ?
+                retrieveCategories(subscribed.payment.categoryId).name : '----' }}
             </p>
         </div>
         <div class="col-sm-4">
             <strong>Valor total</strong>
             <p>{{ subscribed.payment && subscribed.payment.amount ? 'R$ ' + subscribed.payment.amount : '----' }}
             </p>
-        </div>
-
-        <div class="col-sm-4">
-            <strong>Confirmar comprovante</strong>
-            <div *ngIf="subscribed.payment" class="form-group">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button (click)="validarComprovante(subscribed)"
-                        [ngStyle]="{'background-color: green;color:white':  subscribed.payment.icValid, 'background-color: white;color: black': subscribed.payment.icValid}"
-                        type="button" [ngClass]="{'btn btn-success': subscribed.payment.icValid}"
-                        class="btn">Sim</button>
-                    <button (click)="invalidarComprovante(subscribed)"
-                        [ngStyle]="{'background-color: red;color:white':  !subscribed.payment.icValid, 'background-color: white;color: black': subscribed.payment.icValid}"
-                        type="button" [ngClass]="{'btn btn-danger': !subscribed.payment.icValid}"
-                        class="btn">Não</button>
-                </div>
-            </div>
-            <div *ngIf="subscribed.payment && subscribed.payment.pathS3">
-                <p><a [routerLink]="" (click)="download(subscribed.payment.pathS3)">Comprovante
-                        Inscrição</a>
-                </p>
-            </div>
-        </div>
+        </div>-->
 
         <div class="col-sm-4">
             <strong>Confirmar pagamento</strong>
@@ -109,11 +91,7 @@
                         class="btn">Não</button>
                 </div>
             </div>
-            <div *ngIf="subscribed.payment && subscribed.payment.pathReceiptPayment">
-                <p><a [routerLink]="" (click)="download(subscribed.payment.pathReceiptPayment)">Comprovante
-                        Pagamento</a>
-                </p>
-            </div>
+
         </div>
     </div>
     <div *ngIf="subscribed.works.length > 0" class="section">

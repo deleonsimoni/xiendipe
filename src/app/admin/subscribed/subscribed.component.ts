@@ -101,6 +101,9 @@ export class SubscribedComponent implements OnInit {
         case 6:
           this.search = { 'payment.icPaid': true };
           break;
+        case 7:
+          this.search = { 'payment.icPaid': { $exists: false } };
+          break;
         case 5:
           this.search = {};
           break;

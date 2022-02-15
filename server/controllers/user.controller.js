@@ -57,6 +57,7 @@ module.exports = {
 async function insert(user) {
   //user = await Joi.validate(user, userSchema, { abortEarly: false });
   user.hashedPassword = bcrypt.hashSync(user.password, 10);
+  user.payment = { icValid: true }
   delete user.password;
   return await new User(user).save();
 }

@@ -32,23 +32,23 @@
                 <app-work-data [work]="work" [user]="user" *ngIf="work && work._id == workSelect"> </app-work-data>
               </div>
 
-              <div *ngIf="works.length == 0">
+              <!--<div *ngIf="works.length == 0">
                 <h4>Você não possui trabalhos</h4>
-              </div>
+              </div>-->
 
               <!--FORM PARA SUBIR TRABALHO-->
 
-              <!--<div *ngIf="!carregando && user.icAdmin">
-               <div *ngIf="!user.payment || !user.payment.icPaid ">
-                                    <h1 style="color:red; font-family: 'Montserrat', sans-serif;">Para realizar
-                                        submissões de trabalhos você precisa ter
-                                        um pagamento válido</h1>
-                                </div>
+              <div *ngIf="!carregando">
+                <div *ngIf="!user.payment || !user.payment.icPaid ">
+                  <h1 style="color:red; font-family: 'Montserrat', sans-serif;">Para realizar
+                    submissões de trabalhos você precisa ter
+                    um pagamento válido</h1>
+                </div>
                 <div *ngIf="(user.payment && user.payment.icPaid) || user.icAdmin">
                   <div *ngIf="user.works && user.works.length > 0" class="form-row">
-                                        <h3>Você já submeteu {{ user.works.length }} trabalho(s)</h3>
-                                        <br />
-                                    </div>
+                    <h3>Você já submeteu {{ user.works.length }} trabalho(s)</h3>
+                    <br />
+                  </div>
                   <h5 style="color:#c08622; font-family: 'Montserrat', sans-serif;">
                     Certifique-se de que os dados e arquivos estão corretos, pois não será
                     possível qualquer alteração após a finalização da submissão.</h5>
@@ -113,7 +113,7 @@
 
                   </div>
                 </div>
-              </div>-->
+              </div>
             </form>
           </div>
         </div>

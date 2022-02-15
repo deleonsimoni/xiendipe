@@ -684,44 +684,18 @@
             </p>
             <div class="pull-right pulse">
               <a (click)="openDialogMinicurso()" tabindex="0" alt="Normas mediador de minicurso"
-                title="Normas mediador de minicurso" style="color: #ffffff;cursor: pointer;">Normas</a><br />
+                title="Normas mediador de minicurso" style="color: #ffffff;cursor: pointer;">Ver Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
-              <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/minicurso00000.docx')"
-                style="color: #684e43;cursor: pointer;">Download Template</a>-->
+              <a *ngIf="!carregando" (click)="downloadTemplate('templates/minicurso00000.docx')"
+                style="color: #ffffff;cursor: pointer;">Download Template</a>
             </div>
           </div>
         </div>
       </div>
       <br />
       <div class="row">
-        <!-- <div class="col-lg-6">
-           <div class="box wow fadeInLeft">
-            <h4 class="title">Mediador de Roda de Conversa</h4>
-            <p class="description" style="text-align: justify;">
-              As Rodas de Conversa se destinarão ao debate de assunto relevante e associado às temáticas
-              dos eixos
-              do evento. Suas propostas poderão ser apresentadas por um ou mais profissionais da Educação
-              Básica e
-              da Educação Superior, devendo ser planejada para uma sessão de uma hora e meia cada, para um
-              grupo limitado de participantes, com inscrição prévia, a ser realizada conforme cronograma
-              do evento.
-              As propostas de Rodas de Conversa serão avaliadas e selecionadas pelo Comitê Científico,
-              conforme as
-              normas definidas para a sua submissão e avaliação.
-            </p>
-            <div class="pull-right">
-              <a (click)="openDialogRoda()" tabindex="0" alt="Normas Roda de Conversa" title="Normas Roda de Conversa"
-                style="color: #ffffff;cursor: pointer;">Normas</a><br />
-              <div *ngIf="carregando">
-                <i class="fas fa-spinner fa-pulse"></i>
-              </div>
-              <a *ngIf="!carregando" (click)="downloadTemplate('templates/rodadeconversa0000.docx')"
-                style="color: #684e43;cursor: pointer;">Download Template</a>
-            </div>
-          </div> 
-        </div> -->
         <div class="col-lg-6">
           <div class="box wow fadeInLeft">
             <h4 class="title">Coordenador e expositor de Painel</h4>
@@ -741,13 +715,13 @@
 
             <div class="pull-right">
               <a (click)="openDialogPainel()" tabindex="0" alt="Normas Coordenador e expositor de Painel"
-                title="Normas Coordenador e expositor de Painel"
-                style="color: #ffffff;cursor: pointer;">Normas</a><br />
+                title="Normas Coordenador e expositor de Painel" style="color: #ffffff;cursor: pointer;">Ver
+                Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
-              <!--a *ngIf="!carregando" (click)="downloadTemplate('templates/painel00000.docx')"
-                style="color: #684e43;cursor: pointer;">Download Template</a>-->
+              <a *ngIf="!carregando" (click)="downloadTemplate('templates/painel00000.docx')"
+                style="color: #ffffff;cursor: pointer;">Download Template</a>
             </div>
           </div>
         </div>
@@ -770,12 +744,12 @@
               avaliação.</p>
             <div class="pull-right">
               <a (click)="openDialogPoster()" tabindex="0" alt="Normas Expositor de Pôster"
-                title="Normas Expositor de Pôster" style="color: #ffffff;cursor: pointer;">Normas</a><br />
+                title="Normas Expositor de Pôster" style="color: #ffffff;cursor: pointer;">Ver Normas</a><br />
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
-              <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/poster00000.docx')"
-                style="color: #684e43;cursor: pointer;">Download Template</a>-->
+              <a *ngIf="!carregando" (click)="downloadTemplate('templates/poster00000.docx')"
+                style="color: #ffffff;cursor: pointer;">Download Template</a>
             </div>
           </div>
         </div>

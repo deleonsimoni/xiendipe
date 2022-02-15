@@ -14,8 +14,8 @@
         </div>
         <div class="col-sm-2 border-right">
             <small>STATUS</small>
-            <h4>{{ !subscribed.payment ? 'Não realizou envio' : subscribed.payment.icPaid ? 'Pagamento validado' : subscribed.payment.icValid ? 'Comprovante validado' : 'Aguardando validação'}}
-            </h4>
+
+            <h4>{{ subscribed.payment.icPaid ? 'Pagamento validado' : 'Aguardando validação'}}</h4>
         </div>
         <div class="col-sm-1 text-center align-self-center pointer" (click)="selectUser(subscribed);">
             <i class="fa fa-chevron-down"></i>

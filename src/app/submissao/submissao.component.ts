@@ -66,7 +66,7 @@ export class SubmissaoComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.createForm();
+    this.createForm();
 
     const vm = this;
     this.authService.refresh().subscribe((res: any) => {
@@ -76,19 +76,19 @@ export class SubmissaoComponent implements OnInit {
       this.carregando = false;
     });
 
-    /*
-        this.submissionForm.get('modalityId').valueChanges.subscribe(res => {
-          this.showAdd = true;
-          const control = this.submissionForm.get('authors') as FormArray;
-          for (let i = control.length - 1; i >= 0; i--) {
-            if (i === 0) {
-              (this.submissionForm.get('authors') as FormArray).at(0).patchValue({ email: '' });
-            } else {
-              control.removeAt(i);
-            }
-          }
-        });
-    */
+
+    this.submissionForm.get('modalityId').valueChanges.subscribe(res => {
+      this.showAdd = true;
+      const control = this.submissionForm.get('authors') as FormArray;
+      for (let i = control.length - 1; i >= 0; i--) {
+        if (i === 0) {
+          (this.submissionForm.get('authors') as FormArray).at(0).patchValue({ email: '' });
+        } else {
+          control.removeAt(i);
+        }
+      }
+    });
+
     this.carregarTrabalhosUsuario()
 
   }

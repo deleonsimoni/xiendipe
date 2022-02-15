@@ -14,16 +14,14 @@ export class PagamentoComponent implements OnInit {
 
   public paymentForm: FormGroup;
   public idCategoria: number;
-  public valorTotal: number;
+  public valorTotal: string;
   public carregando = true;
   public enviando = false;
 
   public categorias = [
-    { id: 1, name: 'Estudantes de curso Normal/EM' },
-    { id: 2, name: 'Estudantes de Graduação' },
-    { id: 3, name: 'Estudantes de Pós-Graduação' },
-    { id: 4, name: 'Profissionais da Educação Básica' },
-    { id: 5, name: 'Profissionais da Educação Superior' }
+    { id: 1, name: 'Estudantes de Graduação e pós-graduação com comprovação', price: '40,00' },
+    { id: 2, name: 'Professores e demais profissionais da Educação Básica	', price: '80,00' },
+    { id: 3, name: 'Docentes de Educação Superior', price: '120,00' }
   ];
 
   private filesPDF: FileList;
@@ -51,103 +49,6 @@ export class PagamentoComponent implements OnInit {
       this.user = res.user;
       this.carregando = false;
     });
-    this.paymentForm.valueChanges.subscribe(res => {
-      if (res.categoryId) {
-        this.atualizarValor(res.categoryId);
-      } else {
-        this.valorTotal = null;
-      }
-    });
-
-  }
-
-  public atualizarValor(id): void {
-    this.userService.atualizarValor(id)
-      .subscribe((res: any) => {
-        this.valorTotal = res.price;
-      },
-        (err) => {
-          console.log(err);
-        });
-  }
-
-  public getFileNamePDF(): string {
-    const fileName = this.filesPDF ? this.filesPDF[0].name : 'Comprovante da Categoria';
-    return fileName;
-  }
-
-  public setFileNamePDF(files: FileList): void {
-    this.filesPDF = files;
-  }
-
-  public getFileNamePDFTransferencia(): string {
-    const fileName = this.filesPDF ? this.filesPDF[0].name : 'Comprovante da Transferência';
-    return fileName;
-  }
-
-  public setFileNamePDFTransferencia(files: FileList): void {
-    this.filesPDF = files;
-  }
-
-  public gerarPagamento() {
-    if (!this.paymentForm.value.categoryId) {
-      // tslint:disable-next-line: align
-      this.toastr.error('Selecione uma categoria para pagamento.', 'Atenção');
-      return;
-    }
-    if (this.paymentForm.value.categoryId < 5) {
-      if (!this.filesPDF) {
-        this.toastr.error('É necessário selecionar o arquivo de comprovante do vinculo com a instituição', 'Atenção');
-        return;
-        // tslint:disable-next-line: align
-      } if (this.filesPDF[0].size > 2500 * 1027) {
-        this.toastr.error('O comprovante deve ter no máximo 2MB', 'Atenção');
-        return;
-      }
-    }
-
-    this.enviando = true;
-
-    this.uploadService.gerarPagamento(this.filesPDF ? this.filesPDF[0] : null, 'comprovantes', this.user.document, this.paymentForm.value).subscribe(() => {
-      this.enviando = false;
-      this.user.payment = this.paymentForm.value;
-      if (this.paymentForm.value.categoryId === 5) {
-        this.user.payment.icValid = true;
-        this.user.payment.amount = this.valorTotal;
-      }
-      this.toastr.success('Aguarde avaliação do pagamento', 'Sucesso');
-      this.paymentForm.reset();
-      this.filesPDF = null;
-    }, err => {
-      this.enviando = false;
-      this.toastr.error('Servidor momentaneamente inoperante.', 'Erro: ');
-    });
-  }
-
-  public submeterTransferencia() {
-
-    if (!this.filesPDF) {
-      this.toastr.error('É necessário selecionar o arquivo de comprovante de transferência', 'Atenção');
-      return;
-      // tslint:disable-next-line: align
-    } if (this.filesPDF[0].size > 2500 * 1027) {
-      this.toastr.error('O comprovante deve ter no máximo 2MB', 'Atenção');
-      return;
-    }
-
-
-    this.enviando = true;
-
-    this.uploadService.submeterTransferencia(this.filesPDF ? this.filesPDF[0] : null, 'comprovantes', this.user.document)
-      .subscribe((res: any) => {
-        this.enviando = false;
-        this.user.payment.pathReceiptPayment = true;
-        this.toastr.success('Comprovante enviado', 'Sucesso');
-        this.filesPDF = null;
-      }, err => {
-        this.enviando = false;
-        this.toastr.error('Servidor momentaneamente inoperante.', 'Erro: ');
-      });
   }
 
 
