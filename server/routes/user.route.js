@@ -92,11 +92,11 @@ async function testeBoleto(req, res) {
 async function uploadWork(req, res) {
 
   //Prazo encerrado
-  let response = {
+  /*let response = {
     'msg': 'Submissões Encerradas'
-  };
+  };*/
 
-  /*
+
   let response = await userCtrl.uploadWork(req, res);
 
   if (!response) {
@@ -111,7 +111,7 @@ async function uploadWork(req, res) {
     }
 
   }
-*/
+
   res.json(response);
 }
 
