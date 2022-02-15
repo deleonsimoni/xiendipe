@@ -50,7 +50,7 @@ export class HomeComponent implements OnInit {
   };
 
   instituicoes = [
-    'Universidade Federal do Rio de Janeiro – UFRJ',
+    'Universidade Federal de Uberlândia - UFU',
     /* 'Universidade Federal do Estado do Rio de Janeiro – UNIRIO',
      'Universidade Federal Fluminense – UFF',
      'Universidade Federal Rural do Rio de Janeiro – UFRRJ',
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
   ];
 
   coordenacoesGerais = [
-    'Profa. Dra. Camila Lima Coimbra (UFU)',
+    'Profa. Dra. Camila Lima Coimbra - UFU',
     'Prof. Dr. Roberto Valdés Puentes'
   ];
 
@@ -87,108 +87,113 @@ export class HomeComponent implements OnInit {
 
   ];
 
-  gruposDeTrabalho = [
-    {
-      nome: 'Apoio aos preletores',
-      equipe: [
-        'Patricia Bastos de Azevedo – UFRRJ (coord.)'
-
-
-      ]
-    },
-    {
-      nome: 'Atividades culturais',
-      equipe: [
-        'Sandra Maciel – UFF (coord.)'
-      ]
-    },
-    {
-      nome: 'Feira de Livros',
-      equipe: [
-        'Adriana Patricio Delgado – UFRJ (coord.)'
-
-
-      ]
-    },
-    {
-      nome: 'Gestão financeira',
-      equipe: [
-        'Giseli Barreto da Cruz – UFRJ (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Inclusão & acessibilidade',
-      equipe: [
-        'Bianca Della Libera – IBC (coord.)'
-      ]
-    },
-    {
-      nome: 'Local & infraestrutura',
-      equipe: [
-        'Claudia de Oliveira Fernandes – UNIRIO (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Material do congressista',
-      equipe: [
-        'Vania Finholdt Angelo Leite – FFP/UERJ (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Programação',
-      equipe: [
-        'Luís Paulo Borges – EB/CAp UERJ (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Publicações',
-      equipe: [
-        'Claudia de Oliveira Fernandes (UNIRIO)'
-
-      ]
-    },
-    {
-      nome: 'Relação com as redes de ensino',
-      equipe: [
-        'Claudia Miranda – UNIRIO (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Serviço de monitoria e recepção',
-      equipe: [
-        'Cecília Silvano Batalha – EB/FME-Niterói (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Imagem, Comunicação & Tecnologia',
-      equipe: [
-        'Mônica Vasconcellos – UFF (coord.)'
-
-      ]
-    },
-    {
-      nome: 'Secretaria Executiva',
-      equipe: [
-        'Silvana Mesquita – PUC-Rio (coord.)'
-
-      ]
-    },
-  ];
+  /*  gruposDeTrabalho = [
+      {
+        nome: 'Apoio aos preletores',
+        equipe: [
+          'Patricia Bastos de Azevedo – UFRRJ (coord.)'
+  
+  
+        ]
+      },
+      {
+        nome: 'Atividades culturais',
+        equipe: [
+          'Sandra Maciel – UFF (coord.)'
+        ]
+      },
+      {
+        nome: 'Feira de Livros',
+        equipe: [
+          'Adriana Patricio Delgado – UFRJ (coord.)'
+  
+  
+        ]
+      },
+      {
+        nome: 'Gestão financeira',
+        equipe: [
+          'Giseli Barreto da Cruz – UFRJ (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Inclusão & acessibilidade',
+        equipe: [
+          'Bianca Della Libera – IBC (coord.)'
+        ]
+      },
+      {
+        nome: 'Local & infraestrutura',
+        equipe: [
+          'Claudia de Oliveira Fernandes – UNIRIO (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Material do congressista',
+        equipe: [
+          'Vania Finholdt Angelo Leite – FFP/UERJ (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Programação',
+        equipe: [
+          'Luís Paulo Borges – EB/CAp UERJ (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Publicações',
+        equipe: [
+          'Claudia de Oliveira Fernandes (UNIRIO)'
+  
+        ]
+      },
+      {
+        nome: 'Relação com as redes de ensino',
+        equipe: [
+          'Claudia Miranda – UNIRIO (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Serviço de monitoria e recepção',
+        equipe: [
+          'Cecília Silvano Batalha – EB/FME-Niterói (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Imagem, Comunicação & Tecnologia',
+        equipe: [
+          'Mônica Vasconcellos – UFF (coord.)'
+  
+        ]
+      },
+      {
+        nome: 'Secretaria Executiva',
+        equipe: [
+          'Silvana Mesquita – PUC-Rio (coord.)'
+  
+        ]
+      },
+    ];*/
 
   eixos = [
     {
       titulo: 'Eixo 1',
       tema: 'A Didática como campo epistemológico e disciplinar',
-      temaCurto: 'com Formação docente',
-      descricao: `Esse eixo temático.`,
+      /*  temaCurto: 'com Formação docente',*/
+      descricao: `Epistemologia da Didática. Objeto epistêmico da Didática. A produção do conhecimento 
+      no campo da didática. Articulação entre o ensinar e o aprender. Teoria Didática e bases 
+      para propostas pedagógicas. Didática e Epistemologia da prática e/ou práxis. 
+      Fundamentos e perspectivas da didática. `,
       coordenacao: [
-        'Alexandra Garcia Ferreira Lima – FFP/UERJ'
+        'Lenilda - UFAC',
+        'Marilza Suanno - UFG',
+        'Sandra Limonta - UFG'
 
       ],
       pareceristas: []
@@ -196,24 +201,37 @@ export class HomeComponent implements OnInit {
     {
       titulo: 'Eixo 2',
       tema: 'A Didática e os Saberes docentes estruturantes na formação de professores',
-      temaCurto: 'com Currículo e Avaliação',
-      descricao: `Esse eixo temático prioriza os currículos e as avaliações nos contextos históricos e contemporâneos;
-     .`,
+      /* temaCurto: 'com Currículo e Avaliação',*/
+      descricao: `Relação da Didática com os saberes docentes estruturantes na formação de professores. 
+      Saberes pedagógicos e didáticos relacionados ao processo de ensino-aprendizagem; 
+      Planejamento, sequência didática e avaliação; Concepções de formação de professores; 
+      Concepções de profissionalização docente; Formação inicial e continuada de professores; 
+      Estágio Supervisionado na formação de professores; Metodologias e mediações didáticas
+      na formação de professores; Pesquisa-ação; pesquisa colaborativa; narrativas na 
+      formação de professores; Parceria entre universidade e a escola na formação de 
+      professores.`,
       coordenacao: [
-        'Maria Inês Marcondes – PUC-Rio'
-
+        'Vânia Leite – UERJ',
+        'Maria Inês - PUC-Rio',
+        'Martha Prata-Linhares - UFTM',
+        'Silvana Mesquita - PUC-Rio'
       ],
       pareceristas: []
     },
     {
       titulo: 'Eixo 3',
       tema: `A Didática e as tecnologias da informação e comunicação no currículo e práticas 
-      `,
-      temaCurto: `em Direitos Humanos, Interculturalidade e Religiões`,
-      descricao: `Esse eixo temático prioriza as diferenças culturais que desafiam o cotidiano escolar;
-      .`,
+      de ensino`,
+      /*temaCurto: `em Direitos Humanos, Interculturalidade e Religiões`,*/
+      descricao: `A Didática, as práticas de ensino e a Mediação Tecnológica. Tecnologias Digitais e
+      Mediação Pedagógica. Cultura Digital e Escola. Jogos Digitais, Tecnologias e Educação. 
+      As Plataformas Digitais e os Ambientes Virtuais de Aprendizagem (AVA). Ensino 
+      Remoto Emergencial (ERE).`,
       coordenacao: [
-        'Ana Ivenicki – UFRJ'
+        'Priscilla Moreira -UEMG',
+        'Daniela Costa - UFG',
+        'Giovanna Zen - UFBA',
+        'Gyzely Lima - IFTM'
       ],
       pareceristas: []
     },
@@ -221,12 +239,20 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 4',
       tema: `A Didática e Práticas de Ensino na perspectiva da Educação como Direito Constitucional e os desafios políticos da atualidade 
        `,
-      temaCurto: `entre Novas epistemologias, Diferença, Biodiversidade, Democracia e Inclusão`,
-      descricao: `Esse eixo temático prioriza produções que, de uma perspectiva insurgente,
-      .`,
+      /*temaCurto: `entre Novas epistemologias, Diferença, Biodiversidade, Democracia e Inclusão`,*/
+      descricao: `A Educação na Constituição Brasileira e na Legislação Educacional. Educação Básica:
+      Objetivos, princípios e diretrizes curriculares. A educação no contexto das 
+      transformações da sociedade contemporânea. Políticas regressivas e ataques aos direitos
+      educacionais. A Didática e as Práticas de Ensino e o contexto político contemporâneo. As 
+      reformas políticas e o papel da Didática e das Práticas de Ensino no debate 
+      contemporâneo. Os projetos de regulação da educação escolar (BNCC, Escola sem 
+      Partido, Reforma do Ensino Médio). Planejamento e gestão da educação. Gestão 
+      Pedagógica e Democrática da Escola. Políticas de Avaliação da Educação Básica.`,
       coordenacao: [
-        'Inês Barbosa de Oliveira – UNESA'
-
+        'Robson França - UFU',
+        'Andréia Militão - UFGD',
+        'Suzana Gomes - UFMG',
+        'Jussara Paschoalino - UFRJ'
       ],
       pareceristas: []
     },
@@ -234,11 +260,15 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 5',
       tema: `A Didática e as Práticas de ensino nas políticas de formação de Pedagogos(as) 
        `,
-      temaCurto: `entre Educação, Comunicação e Tecnologia`,
-      descricao: `Esse eixo temático prioriza o debate sobre educar com as mídias, para as mídias e pelas mídias;
-      .`,
+      /* temaCurto: `entre Educação, Comunicação e Tecnologia`,*/
+      descricao: `Didática e Práticas de Ensino nas diretrizes do CNE; Implementação, resistência, 
+      permanência de políticas de formação de Pedagogos(as); PIBID, Residência Pedagógica 
+      e outros programas de formação.`,
       coordenacao: [
-        'Adriana Hoffman – UNIRIO'
+        'Leonardo Rolim  - UFPB',
+        'Andreia Gino - UEMG',
+        'Vilma - UFU',
+        'Solange Magalhães - UFG'
 
       ],
       pareceristas: []
@@ -247,11 +277,17 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 6',
       tema: `A Didática e as Práticas de Ensino nos cursos de Licenciatura: entre tensionamentos e perspectivas 
       `,
-      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
-      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
-      .`,
+      /*  temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,*/
+      descricao: `Didática e Práticas de Ensino na Formação de Professores. Reformulação da proposta 
+      curricular na Licenciatura e a concepção de didática instrumental na formação do 
+      licenciando. Tensões e Desafios: Formação e prática real. Ações formativas envolvendo 
+      a Didática. Os conhecimentos do campo da Didática.  Reforma do Ensino Médio e a 
+      relação com a didática e com as Práticas de Ensino.`,
       coordenacao: [
-        'Anelise Nascimento – UFRRJ'
+        'Ademílson Paco - UFMG',
+        'Fabrício Silva - UEFS',
+        'Elcimar Martins - UNILAB',
+        'Thiago Barnabé - UFTM'
 
       ],
       pareceristas: []
@@ -260,11 +296,17 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 7',
       tema: `A Didática, Práticas de Ensino - Infâncias, Juventudes e Vida Adulta 
       `,
-      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
-      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
-     .`,
+      /*temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,*/
+      descricao: `Didática e Práticas de Ensino na Educação Infantil, Ensino Fundamental, EJA em 
+      ambientes não escolares. Concepções de educação, infância, juventude e vida adulta, 
+      tendo como parâmetro os direitos humanos. O pedagogo, a didática, as práticas de ensino 
+      e sua relação com crianças e adolescentes em situação de vulnerabilidade.`,
       coordenacao: [
-        'Anelise Nascimento – UFRRJ'
+        'Fernanda Duarte - UFU',
+        'Altina Silva - UFCAT',
+        'Janaína Cassiano - UFCAT',
+        'Marco Antônio F. Amaral - IFTM',
+        'Adelson - UEMG'
       ],
       pareceristas: []
     },
@@ -272,11 +314,18 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 8',
       tema: `A Didática, Práticas de Ensino, Educação das Relações Étnico-raciais, Diversidade e Inclusão Escolar 
       `,
-      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
-      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
-      .`,
+      /*temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,*/
+      descricao: `Diferenças culturais no cotidiano escolar; Articulação entre diferença e desigualdades no 
+      processo de ensino e aprendizagem; Inclusão escolar e Educação Especial. Didática e 
+      AEE. Educação antirracista. Movimentos sociais e os processos de ensino e 
+      aprendizagem; perspectivas relacionadas a gênero, sexualidade, raça, etnias, classe social 
+      e outros.`,
       coordenacao: [
-        'Anelise Nascimento – UFRRJ'
+        'Dulcéria Tartuci - UFCat',
+        'Valéria Asniz - UFU',
+        'Priscila Ximenes - UFU',
+        'Lázara Cristina Silva - UFU',
+        'Márcia Moreira Custódio - IFTM'
 
       ],
       pareceristas: []
@@ -285,11 +334,15 @@ export class HomeComponent implements OnInit {
       titulo: 'Eixo 9',
       tema: `A Didática da Educação Superior 
      `,
-      temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,
-      descricao: `Esse eixo temático prioriza as abordagens teóricas, metodológicas e epistemológicas sobre infâncias,
-      `,
+      /*temaCurto: `entre Infâncias, Juventudes e Vida Adulta`,*/
+      descricao: `Formação do professor Universitário. Saberes da docência universitária. Pedagogia 
+      Universitária. Didática e questões curriculares na docência Universitária. Formação dos 
+      formadores de professores. Assessoria Pedagógica na Universidade.`,
       coordenacao: [
-        'Anelise Nascimento – UFRRJ'
+        'Vanessa Campos - UFU',
+        'Orlando Aquino - UNIUBE',
+        'Vânia Vieira - UNIUBE',
+        'Maria de Lourdes Ribeiro - IFTM'
       ],
       pareceristas: []
     }

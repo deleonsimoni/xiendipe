@@ -102,6 +102,36 @@
   </section><!-- #about -->
 
   <!--==========================
+      Escolha do tema
+    ============================-->
+  <section id="escolha" class="wow fadeInUp">
+    <div class="container">
+      <div class="section-header">
+        <h2>Escolha do Tema</h2>
+        <p style="text-align: justify;">
+          Escolhemos como logo o Ipê, que contrariando a natureza, suas flores desabrocham em dias
+          secos e cinzentos de inverno. E é assim, antes mesmo do surgimento da nova folhagem, que
+          elas anunciam a proximidade da Primavera. O Ipê nos remete a resistência e beleza, tão
+          necessários nos tempos atuais.</p>
+
+      </div>
+
+
+      <div class="row">
+        <div class="mt-4">
+          <div class="row align-items-center">
+            <img src="../../assets/img/ipe3.jpg" alt="imagem ipê">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--==========================
       Apresentação Section
     ============================-->
   <section id="clients" class="wow fadeInUp">
@@ -314,7 +344,8 @@
   <!--==========================
       organizacao Section
     ============================-->
-  <section id="team" class="wow fadeInUp">
+  ~
+  <!--<section id="team" class="wow fadeInUp">
     <div class="container">
       <div class="section-header">
         <h2>Organização</h2>
@@ -340,7 +371,7 @@
           <li *ngFor="let secretaria of secretarias">
             {{ secretaria }}
           </li>
-          <li>
+           <li>
             <div class="row contact-info" style="cursor: pointer;">
               <div>
                 <div class="box wow fadeInLeft" (click)="openDialogApoiadores(gruposDeTrabalho, imagensApoiadores)">
@@ -355,7 +386,7 @@
 
       </div>
     </div>
-  </section><!-- #coordenadores -->
+  </section>- #coordenadores -->
 
   <!--==========================
       organizacao Section
@@ -383,7 +414,7 @@
             </li>
             <br />
             <ul style="list-style: none;" *ngFor="let eixo of eixos">
-              <strong>{{ eixo.titulo + ' - ' + eixo.temaCurto }}</strong>
+              <strong>{{ eixo.titulo + ' - ' + eixo.tema }}</strong>
               <li *ngFor="let coordenador of eixo.coordenacao">
                 {{ coordenador }}
               </li>
@@ -440,13 +471,160 @@
           cronológico da realização dos ENDIPES e reforçada pelos temas que os orientaram:
 
         </p>
-      </div>
-    </div>
-  </section>
-  <section id="evento" class="wow fadeInUp">
-    <div class="container">
-      <div class="section-header">
-        <h2>Eventos Anteriores</h2>
+        <br />
+        <br />
+        <table class="table table-responsive table-striped tabelaCronograma">
+          <thead>
+            <tr>
+              <th class="text-center">
+                ANO
+              </th>
+              <th class="text-center">
+                TEMA
+              </th>
+              <th class="text-center">
+                COORDENAÇÃO GERAL
+              </th>
+              <th class="text-center">
+                INSTITUIÇÃO PROMOTORA
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>2020</td>
+              <td>XX ENDIPE – “Fazeres-Saberes pedagógicos: diálogos, insurgências e políticas”</td>
+              <td>Giseli Barreto da Cruz / Claudia de Oliveira Fernandes</td>
+              <td>Universidade Federal do Rio de Janeiro e Universidade Federal do Estado do Rio de Janeiro –
+                Rio de Janeiro/RJ</td>
+            </tr>
+            <tr>
+              <td>2018</td>
+              <td>XIX ENDIPE – “Para onde vai a didática? O enfrentamento às abordagens teóricas e desafios
+                políticos da atualidade”</td>
+              <td>Cristina Maria D’Ávila Teixeira</td>
+              <td>Universidade Federal da Bahia – Salvador/BA</td>
+            </tr>
+            <tr>
+              <td>2016</td>
+              <td>XVIII ENDIPE – “Didática e Prática de Ensino no contexto político contemporâneo: cenas da
+                educação brasileira”</td>
+              <td>Silas Borges Monteiro</td>
+              <td>Universidade Federal do Mato Grosso – Cuiabá/MT</td>
+            </tr>
+            <tr>
+              <td>2014</td>
+              <td>XVII ENDIPE – “A Didática e as práticas de ensino nas relações entre escola, formação de
+                professores e a sociedade”</td>
+              <td>Maria do Socorro Lucena Lima</td>
+              <td>Universidade do Estado do Ceará – Fortaleza/CE</td>
+            </tr>
+            <tr>
+              <td>2012</td>
+              <td>XVI ENDIPE – “Didática e Práticas de Ensino: compromisso com a escola pública, laica,
+                gratuita e de qualidade”</td>
+              <td>Alda Marin Junqueira / Selma Garrido Pimenta</td>
+              <td>Universidade Estadual de Campinas – Campinas / SP</td>
+            </tr>
+            <tr>
+              <td>2010</td>
+              <td>XV ENDIPE – “Convergências e tensões no campo da formação e do trabalho docente: políticas e
+                práticas educacionais”</td>
+              <td>Ângela Dalben / Julio Emilio Diniz Pereira / Lucíola L. Santos</td>
+              <td>Universidade Federal de Minas Gerais – Belo Horizonte / MG</td>
+            </tr>
+            <tr>
+              <td>2008</td>
+              <td>XIV ENDIPE – “Trajetórias e Processos de Ensinar e Aprender: lugares, memórias e culturas”
+              </td>
+              <td>Maria Isabel da Cunha / Maria Helena M. B. Abrahão</td>
+              <td>Pontifícia Universidade Católica de Porto Alegre/RS</td>
+            </tr>
+            <tr>
+              <td>2006</td>
+              <td>XIII ENDIPE – “Educação, Questões Pedagógicas e Processos Formativos: compromisso com a
+                inclusão social”</td>
+              <td>Aída Maria Monteiro da Silva</td>
+              <td>Universidade Federal de Pernambuco – Recife / PE</td>
+            </tr>
+            <tr>
+              <td>2004</td>
+              <td>XII ENDIPE – “Conhecimento universal e conhecimento local”</td>
+              <td>Lillian Anna Wachowicz</td>
+              <td>Pontifícia Universidade Católica do Paraná – Curitiba/PR</td>
+            </tr>
+            <tr>
+              <td>2002</td>
+              <td>XI ENDIPE – “Igualdade e diversidade na educação"</td>
+              <td>José Carlos Libâneo</td>
+              <td>Universidade Federal de Goiás – Goiânia / GO</td>
+            </tr>
+            <tr>
+              <td>2000</td>
+              <td>X ENDIPE – “Ensinar e aprender: sujeitos, saberes, espaços e tempos”</td>
+              <td>Vera Maria Candau</td>
+              <td>Universidade do Estado do Rio de Janeiro – Rio de Janeiro/RJ</td>
+            </tr>
+            <tr>
+              <td>1998</td>
+              <td>IX ENDIPE – “Olhando a qualidade do ensino a partir da sala de aula”</td>
+              <td>Selma Garrido Pimenta</td>
+              <td>Universidade de São Paulo – Águas de Lindóia / SP</td>
+            </tr>
+            <tr>
+              <td>1996</td>
+              <td>VIII ENDIPE – “Formação e profissionalização do educador”</td>
+              <td>Leda Schelbe / Maria da Graça Soares</td>
+              <td>Universidade Federal de Santa Catarina – Florianópolis / SC</td>
+            </tr>
+            <tr>
+              <td>1994</td>
+              <td>VII ENDIPE – “Produção do conhecimento e trabalho docente”</td>
+              <td>José Carlos Libâneo</td>
+              <td>Universidade Federal de Goiás – Goiânia / GO</td>
+            </tr>
+            <tr>
+              <td>1991</td>
+              <td>VI ENDIPE – “Perspectivas do trabalho docente para o ano 2000: qual Didática e qual Prática
+                de Ensino? As bases teóricas de uma prática docente interdisciplinar: explicitações
+                necessárias”</td>
+              <td>Merion Campos Bordas</td>
+              <td>Universidade Federal do Rio Grande do Sul – Porto Alegre / RS</td>
+            </tr>
+            <tr>
+              <td>1989</td>
+              <td>V ENDIPE – “Organização do processo de trabalho docente: em busca da integração da Didática
+                e da Prática de Ensino”</td>
+              <td>Maria de Lourdes Rocha de Lima</td>
+              <td>Universidade Federal de Minas Gerais – Belo Horizonte / MG</td>
+            </tr>
+            <tr>
+              <td>1987</td>
+              <td>IV ENDIPE – “A prática pedagógica e a educação transformadora na sociedade brasileira”</td>
+              <td>Aída Maria Monteiro da Silva</td>
+              <td>Universidade Católica de Pernambuco – Recife / PE</td>
+            </tr>
+            <tr>
+              <td>1985</td>
+              <td>III Seminário A Didática em Questão (III ENDIPE)</td>
+              <td>Olga Molina</td>
+              <td>Universidade de São Paulo – São Paulo / SP</td>
+            </tr>
+            <tr>
+              <td>1983</td>
+              <td>II Seminário A Didática em Questão (II ENDIPE)</td>
+              <td>Vera Maria Candau</td>
+              <td>Universidade Católica do Rio de Janeiro/RJ</td>
+            </tr>
+            <tr>
+              <td>1982</td>
+              <td>I Seminário A Didática em Questão (I ENDIPE)</td>
+              <td>Vera Maria Candau</td>
+              <td>Universidade Católica do Rio de Janeiro/RJ</td>
+            </tr>
+
+          </tbody>
+        </table>
         <p style="text-align: justify;">
           Os ENDIPEs já foram realizados, em muitos casos mais de uma vez, nas cidades de São
           Paulo, Rio de Janeiro, Recife, Belo Horizonte, Porto Alegre, Florianópolis, Goiânia,
@@ -460,161 +638,9 @@
           cidade do interior de Minas Gerais, sediará uma edição do ENDIPE.
         </p>
       </div>
-      <br />
-      <table class="table table-responsive table-striped tabelaCronograma">
-        <thead>
-          <tr>
-            <th class="text-center">
-              ANO
-            </th>
-            <th class="text-center">
-              TEMA
-            </th>
-            <th class="text-center">
-              COORDENAÇÃO GERAL
-            </th>
-            <th class="text-center">
-              INSTITUIÇÃO PROMOTORA
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>2020</td>
-            <td>XX ENDIPE – “Fazeres-Saberes pedagógicos: diálogos, insurgências e políticas”</td>
-            <td>Giseli Barreto da Cruz / Claudia de Oliveira Fernandes</td>
-            <td>Universidade Federal do Rio de Janeiro e Universidade Federal do Estado do Rio de Janeiro –
-              Rio de Janeiro/RJ</td>
-          </tr>
-          <tr>
-            <td>2018</td>
-            <td>XIX ENDIPE – “Para onde vai a didática? O enfrentamento às abordagens teóricas e desafios
-              políticos da atualidade”</td>
-            <td>Cristina Maria D’Ávila Teixeira</td>
-            <td>Universidade Federal da Bahia – Salvador/BA</td>
-          </tr>
-          <tr>
-            <td>2016</td>
-            <td>XVIII ENDIPE – “Didática e Prática de Ensino no contexto político contemporâneo: cenas da
-              educação brasileira”</td>
-            <td>Silas Borges Monteiro</td>
-            <td>Universidade Federal do Mato Grosso – Cuiabá/MT</td>
-          </tr>
-          <tr>
-            <td>2014</td>
-            <td>XVII ENDIPE – “A Didática e as práticas de ensino nas relações entre escola, formação de
-              professores e a sociedade”</td>
-            <td>Maria do Socorro Lucena Lima</td>
-            <td>Universidade do Estado do Ceará – Fortaleza/CE</td>
-          </tr>
-          <tr>
-            <td>2012</td>
-            <td>XVI ENDIPE – “Didática e Práticas de Ensino: compromisso com a escola pública, laica,
-              gratuita e de qualidade”</td>
-            <td>Alda Marin Junqueira / Selma Garrido Pimenta</td>
-            <td>Universidade Estadual de Campinas – Campinas / SP</td>
-          </tr>
-          <tr>
-            <td>2010</td>
-            <td>XV ENDIPE – “Convergências e tensões no campo da formação e do trabalho docente: políticas e
-              práticas educacionais”</td>
-            <td>Ângela Dalben / Julio Emilio Diniz Pereira / Lucíola L. Santos</td>
-            <td>Universidade Federal de Minas Gerais – Belo Horizonte / MG</td>
-          </tr>
-          <tr>
-            <td>2008</td>
-            <td>XIV ENDIPE – “Trajetórias e Processos de Ensinar e Aprender: lugares, memórias e culturas”
-            </td>
-            <td>Maria Isabel da Cunha / Maria Helena M. B. Abrahão</td>
-            <td>Pontifícia Universidade Católica de Porto Alegre/RS</td>
-          </tr>
-          <tr>
-            <td>2006</td>
-            <td>XIII ENDIPE – “Educação, Questões Pedagógicas e Processos Formativos: compromisso com a
-              inclusão social”</td>
-            <td>Aída Maria Monteiro da Silva</td>
-            <td>Universidade Federal de Pernambuco – Recife / PE</td>
-          </tr>
-          <tr>
-            <td>2004</td>
-            <td>XII ENDIPE – “Conhecimento universal e conhecimento local”</td>
-            <td>Lillian Anna Wachowicz</td>
-            <td>Pontifícia Universidade Católica do Paraná – Curitiba/PR</td>
-          </tr>
-          <tr>
-            <td>2002</td>
-            <td>XI ENDIPE – “Igualdade e diversidade na educação"</td>
-            <td>José Carlos Libâneo</td>
-            <td>Universidade Federal de Goiás – Goiânia / GO</td>
-          </tr>
-          <tr>
-            <td>2000</td>
-            <td>X ENDIPE – “Ensinar e aprender: sujeitos, saberes, espaços e tempos”</td>
-            <td>Vera Maria Candau</td>
-            <td>Universidade do Estado do Rio de Janeiro – Rio de Janeiro/RJ</td>
-          </tr>
-          <tr>
-            <td>1998</td>
-            <td>IX ENDIPE – “Olhando a qualidade do ensino a partir da sala de aula”</td>
-            <td>Selma Garrido Pimenta</td>
-            <td>Universidade de São Paulo – Águas de Lindóia / SP</td>
-          </tr>
-          <tr>
-            <td>1996</td>
-            <td>VIII ENDIPE – “Formação e profissionalização do educador”</td>
-            <td>Leda Schelbe / Maria da Graça Soares</td>
-            <td>Universidade Federal de Santa Catarina – Florianópolis / SC</td>
-          </tr>
-          <tr>
-            <td>1994</td>
-            <td>VII ENDIPE – “Produção do conhecimento e trabalho docente”</td>
-            <td>José Carlos Libâneo</td>
-            <td>Universidade Federal de Goiás – Goiânia / GO</td>
-          </tr>
-          <tr>
-            <td>1991</td>
-            <td>VI ENDIPE – “Perspectivas do trabalho docente para o ano 2000: qual Didática e qual Prática
-              de Ensino? As bases teóricas de uma prática docente interdisciplinar: explicitações
-              necessárias”</td>
-            <td>Merion Campos Bordas</td>
-            <td>Universidade Federal do Rio Grande do Sul – Porto Alegre / RS</td>
-          </tr>
-          <tr>
-            <td>1989</td>
-            <td>V ENDIPE – “Organização do processo de trabalho docente: em busca da integração da Didática
-              e da Prática de Ensino”</td>
-            <td>Maria de Lourdes Rocha de Lima</td>
-            <td>Universidade Federal de Minas Gerais – Belo Horizonte / MG</td>
-          </tr>
-          <tr>
-            <td>1987</td>
-            <td>IV ENDIPE – “A prática pedagógica e a educação transformadora na sociedade brasileira”</td>
-            <td>Aída Maria Monteiro da Silva</td>
-            <td>Universidade Católica de Pernambuco – Recife / PE</td>
-          </tr>
-          <tr>
-            <td>1985</td>
-            <td>III Seminário A Didática em Questão (III ENDIPE)</td>
-            <td>Olga Molina</td>
-            <td>Universidade de São Paulo – São Paulo / SP</td>
-          </tr>
-          <tr>
-            <td>1983</td>
-            <td>II Seminário A Didática em Questão (II ENDIPE)</td>
-            <td>Vera Maria Candau</td>
-            <td>Universidade Católica do Rio de Janeiro/RJ</td>
-          </tr>
-          <tr>
-            <td>1982</td>
-            <td>I Seminário A Didática em Questão (I ENDIPE)</td>
-            <td>Vera Maria Candau</td>
-            <td>Universidade Católica do Rio de Janeiro/RJ</td>
-          </tr>
-
-        </tbody>
-      </table>
     </div>
-  </section><!-- #cronograma -->
+
+  </section>
 
   <!--==========================
       modalidades Section
@@ -671,8 +697,8 @@
       </div>
       <br />
       <div class="row">
-        <div class="col-lg-6">
-          <div class="box wow fadeInLeft">
+        <!-- <div class="col-lg-6">
+           <div class="box wow fadeInLeft">
             <h4 class="title">Mediador de Roda de Conversa</h4>
             <p class="description" style="text-align: justify;">
               As Rodas de Conversa se destinarão ao debate de assunto relevante e associado às temáticas
@@ -692,26 +718,27 @@
               <div *ngIf="carregando">
                 <i class="fas fa-spinner fa-pulse"></i>
               </div>
-              <!--<a *ngIf="!carregando" (click)="downloadTemplate('templates/rodadeconversa0000.docx')"
-                style="color: #684e43;cursor: pointer;">Download Template</a>-->
+              <a *ngIf="!carregando" (click)="downloadTemplate('templates/rodadeconversa0000.docx')"
+                style="color: #684e43;cursor: pointer;">Download Template</a>
             </div>
-          </div>
-        </div>
+          </div> 
+        </div> -->
         <div class="col-lg-6">
           <div class="box wow fadeInLeft">
             <h4 class="title">Coordenador e expositor de Painel</h4>
             <p class="description" style="text-align: justify;">
-              Os Painéis têm como finalidade a apresentação de trabalhos elaborados pelos autores,
-              decorrentes de
+              Os Painéis têm como finalidade a apresentação de trabalhos decorrentes de
+              <!--    decorrentes de-->
               pesquisas concluídas ou experiências de ensino consolidadas. O tema do Painel deverá se
               relacionar
-              com um dos eixos do Encontro e a sua proposta deverá conter três trabalhos de instituições
+              com um dos eixos do Endipe e a sua proposta deverá conter três trabalhos de instituições
               diferentes,
               sendo um, obrigatoriamente, de professor/a da Educação Básica. O Painel deverá ser proposto
               por um
               coordenador e seus trabalhos avaliados conjuntamente, conforme as normas definidas para a
               sua
-              submissão e avaliação.</p>
+              submissão e avaliação.
+            </p>
 
             <div class="pull-right">
               <a (click)="openDialogPainel()" tabindex="0" alt="Normas Coordenador e expositor de Painel"
@@ -725,8 +752,8 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
+        <!--  </div>-->
+        <!--  <div class="row">-->
         <div class="col-lg-6">
           <div class="box wow fadeInLeft">
             <h4 class="title">Expositor de Pôster</h4>
@@ -735,9 +762,9 @@
               andamento
               ou experiências de ensino em realização. O tema do Pôster deverá se relacionar com um dos
               eixos do
-              Encontro, podendo ser submetido por estudantes de pós-graduação, profissionais da Educação
+              Encontro, podendo ser submetido por estudantes de pós-graduação, professor da Educação
               Básica
-              e/ou profissionais da Educação Superior. Pretende-se que o Pôster seja debatido em salas de
+              e/ou professor da Educação Superior. Pretende-se que o Pôster seja debatido em salas de
               comunicações com mediações de professores convidados. As propostas de Pôsteres serão
               avaliadas e
               selecionadas pelo Comitê Científico, conforme as normas definidas para a sua submissão e
@@ -753,38 +780,39 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="box wow fadeInLeft">
-            <h4 class="title">Simposista</h4>
-            <p class="description" style="text-align: justify;">
-              Os Simpósios serão propostos pelo Comitê Organizador, referentes a cada um dos eixos do XXI
-              ENDIPE 2022. Eles serão formados por três simposistas, preferencialmente de instituições e
-              Estados
-              diferentes, sendo um deles do Rio de Janeiro. O conjunto de Simpósios envolverá
-              pesquisadores
-              nacionais e estrangeiros e professores da Educação Básica e da Educação Superior com
-              produção
-              referente às Didáticas e Práticas de Ensino.
-            </p>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <h4 class="title">Simposista</h4>
+              <p class="description" style="text-align: justify;">
+                Os Simpósios serão propostos pelo Comitê Organizador, referentes a cada um dos eixos do 21º
+                ENDIPE. Eles serão formados por três simposistas, preferencialmente de instituições e
+                Estados
+                diferentes, sendo um deles de Uberlândia. O conjunto de Simpósios envolverá
+                pesquisadores
+                nacionais e estrangeiros e professores da Educação Básica e da Educação Superior com
+                produção
+                referente às Didáticas e Práticas de Ensino.
+              </p>
+            </div>
           </div>
+          <!--  </div>-->
+          <!--  <div class="row">-->
+          <div class="col-lg-6">
+            <div class="box wow fadeInLeft">
+              <h4 class="title">Ouvinte</h4>
+              <p class="description" style="text-align: justify;">
+                Serão aceitas no 21º ENDIPE inscrições de ouvintes sem apresentação de trabalho.
+                Poderão
+                se inscrever nessa modalidade professores da Educação Básica e da Educação Superior,
+                pesquisadores,
+                estudantes de pós-graduação e estudantes de graduação.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="box wow fadeInLeft">
-            <h4 class="title">Ouvinte</h4>
-            <p class="description" style="text-align: justify;">
-              Serão aceitas no XXI ENDIPE 2022 inscrições de ouvintes sem apresentação de trabalho.
-              Poderão
-              se inscrever nessa modalidade professores da Educação Básica e da Educação Superior,
-              pesquisadores,
-              estudantes de pós-graduação e estudantes de graduação.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
     </div>
   </section>
   <!-- #testimonials -->
@@ -918,39 +946,39 @@
               </tr>
               <tr>
                 <th class="text-nowrap">Avaliação pelo Comitê Cientifico</th>
-                <th class="text-nowrap">Até de 2022<br />
+                <th class="text-nowrap">Até 04 de julho de 2022<br />
                   <!--<b style="color: #c08622;">Até 29 de abril de 2020</b>-->
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Divulgação dos trabalhos aprovados</th>
-                <th class="text-nowrap"> de 2022<br />
+                <th class="text-nowrap"> 05 a 12 de julho de 2022<br />
                   <!-- <b style="color: #c08622;">30 de abril de 2020</b>-->
 
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Recursos</th>
-                <th class="text-nowrap"> de 2022<br />
+                <th class="text-nowrap"> 18 a 22 de julho de 2022<br />
                   <!-- <b style="color: #c08622;">04-08 de maio de 2020</b>-->
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Resposta aos recursos</th>
-                <th class="text-nowrap">Até de 2022<br />
+                <th class="text-nowrap">Até 05 de agosto de 2022<br />
                   <!--<b style="color: #c08622;">Até 29 de maio de 2020</b>-->
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Divulgação da programação completa</th>
-                <th class="text-nowrap">Até de 2022<br />
+                <th class="text-nowrap">Até 30 de maio de 2022<br />
                   <!-- <b style="color: #c08622;">Disponível</b>-->
 
                 </th>
               </tr>
               <tr>
                 <th class="text-nowrap">Inscrição nos Minicursos</th>
-                <th class="text-nowrap"> de 2022<br />
+                <th class="text-nowrap"> 01 a 20 de junho de 2022<br />
                   <!-- <b style="color: #c08622;">28/09 a 02/10</b>-->
 
                 </th>
@@ -1193,7 +1221,25 @@
           <div class="contact-phone">
             <!--    <i class="ion-ios-telephone-outline"></i> -->
             <h3>Realização</h3>
-            <p>PPGED/FACED/UFU</p>
+            <!-- <p>PPGED/FACED/UFU</p>-->
+
+            <div class="row">
+              <div class="mt-4">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <!--    <img src="../../assets/img/parceiros/UFU2.jpg" height="160px" width="340px" alt="imagem parceiros">-->
+                    <img src="../../assets/img/parceiros/UFU4.jpg" alt="imagem parceiros">
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4">
+                <div class="row align-items-center">
+                  <div class="col-md-2 text-center">
+                    <img src="../../assets/img/parceiros/FACED4.jpg" alt="imagem parceiros">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1206,7 +1252,7 @@
         </div>
 
       </div>
-      <div class="row">
+      <!--<div class="row">
         <div class="mt-4">
           <div class="row align-items-center">
             <div class="col-md-2 text-center">
@@ -1221,7 +1267,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
     </div>
