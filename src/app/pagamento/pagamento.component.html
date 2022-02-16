@@ -15,7 +15,7 @@
                     </div>
 
                     <form [formGroup]="paymentForm" role="form" class="contactForm">
-                        <div *ngIf="!user.payment && !carregando">
+                        <div *ngIf="!user.payment.icPaid && !carregando">
 
                             <div class="row">
                                 <table class="table table-responsive table-striped tabelaCronograma">
