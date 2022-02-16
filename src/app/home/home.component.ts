@@ -191,9 +191,9 @@ export class HomeComponent implements OnInit {
       para propostas pedagógicas. Didática e Epistemologia da prática e/ou práxis. 
       Fundamentos e perspectivas da didática. `,
       coordenacao: [
-        'Lenilda - UFAC',
-        'Marilza Suanno - UFG',
-        'Sandra Limonta - UFG'
+        'Lenilda Rêgo Albuquerque De Faria - UFAC',
+        'Marilza Vanessa Rosa Suanno - UFG',
+        'So	Sandra Valéria Limonta Rosa - UFG'
 
       ],
       pareceristas: []
@@ -211,10 +211,10 @@ export class HomeComponent implements OnInit {
       formação de professores; Parceria entre universidade e a escola na formação de 
       professores.`,
       coordenacao: [
-        'Vânia Leite – UERJ',
-        'Maria Inês - PUC-Rio',
-        'Martha Prata-Linhares - UFTM',
-        'Silvana Mesquita - PUC-Rio'
+        'Vânia Finholdt Ângelo Leite – UERJ',
+        'Maria Inês Marcondes - PUC-Rio',
+        'Martha Maria Prata-Linhares - UFTM',
+        'Silvana Soares de Araujo Mesquita - PUC-Rio'
       ],
       pareceristas: []
     },
@@ -228,10 +228,10 @@ export class HomeComponent implements OnInit {
       As Plataformas Digitais e os Ambientes Virtuais de Aprendizagem (AVA). Ensino 
       Remoto Emergencial (ERE).`,
       coordenacao: [
-        'Priscilla Moreira -UEMG',
-        'Daniela Costa - UFG',
-        'Giovanna Zen - UFBA',
-        'Gyzely Lima - IFTM'
+        'Priscilla Rezende Moreira - UEMG',
+        'Daniela Costa Lima - UFG',
+        'Giovanna Cristina Zen - UFBA',
+        'Gyzely Suely Lima - IFTM'
       ],
       pareceristas: []
     },
@@ -249,10 +249,11 @@ export class HomeComponent implements OnInit {
       Partido, Reforma do Ensino Médio). Planejamento e gestão da educação. Gestão 
       Pedagógica e Democrática da Escola. Políticas de Avaliação da Educação Básica.`,
       coordenacao: [
-        'Robson França - UFU',
-        'Andréia Militão - UFGD',
-        'Suzana Gomes - UFMG',
-        'Jussara Paschoalino - UFRJ'
+        'Robson Luiz de França - UFU',
+        'Andréia Nunes Militão - UFGD',
+        'Suzana dos Santos Gomes - UFMG',
+        'Jussara Bueno de Queiroz Paschoalino - UFRJ'
+
       ],
       pareceristas: []
     },
@@ -265,10 +266,10 @@ export class HomeComponent implements OnInit {
       permanência de políticas de formação de Pedagogos(as); PIBID, Residência Pedagógica 
       e outros programas de formação.`,
       coordenacao: [
-        'Leonardo Rolim  - UFPB',
-        'Andreia Gino - UEMG',
-        'Vilma - UFU',
-        'Solange Magalhães - UFG'
+        'Leonardo Leonardo Rolim de Lima Severo  - UFPB',
+        'Andreia Silva Gino - UEMG',
+        'Vilma Aparecida de Souza - UFU',
+        'Solange Martins Oliveira Magalhães - UFG'
 
       ],
       pareceristas: []
@@ -284,10 +285,11 @@ export class HomeComponent implements OnInit {
       a Didática. Os conhecimentos do campo da Didática.  Reforma do Ensino Médio e a 
       relação com a didática e com as Práticas de Ensino.`,
       coordenacao: [
-        'Ademílson Paco - UFMG',
-        'Fabrício Silva - UEFS',
-        'Elcimar Martins - UNILAB',
-        'Thiago Barnabé - UFTM'
+        'Ademilson de Souza Soares Paco - UFMG',
+        'Fabrício Oliveira da Silva - UEFS',
+        'Elcimar Simão Martins - UNILAB',
+        'Thiago Henrique Barnabé Corrêa - UFTM',
+        'Juliana Cordeiro Soares Branco - UEMG'
 
       ],
       pareceristas: []
@@ -302,11 +304,12 @@ export class HomeComponent implements OnInit {
       tendo como parâmetro os direitos humanos. O pedagogo, a didática, as práticas de ensino 
       e sua relação com crianças e adolescentes em situação de vulnerabilidade.`,
       coordenacao: [
-        'Fernanda Duarte - UFU',
-        'Altina Silva - UFCAT',
-        'Janaína Cassiano - UFCAT',
-        'Marco Antônio F. Amaral - IFTM',
-        'Adelson - UEMG'
+        'Fernanda Duarte Araújo Silva - UFU',
+        'Altina Abadia da Silva - UFCAT',
+        'Janaína Cassiano da Silva - UFCAT',
+        'Adelson Afonso da Silva França Júnior - UEMG',
+        'Marco Antônio Franco do Amaral - IFTM'
+
       ],
       pareceristas: []
     },
@@ -322,7 +325,7 @@ export class HomeComponent implements OnInit {
       e outros.`,
       coordenacao: [
         'Dulcéria Tartuci - UFCat',
-        'Valéria Asniz - UFU',
+        'Valéria Peres Asniz - UFU',
         'Priscila Alvarenga Cardoso Gimenes - UFU',
         'Lázara Cristina Silva - UFU',
         'Márcia Moreira Custódio - IFTM'
@@ -339,10 +342,11 @@ export class HomeComponent implements OnInit {
       Universitária. Didática e questões curriculares na docência Universitária. Formação dos 
       formadores de professores. Assessoria Pedagógica na Universidade.`,
       coordenacao: [
-        'Vanessa Campos - UFU',
-        'Orlando Aquino - UNIUBE',
-        'Vânia Vieira - UNIUBE',
+        'Vanessa Bueno Campos - UFU',
+        'Orlando Fernandez Aquino - UNIUBE',
+        'Vânia Maria Vieira - UNIUBE',
         'Maria de Lourdes Ribeiro - IFTM'
+
       ],
       pareceristas: []
     }
