@@ -193,7 +193,7 @@ export class HomeComponent implements OnInit {
       coordenacao: [
         'Lenilda Rêgo Albuquerque De Faria - UFAC',
         'Marilza Vanessa Rosa Suanno - UFG',
-        'So	Sandra Valéria Limonta Rosa - UFG'
+        'Sandra Valéria Limonta Rosa - UFG'
 
       ],
       pareceristas: []
