@@ -5,7 +5,7 @@
     padding: 16px 50px 0px 50px;
   
     .nav-item {
-      background-color: #c08622;
+      background-color: #20959b;
       color: #fff;
       border-radius: 4px;
       cursor: pointer;
@@ -15,7 +15,7 @@
       }
   
       &.activated {
-        background-color: #684e43;
+        background-color: #2c8d13;
       }
     }
   
@@ -91,7 +91,7 @@
       ::ng-deep .mat-tab-label {
         font-size: 18px;
         font-weight: 700;
-        color: #684e43;
+        color: #2c8d13;
 
         &:first-child {
           color: red;

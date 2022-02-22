@@ -12,11 +12,11 @@ body {
 }
 
 .red {
-  color: #c08622 !important;
+  color: #20959b !important;
 }
 
 a {
-  color: #c08622;
+  color: #20959b;
   transition: 0.5s;
 }
 
@@ -50,7 +50,7 @@ h6 {
 .back-to-top {
   position: fixed;
   display: none;
-  background: #c08622;
+  background: #20959b;
   color: #fff;
   padding: 6px 12px 9px 12px;
   font-size: 16px;
@@ -61,13 +61,13 @@ h6 {
 }
 
 .back-to-top:focus {
-  background: #c08622;
+  background: #20959b;
   color: #fff;
   outline: none;
 }
 
 .back-to-top:hover {
-  background: #684e43;
+  background: #2c8d13;
   color: #fff;
 }
 
@@ -88,11 +88,11 @@ h6 {
 }
 
 #topbar .contact-info a:hover {
-  color: #c08622;
+  color: #20959b;
 }
 
 #topbar .contact-info i {
-  color: #c08622;
+  color: #20959b;
   padding: 4px;
 }
 
@@ -111,7 +111,7 @@ h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #c08622;
+  color: #20959b;
 }
 
 #topbar .social-links a:first-child {
@@ -197,7 +197,7 @@ h6 {
 }
 
 #intro .intro-content h2 {
-  // color: #684e43;
+  // color: #2c8d13;
   color: #fff;
   margin-bottom: 30px;
   font-size: 64px;
@@ -205,7 +205,7 @@ h6 {
 }
 
 #intro .intro-content h2 span {
-  // color: #c08622;
+  // color: #20959b;
   color: #fff;
   text-decoration: underline;
 }
@@ -222,28 +222,28 @@ h6 {
   transition: 0.5s;
   margin: 10px;
   // color: #fff;
-  color: #684e43;
+  color: #2c8d13;
 }
 
 #intro .intro-content .btn-get-started {
-  // background: #684e43;
+  // background: #2c8d13;
   background: #fff;
-  border: 2px solid #684e43;
+  border: 2px solid #2c8d13;
 }
 
 #intro .intro-content .btn-get-started:hover {
   background: none;
-  color: #684e43;
+  color: #2c8d13;
 }
 
 #intro .intro-content .btn-projects {
-  background: #c08622;
-  border: 2px solid #c08622;
+  background: #20959b;
+  border: 2px solid #20959b;
 }
 
 #intro .intro-content .btn-projects:hover {
   background: none;
-  color: #c08622;
+  color: #20959b;
 }
 
 #intro #intro-carousel {
@@ -357,7 +357,7 @@ h6 {
 
 .nav-menu li:hover > a,
 .nav-menu .menu-active > a {
-  color: #c08622;
+  color: #20959b;
 }
 
 .nav-menu > li {
@@ -384,7 +384,7 @@ h6 {
 }
 
 .nav-menu ul li:hover > a {
-  color: #c08622;
+  color: #20959b;
 }
 
 .nav-menu ul ul {
@@ -467,11 +467,11 @@ h6 {
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color: #c08622;
+  color: #20959b;
 }
 
 #mobile-nav ul .menu-item-active {
-  color: #c08622;
+  color: #20959b;
 }
 
 #mobile-body-overly {
@@ -512,7 +512,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .section-header h2 {
   font-size: 32px;
-  color: #684e43;
+  color: #2c8d13;
   text-transform: uppercase;
   font-weight: 700;
   position: relative;
@@ -525,7 +525,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   display: block;
   width: 50px;
   height: 3px;
-  background: #c08622;
+  background: #20959b;
   bottom: 0;
   left: 0;
 }
@@ -552,7 +552,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #about .content h2 {
-  color: #684e43;
+  color: #2c8d13;
   font-weight: 700;
   font-size: 36px;
   font-family: "Raleway", sans-serif;
@@ -577,7 +577,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #about .content i {
   font-size: 20px;
   padding-right: 4px;
-  color: #c08622;
+  color: #20959b;
 }
 
 #about .content ul {
@@ -624,8 +624,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #services .box .icon i:before {
-  background: #684e43;
-  background: linear-gradient(45deg, #c08622 0%, #a3ebd5 100%);
+  background: #2c8d13;
+  background: linear-gradient(45deg, #20959b 0%, #a3ebd5 100%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -683,7 +683,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #clients .owl-dot.active {
-  background-color: #c08622;
+  background-color: #20959b;
 }
 
 /* Our Portfolio Section
@@ -817,7 +817,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #testimonials .owl-dot.active {
-  background-color: #c08622;
+  background-color: #20959b;
 }
 
 /* Call To Action Section
@@ -854,8 +854,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #call-to-action .cta-btn:hover {
-  background: #c08622;
-  border: 3px solid #c08622;
+  background: #20959b;
+  border: 3px solid #20959b;
 }
 
 /* Our Team Section
@@ -881,7 +881,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #team .member .details {
-  background: #c08622;
+  background: #20959b;
   color: #fff;
   padding: 15px;
   border-radius: 0 0 3px 3px;
@@ -928,7 +928,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 48px;
   display: inline-block;
   margin-bottom: 10px;
-  color: #c08622;
+  color: #20959b;
 }
 
 #contact .contact-info address,
@@ -950,7 +950,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .contact-info a:hover {
-  color: #c08622;
+  color: #20959b;
 }
 
 #contact .contact-address,
@@ -965,8 +965,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form #sendmessage {
-  color: #c08622;
-  border: 1px solid #c08622;
+  color: #20959b;
+  border: 1px solid #20959b;
   display: none;
   text-align: center;
   padding: 15px;
@@ -1007,7 +1007,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #contact .form button[type="submit"] {
-  background: #c08622;
+  background: #20959b;
   border: 0;
   border-radius: 3px;
   padding: 10px 30px;
@@ -1021,11 +1021,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 .theme-green .bs-datepicker-head {
-  background-color: #c08622;
+  background-color: #20959b;
 }
 
 .theme-green .bs-datepicker-body table td span.selected {
-  background-color: #684e43;
+  background-color: #2c8d13;
 }
 
 @media only screen and(max-width: 1197px) {

@@ -15,7 +15,7 @@
             <div class="card-works">
                 <div class="row">
                     <div class="col-sm-10">
-                        <h5 style="color: #c08622">{{type | modalities}} - {{schedule.axis | axis}}</h5>
+                        <h5 style="color: #20959b">{{type | modalities}} - {{schedule.axis | axis}}</h5>
                         <h3 *ngIf="type != '3'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
                         <h3 *ngIf="type == '3'" tabindex="0" alt="Pôster"><b>Apresentação de trabalhos</b></h3>
                         <h4 tabindex="0" *ngFor="let day of schedule.dates">{{day.date + ' ' + (day.startTime ?
@@ -114,8 +114,8 @@
             <div class="card-works">
                 <div class="row">
                     <div class="col-sm-10">
-                        <h5 *ngIf="type != '8'" style="color: #c08622">{{type | modalitiesWork}}</h5>
-                        <h5 *ngIf="type == '8'" style="color: #c08622">{{schedule.theme | themeSimposio}}</h5>
+                        <h5 *ngIf="type != '8'" style="color: #20959b">{{type | modalitiesWork}}</h5>
+                        <h5 *ngIf="type == '8'" style="color: #20959b">{{schedule.theme | themeSimposio}}</h5>
                         <h3 tabindex="0" *ngIf="type != '8'"><b>{{schedule?.titles[0]}}</b></h3>
                         <h3 tabindex="0" *ngIf="type  == '8'"><b>{{schedule.themeSpeeches}}</b></h3>
                         <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + ' - '
@@ -185,7 +185,7 @@
             <div class="card-works">
                 <div class="row">
                     <div class="col-sm-10">
-                        <h5 style="color: #c08622">{{type | modalitiesWork}}</h5>
+                        <h5 style="color: #20959b">{{type | modalitiesWork}}</h5>
                         <h3 tabindex="0"><b>{{schedule?.titles[0]}}</b></h3>
                         <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + ' - '
                             + (schedule.endTime ? schedule.endTime : '')}}</h4>
