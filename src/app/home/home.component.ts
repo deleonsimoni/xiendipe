@@ -5,6 +5,7 @@ import { ModalInscricaoComponent } from '../modal-inscricao/modal-inscricao.comp
 import { ModalEixoComponent } from '../modal-eixo/modal-eixo.component';
 import { ModalProgramacaoComponent } from '../modal-programacao/modal-programacao.component';
 import { ModalNormasComponent } from '../modal-normas/modal-normas.component';
+import { ModalTermoComponent } from '../modal-normas/modal-termo.component';
 import { ModalApoiadoresComponent } from '../modal-apoiadores/modal-apoiadores.component';
 import { ModalNormasRodaConversaComponent } from '../modal-normas/modal-mediador-conversa.component';
 import { ModalNormasPainelComponent } from '../modal-normas/modal-expositor-painel.component';
@@ -506,6 +507,13 @@ export class HomeComponent implements OnInit {
 
   public openDialogNormas() {
     const dialogRef = this.dialog.open(ModalNormasComponent, {
+      data: {},
+      height: '550vh'
+    });
+  }
+
+  public openDialogTermo() {
+    const dialogRef = this.dialog.open(ModalTermoComponent, {
       data: {},
       height: '550vh'
     });

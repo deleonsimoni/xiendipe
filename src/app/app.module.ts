@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModalEixoComponent } from './modal-eixo/modal-eixo.component';
 import { ModalProgramacaoComponent } from './modal-programacao/modal-programacao.component';
 import { ModalNormasComponent } from './modal-normas/modal-normas.component';
+import { ModalTermoComponent } from './modal-normas/modal-termo.component';
 import { ModalNormasMinicursoComponent } from './modal-normas/modal-mediador-minu-curso.component';
 import { ModalNormasRodaConversaComponent } from './modal-normas/modal-mediador-conversa.component';
 import { ModalNormasPainelComponent } from './modal-normas/modal-expositor-painel.component';
@@ -57,7 +58,7 @@ import { GlobalComponentsModule } from './components/global-components.module';
 import { ProgramacaoModule } from './programacao/programacao.module';
 import { HomeVirtualComponent } from './endipe-virtual/home-virtual/home-virtual.component';
 import { MeuEndipeComponent } from './meu-endipe/meu-endipe.component';
-import {NgxImageCompressService} from 'ngx-image-compress';
+import { NgxImageCompressService } from 'ngx-image-compress';
 import { SecretariaVirtualComponent } from './endipe-virtual/secretaria-virtual/secretaria-virtual.component';
 import { LiveVirtualComponent } from './endipe-virtual/live-virtual/live-virtual.component';
 import { TimeLineVirtualComponent } from './endipe-virtual/time-line-virtual/time-line-virtual.component';
@@ -73,6 +74,7 @@ import { AnaisVirtualComponent } from './endipe-virtual/anais-virtual/anais-virt
     ModalEixoComponent,
     ModalProgramacaoComponent,
     ModalNormasComponent,
+    ModalTermoComponent,
     ModalNormasMinicursoComponent,
     ModalNormasRodaConversaComponent,
     ModalNormasPainelComponent,
@@ -136,6 +138,7 @@ import { AnaisVirtualComponent } from './endipe-virtual/anais-virtual/anais-virt
     ModalEixoComponent,
     ModalProgramacaoComponent,
     ModalNormasComponent,
+    ModalTermoComponent,
     ModalNormasMinicursoComponent,
     ModalNormasRodaConversaComponent,
     ModalNormasPainelComponent,

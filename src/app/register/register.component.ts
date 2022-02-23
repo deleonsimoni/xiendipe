@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { MatDialog } from '@angular/material';
-import { ModalNormasComponent } from '../modal-normas/modal-normas.component';
+import { ModalTermoComponent } from '../modal-normas/modal-termo.component';
 import { ModalCadastroSucessoComponent } from '../modal-cadastro-sucesso/modal-cadastro-sucesso.component';
 import { Router } from '@angular/router';
 import { ShareDataService } from '../services/share-data.service';
@@ -171,7 +171,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public openRules(): void {
-    const dialogRef = this.dialog.open(ModalNormasComponent, {
+    const dialogRef = this.dialog.open(ModalTermoComponent, {
       data: {},
     });
   }
