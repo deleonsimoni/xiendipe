@@ -269,8 +269,8 @@ export class SubscribedComponent implements OnInit {
           nome: user.fullname,
           email: user.email,
           documento: user.document,
-          estrangeiro: user.icForeign ? 'S' : 'N',
-          categoria: this.filterCategory.transform(user.categoryId)
+          estrangeiro: user.icForeign ? 'S' : 'N'
+          /*     categoria: this.filterCategory.transform(user.categoryId)*/
         }
       });
 
