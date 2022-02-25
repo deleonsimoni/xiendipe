@@ -132,7 +132,7 @@ export class RegisterComponent implements OnInit {
     } else if (this.registerForm.valid && form == null) {
       this.toastr.error('Senhas não conferem.', 'Erro: ');
     } else {
-      this.toastr.error('Preencha os campos do formulário corretamente.', 'Erro: ');
+      this.toastr.error('Verifique os campos do formulário para checar o correto preenchimento.', 'Erro: ');
     }
     // this.exibirModalSucesso();
   }

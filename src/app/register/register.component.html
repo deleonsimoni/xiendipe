@@ -28,7 +28,10 @@
                         </div>-->
                         <input type="text" class="form-control" name="document" id="document" placeholder="CPF"
                             formControlName="document" [dropSpecialCharacters]="true" mask="000.000.000-00" />
-                        <div class="validation"></div>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.document.touched  && registerForm.controls.document.errors">
+                            Verifique o CPF
+                        </span>
                     </div>
                 </div>
 
@@ -36,12 +39,18 @@
                     <div class="form-group col-md-6">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Nome"
                             data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="fullname" />
-                        <div class="validation"></div>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.fullname.touched  && registerForm.controls.fullname.errors">
+                            Verifique o Nome
+                        </span>
                     </div>
                     <div class="form-group col-md-6">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email"
                             data-rule="email" data-msg="Please enter a valid email" formControlName="email" />
-                        <div class="validation"></div>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.email.touched  && registerForm.controls.email.errors">
+                            Verifique o Email
+                        </span>
                     </div>
                 </div>
                 <div class="form-row">
@@ -58,19 +67,25 @@
                     <div class="form-group col-md-4" formGroupName="phones">
                         <input type="text" class="form-control" name="cellphone" id="cellphone" placeholder="Celular"
                             formControlName="cellphone" [dropSpecialCharacters]="true" mask="(00) 00000-0000" />
-                        <div class="validation"></div>
+
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <input type="password" name="password" class="form-control" id="password" placeholder="Senha"
                             formControlName="password" />
-                        <div class="validation"></div>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.password.touched  && registerForm.controls.password.errors">
+                            Verifique a Senha
+                        </span>
                     </div>
                     <div class="form-group col-md-6">
                         <input type="password" class="form-control" name="cf-password" id="cf-password"
                             placeholder="Confirmar senha" formControlName="cfPassword" />
-                        <div class="validation"></div>
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.cfPassword.touched  && registerForm.controls.cfPassword.errors">
+                            Verifique a Confirmação de Senha
+                        </span>
                     </div>
                 </div>
 
