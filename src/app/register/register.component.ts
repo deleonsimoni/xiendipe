@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
   public submit = false;
   public categories = [
     { id: 1, name: 'Convidado de sessão especial' },
-    { id: 2, name: 'Mediador de roda de conversa' },
     { id: 3, name: 'Expositor de pôster' },
     { id: 4, name: 'Mediador de minicurso' },
     { id: 5, name: 'Coordenador e expositor de painel' },

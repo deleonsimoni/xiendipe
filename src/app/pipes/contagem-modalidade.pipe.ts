@@ -11,9 +11,9 @@ export class ContagemModalidadePipe implements PipeTransform {
     let posterLength = value.filter(element => element.modalityId === 3).length;
     let painelLength = value.filter(element => element.modalityId === 5).length;
     let minicursoLenth = value.filter(element => element.modalityId === 4).length;
-    let rodaDeConversaLength = value.filter(element => element.modalityId === 2).length;
 
-    return `${posterLength} Pôster - ${painelLength} Painel - ${minicursoLenth} Mini Curso - ${rodaDeConversaLength} Roda de Conversa `
+
+    return `${posterLength} Pôster - ${painelLength} Painel - ${minicursoLenth} Mini Curso `
 
   }
 

@@ -21,7 +21,7 @@ export class EmailComponent implements OnInit {
     { id: 2, name: "Todos participantes com inscrição paga" },
     { id: 3, name: "Todos autores de trabalho aceitos" },
     { id: 4, name: "Todos inscritos em minicurso" },
-    { id: 5, name: "Todos inscritos em roda de conversa" },
+
   ]
 
   public editorStyle = { 'height': '500px' };
