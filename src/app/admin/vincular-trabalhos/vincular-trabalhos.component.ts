@@ -14,16 +14,15 @@ import { TypeWorkRelatorioPipe } from "src/app/pipes/type-work-relatorio.pipe";
 })
 export class VincularTrabalhosComponent implements OnInit {
   public eixos = [
-    { id: 1, name: "Formação docente" },
-    { id: 2, name: "Currículo e avaliação" },
-    { id: 3, name: "Direitos humanos, Interculturalidade e Religiões" },
-    {
-      id: 4,
-      name:
-        "Nova epistemologia, Diferença, Biodiversidade, Democracia e Inclusão",
-    },
-    { id: 5, name: "Educação, Comunicação e Técnologia" },
-    { id: 6, name: "Infâncias, Juventudes e Vida Adulta" },
+    { id: 1, name: "A Didática como campo epistemológico e disciplinar" },
+    { id: 2, name: "A Didática e os Saberes docentes estruturantes na formação de professores" },
+    { id: 3, name: "A Didática e as tecnologias da informação e comunicação no currículo e práticas de ensino" },
+    { id: 4, name: "A Didática e Práticas de Ensino na perspectiva da Educação como Direito Constitucional e os desafios políticos da atualidade" },
+    { id: 5, name: "A Didática e as Práticas de ensino nas políticas de formação de Pedagogos(as)" },
+    { id: 6, name: "A Didática e as Práticas de Ensino nos cursos de Licenciatura: entre tensionamentos e perspectivas" },
+    { id: 7, name: "A Didática, Práticas de Ensino - Infâncias, Juventudes e Vida Adulta" },
+    { id: 8, name: "A Didática, Práticas de Ensino, Educação das Relações Étnico-raciais, Diversidade e Inclusão Escolar" },
+    { id: 9, name: "A Didática da Educação Superior" },
   ];
   public axisId = null;
   public works = [];
@@ -46,7 +45,7 @@ export class VincularTrabalhosComponent implements OnInit {
     private adminService: AdminService,
     private toastr: ToastrService,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.retrieveUser();
@@ -298,8 +297,8 @@ export class VincularTrabalhosComponent implements OnInit {
 
       var a = document.createElement("a");
       var blob = new Blob(["\ufeff" + csvArray], {
-          type: "text/csv; charset=utf-8",
-        }),
+        type: "text/csv; charset=utf-8",
+      }),
         url = window.URL.createObjectURL(blob);
 
       a.href = url;

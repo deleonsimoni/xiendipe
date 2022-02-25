@@ -1,6 +1,5 @@
 export const MODALITIES = [
   { id: 1, name: "Convidado de sessão especial" },
-  { id: 2, name: "Roda de conversa" },
   { id: 3, name: "Pôster" },
   { id: 4, name: "Minicurso" },
   { id: 5, name: "Painel" },
@@ -9,27 +8,28 @@ export const MODALITIES = [
 ];
 
 export const CATEGORY_PAYMENT = [
-  { id: 1, name: "Estudantes de curso Normal/EM" },
-  { id: 2, name: "Estudantes de Graduação" },
-  { id: 3, name: "Estudantes de Pós-Graduação" },
-  { id: 4, name: "Profissionais da Educação Básica" },
-  { id: 5, name: "Profissionais da Educação Superior" },
+  { id: 1, name: "Estudantes de Graduação e pós-graduação com comprovação" },
+  { id: 2, name: "Professores e demais profissionais da Educação Básica" },
+  { id: 3, name: "Docentes de Educação Superior" },
 ];
 
 export const AXIS = [
-  { id: 1, name: "Formação docente" },
-  { id: 2, name: "Currículo e avaliação" },
-  { id: 3, name: "Direitos humanos, Interculturalidade e Religiões" },
-  { id: 4, name: "Nova epistemologia, Diferença, Biodiversidade, Democracia e Inclusão" },
-  { id: 5, name: "Educação, Comunicação e Técnologia" },
-  { id: 6, name: "Infâncias, Juventudes e Vida Adulta" },
+  { id: 1, name: "A Didática como campo epistemológico e disciplinar" },
+  { id: 2, name: "A Didática e os Saberes docentes estruturantes na formação de professores" },
+  { id: 3, name: "A Didática e as tecnologias da informação e comunicação no currículo e práticas de ensino" },
+  { id: 4, name: "A Didática e Práticas de Ensino na perspectiva da Educação como Direito Constitucional e os desafios políticos da atualidade" },
+  { id: 5, name: "A Didática e as Práticas de ensino nas políticas de formação de Pedagogos(as)" },
+  { id: 6, name: "A Didática e as Práticas de Ensino nos cursos de Licenciatura: entre tensionamentos e perspectivas" },
+  { id: 7, name: "A Didática, Práticas de Ensino - Infâncias, Juventudes e Vida Adulta" },
+  { id: 8, name: "A Didática, Práticas de Ensino, Educação das Relações Étnico-raciais, Diversidade e Inclusão Escolar" },
+  { id: 9, name: "A Didática da Educação Superior" },
 ];
 
 export const WORK_OPTIONS = [
   { id: 1, name: "Pôster" },
   { id: 2, name: "Painel" },
   { id: 3, name: "Minicurso" },
-  { id: 4, name: "Roda de conversa" },
+  ,
 ];
 
 export const SCHEDULE_TYPE = [
@@ -41,7 +41,6 @@ export const SCHEDULE_TYPE = [
   { id: 5, name: "Painel" },
   { id: 3, name: "Pôster" },
   { id: 11, name: "Conexão Entrevista" },
-  { id: 2, name: "Roda de Conversa" },
   { id: 10, name: "Sessões Especiais" },
   { id: 8, name: "Simpósio" },
 ];
