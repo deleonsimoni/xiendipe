@@ -4,7 +4,7 @@ import { AuthService } from '../services/auth.service';
 import { MatDialog } from '@angular/material';
 import { ModalTermoComponent } from '../modal-normas/modal-termo.component';
 import { ModalCadastroSucessoComponent } from '../modal-cadastro-sucesso/modal-cadastro-sucesso.component';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { ShareDataService } from '../services/share-data.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -34,14 +34,17 @@ export class RegisterComponent implements OnInit {
     private dialog: MatDialog,
     private rota: Router,
     private share: ShareDataService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private router: Router
   ) {
 
     this.createForm();
 
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+
+  }
 
   private createForm(): void {
     this.registerForm = this.builder.group({

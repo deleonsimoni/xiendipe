@@ -415,7 +415,7 @@ export class HomeComponent implements OnInit {
   }
 
   downloadTemplate(nameFile) {
-    /*const vm = this;
+    const vm = this;
 
     function sucessoDownload() {
       vm.carregando = false;
@@ -432,7 +432,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.carregando = true;
-    this.download.getFile(nameFile, sucessoDownload, falhaDownload);*/
+    this.download.getFile(nameFile, sucessoDownload, falhaDownload);
   }
 
   openDialog(): void {
