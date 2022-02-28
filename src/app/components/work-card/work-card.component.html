@@ -3,28 +3,21 @@
     <div *ngIf="reviewers.length > 0" class="col-md-10 border-right">
       <small>PARECERISTA</small>
       <select *ngIf="reviewers" class="form-control" [(ngModel)]="selectReview">
-        <option
-          *ngFor="let reviewer of reviewers"
-          [selected]="reviewer._id == (work?.reviewers)[0]?.userId"
-          [ngValue]="reviewer"
-          type="combobox"
-        >
+        <option *ngFor="let reviewer of reviewers" [selected]="reviewer._id == (work?.reviewers)[0]?.userId"
+          [ngValue]="reviewer" type="combobox">
           {{ reviewer.email }}
         </option>
       </select>
     </div>
-    <div *ngIf="reviewers.length > 0" class="col-md-10 border-right">
+    <!--<div *ngIf="reviewers.length > 0" class="col-md-10 border-right">
       <small>-</small>
       <h4>-</h4>
-    </div>
-    <div
-      *ngIf="reviewers.length > 0"
-      style="cursor: pointer;"
-      class="col-md-2 text-center align-self-center pointer"
-      (click)="markReviewerWork(work._id)"
-    >
+    </div>-->
+    <div *ngIf="reviewers.length > 0" style="cursor: pointer;" class="col-md-2 text-center align-self-center pointer"
+      (click)="markReviewerWork(work._id)">
       <i class="fa fa-check"> Vincular</i>
     </div>
+
   </div>
 
   <div class="row">

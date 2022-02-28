@@ -180,15 +180,14 @@ export class VincularTrabalhosComponent implements OnInit {
   loadData() {
     this.loadWorksPaginate(1);
 
-    /* LISTAR PARECERISTAS
+    // LISTAR PARECERISTAS
     this.adminService.retrieveReviewers(this.axisId).subscribe((res) => {
       if (res.temErro) {
         this.toastr.error("Erro", res);
       } else {
-        this.loadWorks();
         this.reviewers = res.reviewers;
       }
-    });*/
+    });
   }
 
   loadWorksPaginate(event) {

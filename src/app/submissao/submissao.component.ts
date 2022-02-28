@@ -30,9 +30,9 @@ export class SubmissaoComponent implements OnInit {
   public showAdd = true;
   public modalidadesUsuario: any[] = [];
   public modalidades = [
-    { id: 1, name: 'Mediador de minicurso' },
-    { id: 2, name: 'Expositor de pôster' },
-    { id: 3, name: 'Coordenador e/ou expositor de painel' }
+    { id: 4, name: 'Mediador de minicurso' },
+    { id: 3, name: 'Expositor de pôster' },
+    { id: 5, name: 'Coordenador e/ou expositor de painel' }
   ];
   public workOptions = [
     { id: 1, name: 'Pôster' },

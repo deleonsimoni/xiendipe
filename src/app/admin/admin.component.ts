@@ -73,14 +73,15 @@ export class AdminComponent implements OnInit {
       this.menu = this.adminRoutes.concat(this.nonAdminRoutes);
     } else if (this.user.icAdmin) {
       this.menu = this.adminRoutes;
-    } else if (this.user.icEditor){
+    } else if (this.user.icEditor) {
       this.menu = this.editorRoutes;
       this.router.navigate(['/admin/anais']);
     } else if (this.user.reviewer && this.user.reviewer.icCoordinator) {
-      this.menu = this.menu.concat(this.coordinatorRoutes);
+      //this.menu = this.menu.concat(this.coordinatorRoutes);
+      this.menu = this.coordinatorRoutes;
     } else {
       this.menu = this.nonAdminRoutes;
-    } 
+    }
 
   }
 
