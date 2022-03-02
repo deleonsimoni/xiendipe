@@ -9,8 +9,7 @@ export class TypeWorkRelatorioPipe implements PipeTransform {
   transform(value: any, ...args: any[]): any {
 
     switch (Number(value)) {
-      case 2:
-        return 'Roda de Conversa'
+
       case 3:
         return 'Pôster'
       case 4:

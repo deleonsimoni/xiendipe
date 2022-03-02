@@ -79,9 +79,6 @@ export class VincularTrabalhosComponent implements OnInit {
           this.works = this.allWorks;
         }
         break;
-      case 2:
-        this.works = this.works.filter((work) => work.modalityId == 2);
-        break;
       case 3:
         this.works = this.works.filter((work) => work.modalityId == 3);
         break;
