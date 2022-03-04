@@ -49,7 +49,7 @@ async function getUsers(req) {
 
   usersFound = await User.find(search)
     .select(
-      "fullname address email createdAt document phones modalityId payment works institution isPCD deficiencyType icForeign"
+      "fullname address email createdAt document phones modalityId payment works institution isPCD deficiencyType icForeign reviewer"
     )
     .sort({
       fullname: 1,
@@ -555,7 +555,7 @@ async function sendEmail(req) {
 
   }
 
-  if(req.files){
+  if (req.files) {
     attachment = {};
     attachment.fileName = req.files.fileArray.name;
     attachment.file = req.files.fileArray.data;
@@ -565,20 +565,20 @@ async function sendEmail(req) {
   let chunk = 12;
   let auxFor = 0;
 
-  const idInterval = setInterval(function(){
-    
-    if(auxFor <= emailsSend.length) {
+  const idInterval = setInterval(function () {
 
-      emailDestinationAux = emailsSend.slice(auxFor, auxFor+chunk);
-      if(emailDestinationAux.length){
-        
+    if (auxFor <= emailsSend.length) {
+
+      emailDestinationAux = emailsSend.slice(auxFor, auxFor + chunk);
+      if (emailDestinationAux.length) {
+
         emailSender.sendMailAWS(
-          emailDestinationAux, 
+          emailDestinationAux,
           formulario.title,
           formulario.description,
           attachment
         );
-        
+
       }
 
     } else {
@@ -587,10 +587,10 @@ async function sendEmail(req) {
     }
 
     auxFor += chunk;
-    
-  },1800);
 
-  
+  }, 1800);
+
+
 
   return true;
 

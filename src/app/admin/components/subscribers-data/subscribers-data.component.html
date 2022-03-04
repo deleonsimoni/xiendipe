@@ -1,6 +1,14 @@
 <div class="work-content">
     <div class="section first">
-        <h6>Dados pessoais <i class="fa fa-pencil ml-2" (click)="editProfile()"></i> </h6>
+        <h6>Dados pessoais<i class="fa fa-pencil ml-2" (click)="editProfile()"></i> </h6>
+    </div>
+    <div *ngIf="subscribed.reviewer" class="row align-items-center mb-4">
+        <div style="color:black !important;" *ngIf="subscribed.reviewer.icCoordinator" class="col-12 mb-12">
+            <strong>Coordenador - {{subscribed.reviewer.icModalityId | axis}}</strong>
+        </div>
+        <div style="color:black !important;" *ngIf="!subscribed.reviewer.icCoordinator" class="col-12 mb-12">
+            <strong>Parecerista - {{subscribed.reviewer.icModalityId | axis}}</strong>
+        </div>
     </div>
     <div class="row align-items-center">
         <div class="col-sm-4 mb-2">

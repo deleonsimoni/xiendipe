@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-12">
                         <input type="text" name="name" class="form-control" id="name" placeholder="Nome"
                             data-rule="minlen:4" data-msg="Please enter at least 4 chars" formControlName="fullname" />
                         <span class="text-danger"
@@ -44,6 +44,9 @@
                             Verifique o Nome
                         </span>
                     </div>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group col-md-6">
                         <input type="email" class="form-control" name="email" id="email" placeholder="Email"
                             data-rule="email" data-msg="Please enter a valid email" formControlName="email" />
@@ -52,7 +55,17 @@
                             Verifique o Email
                         </span>
                     </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="emailConfirm" id="emailConfirm"
+                            placeholder="Digite novamente o Email" data-rule="email"
+                            data-msg="Please enter a valid email" formControlName="emailConfirm" />
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.emailConfirm.touched  && registerForm.controls.emailConfirm.errors">
+                            Verifique a confirmação de email
+                        </span>
+                    </div>
                 </div>
+
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <input type="text" name="birth-date" class="form-control" id="birth-date"

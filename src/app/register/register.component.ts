@@ -51,6 +51,7 @@ export class RegisterComponent implements OnInit {
       fullname: [null, [Validators.required]],
       // tslint:disable-next-line: max-line-length
       email: [null, [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
+      emailConfirm: [null, [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
       password: [null, [Validators.required, Validators.minLength(6)]],
       cfPassword: [null, [Validators.required, Validators.minLength(6)]],
       dateBirth: [null, [Validators.required]],
@@ -106,6 +107,11 @@ export class RegisterComponent implements OnInit {
         return;
       }
 
+      if (this.registerForm.value.emailConfirm != this.registerForm.value.email) {
+        this.toastr.error('Verifique o campo email e confirmação de email.', 'Atenção: ');
+        return;
+      }
+
       if (!this.registerForm.value.fullname) {
         this.toastr.error('Digite o nome e sobrenome.', 'Atenção: ');
         return;
@@ -125,7 +131,7 @@ export class RegisterComponent implements OnInit {
               this.toastr.error('Email já registrado.', 'Erro: ');
             }
             if (err.error.message.match('cpf')) {
-              this.toastr.error('CPF ou passaporte já cadastrado.', 'Erro: ');
+              this.toastr.error('CPF já cadastrado.', 'Erro: ');
             }
             if (err.error.message.match('document')) {
               this.toastr.error('CPF ou passaporte já cadastrado.', 'Erro: ');
