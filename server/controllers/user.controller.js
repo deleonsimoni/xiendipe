@@ -11,7 +11,7 @@ const IncomingForm = require('formidable').IncomingForm;
 const fs = require('fs');
 const S3Uploader = require('./aws.controller');
 const config = require('../config/config');
-const emailSender = require('../controllers/email.controller');
+const emailSender = require('../controllers/aws.controller');
 const templateEmail = require('../config/templateEmails');
 const validarCpf = require('validar-cpf');
 
@@ -80,7 +80,7 @@ async function generateNewPassword(user) {
       message: err
     };
     let email = templateEmail.esqueciSenha.replace("#senha#", randomstring);
-    emailSender.sendMail(user.email, 'Recuperação de Senha', email);
+    emailSender.sendEmailAWS(user.email, 'Recuperação de Senha', email);
   })
 
   return response;
@@ -702,7 +702,7 @@ async function markReviewer(idWork, idReviewer, reviewerEmail) {
       userEmail: reviewerEmail
     };
     let email = templateEmail.pareceristaVinculado;
-    emailSender.sendMail(reviewerEmail, 'Você foi selecionado como parecerista', email);
+    emailSender.sendEmailAWS(reviewerEmail, 'Você foi selecionado como parecerista', email);
     await work.save();
   }
 

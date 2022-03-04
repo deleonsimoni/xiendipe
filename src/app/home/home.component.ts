@@ -251,9 +251,10 @@ export class HomeComponent implements OnInit {
       Pedagógica e Democrática da Escola. Políticas de Avaliação da Educação Básica.`,
       coordenacao: [
         'Robson Luiz de França - UFU',
-        'Andréia Nunes Militão - UFGD',
+        'Andréia Nunes Militão - UEMS/UFGD',
         'Suzana dos Santos Gomes - UFMG',
-        'Jussara Bueno de Queiroz Paschoalino - UFRJ'
+        'Jussara Bueno de Queiroz Paschoalino - UFRJ',
+        'Claudia Tavares do Amaral - UFCAT'
 
       ],
       pareceristas: []
@@ -267,10 +268,10 @@ export class HomeComponent implements OnInit {
       permanência de políticas de formação de Pedagogos(as); PIBID, Residência Pedagógica 
       e outros programas de formação.`,
       coordenacao: [
-        'Leonardo Leonardo Rolim de Lima Severo  - UFPB',
+        'José Leonardo Leonardo Rolim de Lima Severo  - UFPB',
         'Andreia Silva Gino - UEMG',
         'Vilma Aparecida de Souza - UFU',
-        'Solange Martins Oliveira Magalhães - UFG'
+        'Kátia Silene da Silva - UFCAT'
 
       ],
       pareceristas: []
