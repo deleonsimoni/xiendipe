@@ -49,6 +49,7 @@ export class ModalReviewAdminComponent implements OnInit {
       question1: [null, [Validators.required]],
       question2: [null, [Validators.required]],
       question3: [null, [Validators.required]],
+      question4: [null, [Validators.required]],
       workId: [],
     });
   }

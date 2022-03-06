@@ -34,15 +34,9 @@
           <a [routerLink]="" (click)="download(work.pathS3PDF)">Download DOC</a>
         </p>
         <div *ngIf="user.icAdmin" class="custom-file mt-2">
-          <input
-            type="file"
-            class="custom-file-input"
+          <input type="file" class="custom-file-input"
             accept="application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-            data-max-size="2048"
-            id="customPreReadFile"
-            (change)="setFileNameDOC($event.target.files)"
-            #fileInput
-          />
+            data-max-size="2048" id="customPreReadFile" (change)="setFileNameDOC($event.target.files)" #fileInput />
           <label class="custom-file-label" for="customPreReadFile">{{ getFileNameDOC() }}</label>
           <div class="col-md-4">
             <button class="btn-primary" (click)="alterarArquivos()">
@@ -59,16 +53,8 @@
           <a [routerLink]="" (click)="download(work.pathS3DOC)">Download PDF</a>
         </p>
         <div *ngIf="user.icAdmin" class="custom-file mt-2">
-          <input
-            type="file"
-            name="arquivoPDF"
-            class="custom-file-input"
-            accept="application/pdf"
-            data-max-size="2048"
-            id="customPreReadFile"
-            (change)="setFileNamePDF($event.target.files)"
-            #fileInput
-          />
+          <input type="file" name="arquivoPDF" class="custom-file-input" accept="application/pdf" data-max-size="2048"
+            id="customPreReadFile" (change)="setFileNamePDF($event.target.files)" #fileInput />
           <label class="custom-file-label" for="customPreReadFile">{{ getFileNamePDF() }}</label>
           <div class="col-md-4">
             <button class="btn-primary" (click)="alterarArquivos()">
@@ -86,8 +72,7 @@
     </div>
     <div *ngIf="work.reviewAdmin || work.reviewers" class="row align-items-center mb-2">
       <div class="col-md-12">
-        <strong
-          >Parecerista
+        <strong>Parecerista
           <!-- <div *ngIf="work.reviewers">
             <p *ngFor="let reviewerCoordinator of work.reviewers">{{ reviewerCoordinator.userEmail }}</p>
           </div>-->
@@ -108,6 +93,10 @@
             <p>
               Respeita o número máximo de autores -
               {{ work.reviewAdmin.review.question3 }}
+            </p>
+            <p>
+              Segue o número de páginas da modalidade -
+              {{ work.reviewAdmin.review.question4 }}
             </p>
             <p *ngIf="!work.reviewReviewer">Trabalho apto? {{ work.reviewAdmin.review.icAllow }}</p>
           </div>
@@ -154,9 +143,7 @@
 
     <div
       *ngIf="work.reviewAdmin?.review && work?.recursoAdmin?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
-      class="row align-items-center mb-2"
-      style="border: crimson; margin: 1px; border-style: dotted;"
-    >
+      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
 
@@ -190,11 +177,8 @@
       </div>
     </div>
 
-    <div
-      *ngIf="work.reviewReviewer && work?.recurso?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
-      class="row align-items-center mb-2"
-      style="border: crimson; margin: 1px; border-style: dotted;"
-    >
+    <div *ngIf="work.reviewReviewer && work?.recurso?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
+      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
 
@@ -228,11 +212,8 @@
       </div>
     </div>
 
-    <div
-      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator)"
-      class="row align-items-center mb-2"
-      style="border: crimson; margin: 1px; border-style: dotted;"
-    >
+    <div *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator)"
+      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
         <h3 style="color: red;">Avaliar recurso</h3>
@@ -259,32 +240,20 @@
               </div>
 
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button
-                  (click)="aceitarRecurso()"
-                  [ngStyle]="{
+                <button (click)="aceitarRecurso()" [ngStyle]="{
                     'background-color: green;color:white': work.recurso?.icAllow == 'Sim',
                     'background-color: white;color: black': work.recurso?.icAllow == 'Nao'
-                  }"
-                  type="button"
-                  [ngClass]="{
+                  }" type="button" [ngClass]="{
                     'btn btn-success': work.recurso?.icAllow == 'Sim'
-                  }"
-                  class="btn"
-                >
+                  }" class="btn">
                   Sim
                 </button>
-                <button
-                  (click)="negarRecurso()"
-                  [ngStyle]="{
+                <button (click)="negarRecurso()" [ngStyle]="{
                     'background-color: red;color:white': work.recurso?.icAllow == 'Sim',
                     'background-color: white;color: black': work.recurso?.icAllow == 'Nao'
-                  }"
-                  type="button"
-                  [ngClass]="{
+                  }" type="button" [ngClass]="{
                     'btn btn-danger': work.recurso?.icAllow == 'Nao'
-                  }"
-                  class="btn"
-                >
+                  }" class="btn">
                   Não
                 </button>
               </div>
@@ -294,11 +263,8 @@
       </div>
     </div>
 
-    <div
-      *ngIf="work.recursoAdmin?.justify && user.icAdmin"
-      class="row align-items-center mb-2"
-      style="border: crimson; margin: 1px; border-style: dotted;"
-    >
+    <div *ngIf="work.recursoAdmin?.justify && user.icAdmin" class="row align-items-center mb-2"
+      style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
         <h3 style="color: red;">Avaliar recurso por forma</h3>
@@ -322,32 +288,20 @@
               Aceitar Recurso?
               <br />
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button
-                  (click)="aceitarRecursoAdmin()"
-                  [ngStyle]="{
+                <button (click)="aceitarRecursoAdmin()" [ngStyle]="{
                     'background-color: green;color:white': work.recursoAdmin?.icAllow == 'Sim',
                     'background-color: white;color: black': work.recursoAdmin?.icAllow == 'Nao'
-                  }"
-                  type="button"
-                  [ngClass]="{
+                  }" type="button" [ngClass]="{
                     'btn btn-success': work.recursoAdmin?.icAllow == 'Sim'
-                  }"
-                  class="btn"
-                >
+                  }" class="btn">
                   Sim
                 </button>
-                <button
-                  (click)="negarRecursoAdmin()"
-                  [ngStyle]="{
+                <button (click)="negarRecursoAdmin()" [ngStyle]="{
                     'background-color: red;color:white': work.recursoAdmin?.icAllow == 'Sim',
                     'background-color: white;color: black': work.recursoAdmin?.icAllow == 'Nao'
-                  }"
-                  type="button"
-                  [ngClass]="{
+                  }" type="button" [ngClass]="{
                     'btn btn-danger': work.recursoAdmin?.icAllow == 'Nao'
-                  }"
-                  class="btn"
-                >
+                  }" class="btn">
                   Não
                 </button>
               </div>
