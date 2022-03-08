@@ -192,11 +192,13 @@ export class HomeComponent implements OnInit {
       para propostas pedagógicas. Didática e Epistemologia da prática e/ou práxis. 
       Fundamentos e perspectivas da didática. `,
       coordenacao: [
-        'Lenilda Rêgo Albuquerque De Faria - UFAC',
+
         'Marilza Vanessa Rosa Suanno - UFG',
         'Sandra Valéria Limonta Rosa - UFG'
 
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Lenilda Rêgo Albuquerque De Faria - UFAC`
+      ,
       pareceristas: []
     },
     {
@@ -212,11 +214,13 @@ export class HomeComponent implements OnInit {
       formação de professores; Parceria entre universidade e a escola na formação de 
       professores.`,
       coordenacao: [
-        'Vânia Finholdt Ângelo Leite – UERJ',
+
         'Maria Inês Marcondes - PUC-Rio',
         'Martha Maria Prata-Linhares - UFTM',
         'Silvana Soares de Araujo Mesquita - PUC-Rio'
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Vânia Finholdt Ângelo Leite – UERJ`
+      ,
       pareceristas: []
     },
     {
@@ -229,11 +233,13 @@ export class HomeComponent implements OnInit {
       As Plataformas Digitais e os Ambientes Virtuais de Aprendizagem (AVA). Ensino 
       Remoto Emergencial (ERE).`,
       coordenacao: [
-        'Priscilla Rezende Moreira - UEMG',
+
         'Daniela Costa Lima - UFG',
         'Giovanna Cristina Zen - UFBA',
         'Gyzely Suely Lima - IFTM'
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Priscilla Rezende Moreira - UEMG`
+      ,
       pareceristas: []
     },
     {
@@ -250,13 +256,15 @@ export class HomeComponent implements OnInit {
       Partido, Reforma do Ensino Médio). Planejamento e gestão da educação. Gestão 
       Pedagógica e Democrática da Escola. Políticas de Avaliação da Educação Básica.`,
       coordenacao: [
-        'Robson Luiz de França - UFU',
+
         'Andréia Nunes Militão - UEMS/UFGD',
         'Suzana dos Santos Gomes - UFMG',
         'Jussara Bueno de Queiroz Paschoalino - UFRJ',
         'Claudia Tavares do Amaral - UFCAT'
 
       ],
+      coordenacaogeral: `Coordenador geral do eixo: Robson Luiz de França - UFU`
+      ,
       pareceristas: []
     },
     {
@@ -268,12 +276,15 @@ export class HomeComponent implements OnInit {
       permanência de políticas de formação de Pedagogos(as); PIBID, Residência Pedagógica 
       e outros programas de formação.`,
       coordenacao: [
-        'José Leonardo Leonardo Rolim de Lima Severo  - UFPB',
+
         'Andreia Silva Gino - UEMG',
         'Vilma Aparecida de Souza - UFU',
         'Kátia Silene da Silva - UFCAT'
 
       ],
+
+      coordenacaogeral: `Coordenador geral do eixo: José Leonardo Leonardo Rolim de Lima Severo  - UFPB`
+      ,
       pareceristas: []
     },
     {
@@ -287,13 +298,15 @@ export class HomeComponent implements OnInit {
       a Didática. Os conhecimentos do campo da Didática.  Reforma do Ensino Médio e a 
       relação com a didática e com as Práticas de Ensino.`,
       coordenacao: [
-        'Ademilson de Souza Soares Paco - UFMG',
+
         'Fabrício Oliveira da Silva - UEFS',
         'Elcimar Simão Martins - UNILAB',
         'Thiago Henrique Barnabé Corrêa - UFTM',
         'Juliana Cordeiro Soares Branco - UEMG'
 
       ],
+      coordenacaogeral: `Coordenador geral do eixo: Ademilson de Souza Soares Paco – UFMG`
+      ,
       pareceristas: []
     },
     {
@@ -306,13 +319,15 @@ export class HomeComponent implements OnInit {
       tendo como parâmetro os direitos humanos. O pedagogo, a didática, as práticas de ensino 
       e sua relação com crianças e adolescentes em situação de vulnerabilidade.`,
       coordenacao: [
-        'Fernanda Duarte Araújo Silva - UFU',
+
         'Altina Abadia da Silva - UFCAT',
         'Janaína Cassiano da Silva - UFCAT',
         'Adelson Afonso da Silva França Júnior - UEMG',
         'Marco Antônio Franco do Amaral - IFTM'
 
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Fernanda Duarte Araújo Silva - UFU`
+      ,
       pareceristas: []
     },
     {
@@ -326,13 +341,15 @@ export class HomeComponent implements OnInit {
       aprendizagem; perspectivas relacionadas a gênero, sexualidade, raça, etnias, classe social 
       e outros.`,
       coordenacao: [
-        'Dulcéria Tartuci - UFCat',
+
         'Valéria Peres Asniz - UFU',
         'Priscila Alvarenga Cardoso Gimenes - UFU',
         'Lázara Cristina Silva - UFU',
         'Márcia Moreira Custódio - IFTM'
 
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Dulcéria Tartuci - UFCAT`
+      ,
       pareceristas: []
     },
     {
@@ -344,12 +361,15 @@ export class HomeComponent implements OnInit {
       Universitária. Didática e questões curriculares na docência Universitária. Formação dos 
       formadores de professores. Assessoria Pedagógica na Universidade.`,
       coordenacao: [
-        'Vanessa Bueno Campos - UFU',
+
         'Orlando Fernandez Aquino - UNIUBE',
         'Vânia Maria Vieira - UNIUBE',
-        'Maria de Lourdes Ribeiro - IFTM'
+        'Maria de Lourdes Ribeiro - IFTM',
+        'Talamira Taíta Rodrigues de Brito - UESB'
 
       ],
+      coordenacaogeral: `Coordenadora geral do eixo: Vanessa Bueno Campos - UFU`
+      ,
       pareceristas: []
     }
   ];
