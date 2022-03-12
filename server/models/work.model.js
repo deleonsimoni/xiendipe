@@ -42,11 +42,15 @@ const WorkSchema = new mongoose.Schema(
           question3: String,
           question4: String,
           question5: String,
+          question6: String,
+          question7: String,
+          question8: String,
+          question9: String,
           description: String,
         },
       },
     ],
-    reviewAdmin: {
+    /*reviewAdmin: {
       userId: {
         type: mongoose.Schema.Types.ObjectId,
       },
@@ -60,7 +64,7 @@ const WorkSchema = new mongoose.Schema(
         question3: String,
         question4: String,
       },
-    },
+    },*/
     reviewReviewer: {
       userId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -80,14 +84,18 @@ const WorkSchema = new mongoose.Schema(
         question3: String,
         question4: String,
         question5: String,
+        question6: String,
+        question7: String,
+        question8: String,
+        question9: String,
         justify: String,
       },
     },
-    recursoAdmin: {
-      justify: String,
-      reply: String,
-      icAllow: String,
-    },
+    /*  recursoAdmin: {
+        justify: String,
+        reply: String,
+        icAllow: String,
+      },*/
     recurso: {
       justify: String,
       reply: String,

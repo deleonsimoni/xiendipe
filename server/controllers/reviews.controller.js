@@ -7,12 +7,12 @@ module.exports = {
   pedirRecurso,
   negarRecurso,
   aceitarRecurso,
-  pedirRecursoAdmin,
+  /*pedirRecursoAdmin,
   negarRecursoAdmin,
-  aceitarRecursoAdmin,
+  aceitarRecursoAdmin,*/
 };
 
-async function pedirRecursoAdmin(workId, justificativa) {
+/*async function pedirRecursoAdmin(workId, justificativa) {
   return await Work.findOneAndUpdate(
     {
       _id: workId,
@@ -64,7 +64,7 @@ async function aceitarRecursoAdmin(workId, reply) {
       new: true,
     }
   );
-}
+}*/
 
 async function pedirRecurso(workId, justificativa) {
   return await Work.findOneAndUpdate(
@@ -125,19 +125,19 @@ async function insertReviews(reviews, user) {
     review: reviews,
   };
 
-  return await Work.findOneAndUpdate(
-    {
-      _id: reviews.workId,
-    },
-    {
-      $set: {
-        reviewAdmin: review,
+  /*  return await Work.findOneAndUpdate(
+      {
+        _id: reviews.workId,
       },
-    },
-    {
-      new: true,
-    }
-  );
+      {
+        $set: {
+          reviewAdmin: review,
+        },
+      },
+      {
+        new: true,
+      }
+    );*/
 }
 
 async function insertReviewerReview(reviews, user) {

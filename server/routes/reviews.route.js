@@ -6,13 +6,13 @@ const asyncHandler = require("express-async-handler");
 const router = express.Router();
 module.exports = router;
 
-router.post(
+/*router.post(
   "/admin",
   passport.authenticate("jwt", {
     session: false,
   }),
   asyncHandler(insertAdminReview)
-);
+);*/
 
 router.post(
   "/pedirRecurso/:workId",
@@ -38,7 +38,7 @@ router.post(
   asyncHandler(aceitarRecurso)
 );
 
-router.post(
+/*router.post(
   "/pedirRecursoAdmin/:workId",
   passport.authenticate("jwt", {
     session: false,
@@ -60,7 +60,7 @@ router.post(
     session: false,
   }),
   asyncHandler(aceitarRecursoAdmin)
-);
+);*/
 
 router.post(
   "/reviewer",
@@ -102,7 +102,7 @@ async function aceitarRecurso(req, res) {
   res.json(reviews);
 }
 
-async function pedirRecursoAdmin(req, res) {
+/*async function pedirRecursoAdmin(req, res) {
   let reviews = await reviewCtrl.pedirRecursoAdmin(
     req.params.workId,
     req.body.justificativaRecurso
@@ -144,7 +144,7 @@ async function insertAdminReview(req, res) {
   } else {
     res.sendStatus(401);
   }
-}
+}*/
 
 async function insertReviewerReview(req, res) {
   if (req.user.reviewer) {

@@ -12,10 +12,10 @@
         <strong>Data de submissão</strong>
         <p>{{ work.createdAt | date: "dd/MM/yyyy" }}</p>
       </div>
-      <div class="col-md-4">
+      <!--<div class="col-md-4">
         <strong>Tipo de trabalho</strong>
         <p>{{ work.typeWork ? (work.typeWork | typeWork) : "---" }}</p>
-      </div>
+      </div>-->
     </div>
     <div class="row align-items-center mb-2">
       <div class="col-md-8">
@@ -66,22 +66,23 @@
     </div>
     <div class="row align-items-center mb-2">
       <div class="col-md-12">
+
         <strong>{{ work.authors.length > 1 ? "Autores" : "Autor" }}</strong>
         <p *ngFor="let author of work.authors">{{ author.userEmail }}</p>
       </div>
     </div>
-    <div *ngIf="work.reviewAdmin || work.reviewers" class="row align-items-center mb-2">
+    <!--  <div *ngIf="work.reviewAdmin || work.reviewers" class="row align-items-center mb-2">
       <div class="col-md-12">
         <strong>Parecerista
-          <!-- <div *ngIf="work.reviewers">
+           <div *ngIf="work.reviewers">
             <p *ngFor="let reviewerCoordinator of work.reviewers">{{ reviewerCoordinator.userEmail }}</p>
-          </div>-->
+          </div>
         </strong>
         <div *ngIf="work.reviewAdmin">
           <div>
-            <!--  <p *ngIf="user.icAdmin || user?.reviewer?.icCoordinator">
+              <p *ngIf="user.icAdmin || user?.reviewer?.icCoordinator">
               Parecer: {{ work.reviewAdmin.userEmail }}
-            </p>-->
+            </p>
             <p>
               Cabeçalho e rodapé conforme template -
               {{ work.reviewAdmin.review.question1 }}
@@ -102,33 +103,53 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
     <hr />
+
     <div *ngIf="work.reviewReviewer" class="row align-items-center mb-2">
       <hr />
       <div class="col-md-12">
+
         <!-- <strong *ngIf="user.icAdmin || user?.reviewer?.icCoordinator"
           >Parecer de {{ work.reviewReviewer.userEmail }}</strong
         >-->
 
         <div *ngIf="work.reviewReviewer.review">
+          <strong>Parecer</strong>
           <div>
             <p>
-              Adequação ao eixo e ao evento -
+              Cabeçalho e rodapé conforme template -
               {{ work.reviewReviewer.review.question1 }}
             </p>
-            <p>Correção textual - {{ work.reviewReviewer.review.question2 }}</p>
             <p>
-              Clareza na apresentação -
+              Segue a formatação indicada para a modalidade -
+              {{ work.reviewReviewer.review.question2 }}
+            </p>
+            <p>
+              Respeita o número máximo de autores -
               {{ work.reviewReviewer.review.question3 }}
             </p>
             <p>
-              Coerência entre objetivos/metodologia/fundamentação -
+              Segue o número de páginas da modalidade -
               {{ work.reviewReviewer.review.question4 }}
             </p>
             <p>
-              Contém identificação que configura quebra de anonimato -
+              Adequação ao eixo e ao evento -
               {{ work.reviewReviewer.review.question5 }}
+            </p>
+            <p>Correção textual -
+              {{ work.reviewReviewer.review.question6 }}</p>
+            <p>
+              Clareza na apresentação -
+              {{ work.reviewReviewer.review.question7 }}
+            </p>
+            <p>
+              Coerência entre objetivos/metodologia/fundamentação -
+              {{ work.reviewReviewer.review.question8 }}
+            </p>
+            <p>
+              Contém identificação que configura quebra de anonimato -
+              {{ work.reviewReviewer.review.question9 }}
             </p>
 
             <p>Aprovado - {{ work.reviewReviewer.review.icAllow }}</p>
@@ -141,9 +162,8 @@
 
     <!-- RECURSOS -->
 
-    <div
-      *ngIf="work.reviewAdmin?.review && work?.recursoAdmin?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
-      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
+    <div *ngIf="!user.icAdmin && !user?.reviewer?.icCoordinator" class="row align-items-center mb-2"
+      style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
 
@@ -152,7 +172,7 @@
             <div class="form-group col-md-12">
               <label id="example-radio-group-label">Justificativa</label>
 
-              <span>
+              <!--    <span>
                 <br /><br />
                 {{ work.recursoAdmin?.justify }}
               </span>
@@ -170,7 +190,7 @@
 
               <div *ngIf="work.recursoAdmin?.icAllow == 'Nao'" class="row justify-content-end">
                 <b style="color: red;">Recurso recusado</b>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -263,7 +283,7 @@
       </div>
     </div>
 
-    <div *ngIf="work.recursoAdmin?.justify && user.icAdmin" class="row align-items-center mb-2"
+    <!--<div *ngIf="work.recursoAdmin?.justify && user.icAdmin" class="row align-items-center mb-2"
       style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
@@ -309,14 +329,14 @@
           </div>
         </div>
       </div>
-    </div>
+    </div>-->
 
     <div class="row">
       <div class="col-md-12">
-        <button *ngIf="user.icAdmin" class="add" (click)="addReviewer(work)">
+        <!-- <button *ngIf="user.icAdmin" class="add" (click)="addReviewer(work)">
           <i class="fas fa-plus"></i>
           Parecer Admin
-        </button>
+        </button>-->
         <button *ngIf="user?.reviewer?.icCoordinator" class="add" (click)="addReviewerCoordinator(work)">
           <i class="fas fa-check"></i>
           Parecer

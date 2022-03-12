@@ -61,11 +61,19 @@ export class VincularTrabalhosComponent implements OnInit {
     }
   }
 
-  public filtrarStatus() {
+  /*public filtrarStatus() {
     this.modalidadeFilter = 0;
     if (this.user.icAdmin) {
       this.filtraStatusAdmin();
     } else {
+      this.filtraStatusCoordenador();
+    }
+  }*/
+
+  public filtrarStatus() {
+    this.modalidadeFilter = 0;
+    if (this.user.icCoordinator) {
+
       this.filtraStatusCoordenador();
     }
   }
@@ -91,46 +99,46 @@ export class VincularTrabalhosComponent implements OnInit {
     }
   }
 
-  filtraStatusAdmin() {
-    switch (Number(this.status)) {
-      case 0:
-        this.works = this.allWorks;
-        break;
-      case 1:
-        this.works = this.allWorks.filter((work) => !work.reviewAdmin);
-        break;
-      case 2:
-        this.works = this.allWorks.filter(
-          (work) => work.reviewAdmin && work.reviewAdmin.review.icAllow == "Nao"
-        );
-        break;
-      case 3:
-        this.works = this.allWorks.filter(
-          (work) => work.reviewAdmin && work.reviewAdmin.review.icAllow == "Sim"
-        );
-        break;
-      case 4:
-        this.works = this.allWorks.filter(
-          (work) => work.recurso && work.recurso.icAllow == "Sim"
-        );
-        break;
-      case 5:
-        //this.works = this.allWorks.filter(work => work.recurso && (work.recurso.justify || work.recursoAdmin?.justify) && !work.recurso.icAllow);
-        this.works = this.allWorks.filter(
-          (work) =>
-            work.recurso && (work.recurso.justify || work.recursoAdmin.justify)
-        );
-
-        break;
-      case 6:
-        //this.works = this.allWorks.filter(work => work.recurso && (work.recurso.justify || work.recursoAdmin?.justify) && !work.recurso.icAllow);
-        this.works = this.allWorks.filter(
-          (work) => work.recursoAdmin && work.recursoAdmin.justify
-        );
-
-        break;
-    }
-  }
+  /* filtraStatusAdmin() {
+     switch (Number(this.status)) {
+       case 0:
+         this.works = this.allWorks;
+         break;
+       case 1:
+         this.works = this.allWorks.filter((work) => !work.reviewAdmin);
+         break;
+       case 2:
+         this.works = this.allWorks.filter(
+           (work) => work.reviewAdmin && work.reviewAdmin.review.icAllow == "Nao"
+         );
+         break;
+       case 3:
+         this.works = this.allWorks.filter(
+           (work) => work.reviewAdmin && work.reviewAdmin.review.icAllow == "Sim"
+         );
+         break;
+       case 4:
+         this.works = this.allWorks.filter(
+           (work) => work.recurso && work.recurso.icAllow == "Sim"
+         );
+         break;
+       case 5:
+         //this.works = this.allWorks.filter(work => work.recurso && (work.recurso.justify || work.recursoAdmin?.justify) && !work.recurso.icAllow);
+         this.works = this.allWorks.filter(
+           (work) =>
+             work.recurso && (work.recurso.justify || work.recursoAdmin.justify)
+         );
+ 
+         break;
+       case 6:
+         //this.works = this.allWorks.filter(work => work.recurso && (work.recurso.justify || work.recursoAdmin?.justify) && !work.recurso.icAllow);
+         this.works = this.allWorks.filter(
+           (work) => work.recursoAdmin && work.recursoAdmin.justify
+         );
+ 
+         break;
+     }
+   }*/
 
   filtraStatusCoordenador() {
     switch (Number(this.status)) {

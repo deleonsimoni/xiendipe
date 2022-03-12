@@ -66,12 +66,16 @@ export class ModalReviewReviewerComponent implements OnInit {
 
   private createForm() {
     this.reviewForm = this.builder.group({
-      icAllow: [null, [Validators.required]],
       question1: [null, [Validators.required]],
       question2: [null, [Validators.required]],
       question3: [null, [Validators.required]],
       question4: [null, [Validators.required]],
       question5: [null, [Validators.required]],
+      question6: [null, [Validators.required]],
+      question7: [null, [Validators.required]],
+      question8: [null, [Validators.required]],
+      question9: [null, [Validators.required]],
+      icAllow: [null, [Validators.required]],
       justify: [null, []],
       workId: [],
     });
