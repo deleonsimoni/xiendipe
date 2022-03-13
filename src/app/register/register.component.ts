@@ -55,6 +55,7 @@ export class RegisterComponent implements OnInit {
       password: [null, [Validators.required, Validators.minLength(6)]],
       cfPassword: [null, [Validators.required, Validators.minLength(6)]],
       dateBirth: [null, [Validators.required]],
+      pcdId: [null],
       icForeign: [false],
       isPCD: [false],
       deficiencyType: [null],

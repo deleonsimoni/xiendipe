@@ -49,7 +49,7 @@ async function getUsers(req) {
 
   usersFound = await User.find(search)
     .select(
-      "fullname address email createdAt document phones modalityId payment works institution isPCD deficiencyType icForeign reviewer"
+      "fullname address email createdAt document phones modalityId payment works institution pcdId deficiencyType icForeign reviewer"
     )
     .sort({
       fullname: 1,
@@ -121,22 +121,33 @@ async function getWorksPaginated(req) {
         case 12:
           search["recurso.icAllow"] = "Nao";
           break;
+        /*   case 13:
+             search["$or"] = [
+               {
+                 "reviewAdmin.review.icAllow": "Sim",
+                 "reviewReviewer.review.icAllow": "Sim"
+               },
+               {
+                 "recurso.icAllow": "Sim"
+               },
+               {
+                 "recursoAdmin.icAllow": "Sim"
+               },
+               {
+                 "reviewAdmin.review.icAllow": "Sim",
+                 "reviewReviewer.review.icAllow": null
+               }
+             ];*/
+
         case 13:
           search["$or"] = [
             {
-              "reviewAdmin.review.icAllow": "Sim",
               "reviewReviewer.review.icAllow": "Sim"
             },
             {
               "recurso.icAllow": "Sim"
             },
-            {
-              "recursoAdmin.icAllow": "Sim"
-            },
-            {
-              "reviewAdmin.review.icAllow": "Sim",
-              "reviewReviewer.review.icAllow": null
-            }
+
           ];
           break;
 
@@ -346,19 +357,13 @@ async function getWorksValids(axis, modality) {
     modalityId: modality,
     $or: [
       {
-        "reviewAdmin.review.icAllow": "Sim",
+
         "reviewReviewer.review.icAllow": "Sim",
       },
       {
         "recurso.icAllow": "Sim",
       },
-      {
-        "recursoAdmin.icAllow": "Sim",
-      },
-      {
-        "reviewAdmin.review.icAllow": "Sim",
-        "reviewReviewer.review.icAllow": null,
-      },
+
     ],
   })
     .select("_id title")
@@ -370,7 +375,7 @@ async function getWorksValids(axis, modality) {
 async function getWorksCoordinator(axis) {
   return await Work.find({
     axisId: axis,
-    "reviewAdmin.review.icAllow": "Sim",
+    /*"reviewAdmin.review.icAllow": "Sim",*/
   });
 }
 

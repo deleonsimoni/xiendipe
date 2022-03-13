@@ -106,7 +106,8 @@
     </div>-->
     <hr />
 
-    <div *ngIf="work.reviewReviewer" class="row align-items-center mb-2">
+    <div *ngIf="work.reviewReviewer && (user.icAdmin || user?.reviewer?.icCoordinator)"
+      class="row align-items-center mb-2">
       <hr />
       <div class="col-md-12">
 
@@ -162,7 +163,7 @@
 
     <!-- RECURSOS -->
 
-    <div *ngIf="!user.icAdmin && !user?.reviewer?.icCoordinator" class="row align-items-center mb-2"
+    <div *ngIf="!user.icAdmin && !user?.reviewer?.icCoordinator && false" class="row align-items-center mb-2"
       style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>

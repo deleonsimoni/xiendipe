@@ -54,14 +54,26 @@
     </div>
     <div class="row align-items-center">
         <div class="col-sm-4 mb-2">
-            <strong>PCD</strong>
-            <p>{{ subscribed.isPCD ? subscribed.deficiencyType ? 'Sim - ' + subscribed.deficiencyType : 'Sim' : 'Não' }}
+            <strong>Deficiência</strong>
+
+
+            <p *ngIf='subscribed.pcdId == 1'>
+                Auditiva
             </p>
+
+            <p *ngIf='subscribed.pcdId == 2'>
+                Visual
+            </p>
+
+            <p *ngIf='!subscribed.pcdId'>
+                -----
+            </p>
+
         </div>
-        <div class="col-sm-4 mb-2">
+        <!--   <div class="col-sm-4 mb-2">
             <strong>Estrangeiro</strong>
             <p>{{ subscribed.isForeign ? 'Sim' : 'Não' }}</p>
-        </div>
+        </div>-->
         <div class="col-sm-4 mb-2">
             <strong>Instituição:</strong>
             <p>{{ subscribed.institution?.name ? subscribed.institution?.initials + '-' + subscribed.institution?.name :
