@@ -198,6 +198,46 @@
       </div>
     </div>
 
+    <div
+      *ngIf="work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
+      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
+      <div class="col-md-12">
+        <h3 style="color:red;">Entrar com recurso</h3>
+
+        <div>
+
+          <div class="form-row justify-content-center">
+            <div class="form-group col-md-12">
+              <label id="example-radio-group-label">Justificativa</label>
+
+              <textarea *ngIf="!work.recurso?.icAllow" maxlength="2000" class="form-control" rows="5"
+                [(ngModel)]="justificativaRecurso">
+                      </textarea>
+              <span *ngIf="work.recurso?.icAllow">
+                <hr />
+                {{work.recurso?.justify}}
+              </span>
+
+              <div *ngIf="work.recurso?.icAllow == 'Sim'" class="row justify-content-end">
+                <b style="color: green">Recurso aceito</b>
+              </div>
+
+              <div *ngIf="work.recurso?.icAllow == 'Nao'" class="row justify-content-end">
+                <b style="color: red">Recurso recusado</b>
+              </div>
+
+              <div *ngIf="!work.recurso?.icAllow" class="row justify-content-end">
+                <button class="btn-get-started" (click)="aplicarRecurso()">Enviar Recurso</button>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
     <div *ngIf="work.reviewReviewer && work?.recurso?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
@@ -206,7 +246,7 @@
         <div>
           <div class="form-row justify-content-center">
             <div class="form-group col-md-12">
-              <label id="example-radio-group-label">Justificativaaa</label>
+              <label id="example-radio-group-label">Justificativa</label>
 
               <span>
                 <hr />
@@ -232,6 +272,9 @@
         </div>
       </div>
     </div>
+
+
+
 
     <div *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator)"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
