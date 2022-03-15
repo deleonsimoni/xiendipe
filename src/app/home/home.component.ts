@@ -234,11 +234,11 @@ export class HomeComponent implements OnInit {
       Remoto Emergencial (ERE).`,
       coordenacao: [
 
-        'Daniela Costa Lima - UFG',
-        'Giovanna Cristina Zen - UFBA',
+        'Daniela da Costa Britto Pereira Lima  - UFG',
+        'Giovana Cristina Zen - UFBA',
         'Gyzely Suely Lima - IFTM'
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Priscilla Rezende Moreira - UEMG`
+      coordenacaogeral: `Coordenadora geral do eixo: Priscila Rezende Moreira - UEMG`
       ,
       pareceristas: []
     },
@@ -277,7 +277,7 @@ export class HomeComponent implements OnInit {
       e outros programas de formação.`,
       coordenacao: [
 
-        'Andreia Silva Gino - UEMG',
+        'Andréa Silva Gino - UEMG',
         'Vilma Aparecida de Souza - UFU',
         'Kátia Silene da Silva - UFCAT'
 
@@ -305,7 +305,7 @@ export class HomeComponent implements OnInit {
         'Juliana Cordeiro Soares Branco - UEMG'
 
       ],
-      coordenacaogeral: `Coordenador geral do eixo: Ademilson de Souza Soares Paco – UFMG`
+      coordenacaogeral: `Coordenador geral do eixo: Ademilson de Sousa Soares – UFMG`
       ,
       pareceristas: []
     },
@@ -342,8 +342,8 @@ export class HomeComponent implements OnInit {
       e outros.`,
       coordenacao: [
 
-        'Valéria Peres Asniz - UFU',
-        'Priscila Alvarenga Cardoso Gimenes - UFU',
+        'Valéria Peres Asnis - UFU',
+        'Priscila Alvarenga Cardoso - UFU',
         'Lázara Cristina Silva - UFU',
         'Márcia Moreira Custódio - IFTM'
 
@@ -362,7 +362,7 @@ export class HomeComponent implements OnInit {
       formadores de professores. Assessoria Pedagógica na Universidade.`,
       coordenacao: [
 
-        'Orlando Fernandez Aquino - UNIUBE',
+        'Orlando Fernández Aquino - UNIUBE',
         'Vânia Maria Vieira - UNIUBE',
         'Maria de Lourdes Ribeiro - IFTM',
         'Talamira Taíta Rodrigues de Brito - UESB'
