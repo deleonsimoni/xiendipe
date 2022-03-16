@@ -440,23 +440,29 @@ async function validarUsuarioPrincipal(usuarios, emailPrincipal) {
 
 async function validarEmailDuplicado(usuarios) {
 
-  console.log(usuarios);
-  var sorted_arr = usuarios.slice().sort();
-  console.log('------------------')
-  console.log(sorted_arr);
 
-  var results = [];
-  for (var i = 0; i < sorted_arr.length - 1; i++) {
-    if (sorted_arr[i + 1].email == sorted_arr[i].email) {
-      results.push(sorted_arr[i]);
+
+  // empty object
+  let map = {};
+  let result = false;
+  for (let i = 0; i < usuarios.length; i++) {
+    console.log(map)
+    // check if object contains entry with this element as key
+    if (map[usuarios[i].email]) {
+      result = true;
+      // terminate the loop
+      break;
     }
+    // add entry in object with the element as key
+    map[usuarios[i].email] = true;
+  }
+  if (result) {
+    console.log('Array contains duplicate elements');
+  } else {
+    console.log('Array does not contain duplicate elements');
   }
 
-  if (results.length > 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return result;
 
 }
 
