@@ -21,12 +21,13 @@ export class WorkCardComponent implements OnInit {
 
   ngOnInit() {
 
-    //carregando combobox
 
 
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    //carregando combobox
+
     if (changes) {
       this.reviewers.forEach(r => {
         if (this.work.reviewers[0] && r._id == this.work.reviewers[0].userId) {
