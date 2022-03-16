@@ -1,4 +1,4 @@
-import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, Input, EventEmitter, Output, OnInit, SimpleChanges } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { AdminService } from '../../admin/admin.service';
@@ -22,11 +22,18 @@ export class WorkCardComponent implements OnInit {
   ngOnInit() {
 
     //carregando combobox
-    this.reviewers.forEach(r => {
-      if (this.work.reviewers[0] && r._id == this.work.reviewers[0].userId) {
-        this.selectReview = r;
-      }
-    });
+
+
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes) {
+      this.reviewers.forEach(r => {
+        if (this.work.reviewers[0] && r._id == this.work.reviewers[0].userId) {
+          this.selectReview = r;
+        }
+      });
+    }
 
   }
 
