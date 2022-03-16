@@ -440,7 +440,11 @@ async function validarUsuarioPrincipal(usuarios, emailPrincipal) {
 
 async function validarEmailDuplicado(usuarios) {
 
+  console.log(usuarios);
   var sorted_arr = usuarios.slice().sort();
+  console.log('------------------')
+  console.log(sorted_arr);
+
   var results = [];
   for (var i = 0; i < sorted_arr.length - 1; i++) {
     if (sorted_arr[i + 1].email == sorted_arr[i].email) {
