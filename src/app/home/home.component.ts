@@ -197,7 +197,7 @@ export class HomeComponent implements OnInit {
         'Sandra Valéria Limonta Rosa - UFG'
 
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Lenilda Rêgo Albuquerque De Faria - UFAC`
+      coordenacaogeral: ` Lenilda Rêgo Albuquerque De Faria - UFAC`
       ,
       pareceristas: []
     },
@@ -219,7 +219,7 @@ export class HomeComponent implements OnInit {
         'Martha Maria Prata-Linhares - UFTM',
         'Silvana Soares de Araujo Mesquita - PUC-Rio'
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Vânia Finholdt Ângelo Leite – UERJ`
+      coordenacaogeral: ` Vânia Finholdt Ângelo Leite – UERJ`
       ,
       pareceristas: []
     },
@@ -238,7 +238,7 @@ export class HomeComponent implements OnInit {
         'Giovana Cristina Zen - UFBA',
         'Gyzely Suely Lima - IFTM'
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Priscila Rezende Moreira - UEMG`
+      coordenacaogeral: ` Priscila Rezende Moreira - UEMG`
       ,
       pareceristas: []
     },
@@ -263,7 +263,7 @@ export class HomeComponent implements OnInit {
         'Claudia Tavares do Amaral - UFCAT'
 
       ],
-      coordenacaogeral: `Coordenador geral do eixo: Robson Luiz de França - UFU`
+      coordenacaogeral: ` Robson Luiz de França - UFU`
       ,
       pareceristas: []
     },
@@ -283,7 +283,7 @@ export class HomeComponent implements OnInit {
 
       ],
 
-      coordenacaogeral: `Coordenador geral do eixo: José Leonardo Leonardo Rolim de Lima Severo  - UFPB`
+      coordenacaogeral: ` José Leonardo Leonardo Rolim de Lima Severo  - UFPB`
       ,
       pareceristas: []
     },
@@ -305,7 +305,7 @@ export class HomeComponent implements OnInit {
         'Juliana Cordeiro Soares Branco - UEMG'
 
       ],
-      coordenacaogeral: `Coordenador geral do eixo: Ademilson de Sousa Soares – UFMG`
+      coordenacaogeral: ` Ademilson de Sousa Soares – UFMG`
       ,
       pareceristas: []
     },
@@ -326,7 +326,7 @@ export class HomeComponent implements OnInit {
         'Marco Antônio Franco do Amaral - IFTM'
 
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Fernanda Duarte Araújo Silva - UFU`
+      coordenacaogeral: ` Fernanda Duarte Araújo Silva - UFU`
       ,
       pareceristas: []
     },
@@ -348,7 +348,7 @@ export class HomeComponent implements OnInit {
         'Márcia Moreira Custódio - IFTM'
 
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Dulcéria Tartuci - UFCAT`
+      coordenacaogeral: ` Dulcéria Tartuci - UFCAT`
       ,
       pareceristas: []
     },
@@ -368,7 +368,7 @@ export class HomeComponent implements OnInit {
         'Talamira Taíta Rodrigues de Brito - UESB'
 
       ],
-      coordenacaogeral: `Coordenadora geral do eixo: Vanessa Bueno Campos - UFU`
+      coordenacaogeral: ` Vanessa Bueno Campos - UFU`
       ,
       pareceristas: []
     }
