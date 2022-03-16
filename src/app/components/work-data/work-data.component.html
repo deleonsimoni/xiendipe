@@ -18,11 +18,11 @@
       </div>-->
     </div>
     <div class="row align-items-center mb-2">
-      <div class="col-md-8">
+      <div class="col-md-4">
         <strong>Modalidade</strong>
         <p>{{ work.modalityId | modalities }}</p>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-8">
         <strong>Eixo</strong>
         <p>{{ work.axisId | axis }}</p>
       </div>
@@ -161,10 +161,10 @@
       </div>
     </div>
 
-    <!-- RECURSOS -->
+    <!-- RECURSOS COLOCAR FALSE ATE A DATA D ELIBERACAO-->
 
-    <div *ngIf="!user.icAdmin && !user?.reviewer?.icCoordinator && false" class="row align-items-center mb-2"
-      style="border: crimson; margin: 1px; border-style: dotted;">
+    <div *ngIf="!user.icAdmin && !user?.reviewer?.icCoordinator && work.recurso?.justify"
+      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
 
@@ -198,8 +198,10 @@
       </div>
     </div>
 
+    <!-- RECURSOS COLOCAR FALSE ATE A DATA D ELIBERACAO-->
+
     <div
-      *ngIf="false && work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
+      *ngIf="work.reviewReviewer && work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color:red;">Entrar com recurso</h3>
