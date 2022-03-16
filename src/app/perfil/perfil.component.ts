@@ -75,12 +75,12 @@ export class PerfilComponent implements OnInit {
         }
       }
 
-      if (!this.validarNome(this.userForm.value.fullname)) {
+      if (!this.userForm.value.fullname) {
         this.toastr.error('Digite o nome e sobrenome.', 'Atenção: ');
         return;
       }
 
-      if(!(this.userData.dateBirth instanceof Date)){
+      if (!(this.userData.dateBirth instanceof Date)) {
         this.userData.dateBirth = moment(this.userData.dateBirth, 'DD/MM/YYYY');
       }
 
@@ -96,16 +96,6 @@ export class PerfilComponent implements OnInit {
         });
     } else {
       this.toastr.error('Preencha os campos do formulário corretamente.', 'Erro: ');
-    }
-  }
-
-  public validarNome(nome) {
-    const regName = /^[A-zÀ-ú ]{6,30}$/;
-    const name = nome;
-    if (!regName.test(name)) {
-      return false;
-    } else {
-      return true;
     }
   }
 

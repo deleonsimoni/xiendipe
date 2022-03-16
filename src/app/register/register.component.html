@@ -82,26 +82,31 @@
                             formControlName="cellphone" [dropSpecialCharacters]="true" mask="(00) 00000-0000" />
 
                     </div>
-                    <div class="form-group col-md-4">
-                        Possui alguma deficiência?
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pcdId" id="radio1" [value]="1"
-                                formControlName="pcdId">
-                            <label class="form-check-label" for="radio1">
-                                Auditiva
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="pcdId" id="radio2" [value]="2"
-                                formControlName="pcdId">
-                            <label class="form-check-label" for="radio2">
-                                Visual
-                            </label>
-                        </div>
+
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Senha"
+                            formControlName="password" />
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.password.touched  && registerForm.controls.password.errors">
+                            Verifique a Senha
+                        </span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password" class="form-control" name="cf-password" id="cf-password"
+                            placeholder="Confirmar senha" formControlName="cfPassword" />
+                        <span class="text-danger"
+                            *ngIf="registerForm.controls.cfPassword.touched  && registerForm.controls.cfPassword.errors">
+                            Verifique a Confirmação de Senha
+                        </span>
                     </div>
                 </div>
+
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+
+                    <div class="form-group col-md-6">
                         Categoria
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="categoriaId" id="radio1" [value]="1"
@@ -127,25 +132,32 @@
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="form-row">
+
+
                     <div class="form-group col-md-6">
-                        <input type="password" name="password" class="form-control" id="password" placeholder="Senha"
-                            formControlName="password" />
-                        <span class="text-danger"
-                            *ngIf="registerForm.controls.password.touched  && registerForm.controls.password.errors">
-                            Verifique a Senha
-                        </span>
+                        Possui alguma deficiência?
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pcdId" id="radio1" [value]="1"
+                                formControlName="pcdId">
+                            <label class="form-check-label" for="radio1">
+                                Auditiva
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="pcdId" id="radio2" [value]="2"
+                                formControlName="pcdId">
+                            <label class="form-check-label" for="radio2">
+                                Visual
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <input type="password" class="form-control" name="cf-password" id="cf-password"
-                            placeholder="Confirmar senha" formControlName="cfPassword" />
-                        <span class="text-danger"
-                            *ngIf="registerForm.controls.cfPassword.touched  && registerForm.controls.cfPassword.errors">
-                            Verifique a Confirmação de Senha
-                        </span>
-                    </div>
+
+
+
+
                 </div>
+
+
 
 
                 <div class="section-header">
