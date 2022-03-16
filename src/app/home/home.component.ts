@@ -364,7 +364,7 @@ export class HomeComponent implements OnInit {
 
         'Orlando Fernández Aquino - UNIUBE',
         'Vânia Maria Vieira - UNIUBE',
-        'Maria de Lourdes Ribeiro - IFTM',
+        'Maria de Lourdes Ribeiro Gaspar - IFTM',
         'Talamira Taíta Rodrigues de Brito - UESB'
 
       ],

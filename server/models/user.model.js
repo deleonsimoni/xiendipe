@@ -13,7 +13,9 @@ const UserSchema = new mongoose.Schema({
   pcdId: {
     type: Number
   },
-
+  categoriaId: {
+    type: Number
+  },
   email: {
     type: String,
     required: true,

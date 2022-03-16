@@ -58,6 +58,7 @@ export class RegisterComponent implements OnInit {
       pcdId: [null],
       icForeign: [false],
       isPCD: [false],
+      categoriaId: [null, [Validators.required]],
       deficiencyType: [null],
       document: [null, [Validators.required]],
       address: this.builder.group({

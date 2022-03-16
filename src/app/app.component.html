@@ -76,6 +76,9 @@
                     fragment="comiteOrganizador">Comitê
                     Organizador</a>
                   <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" [routerLink]="['/home']" alt="Bolsistas" fragment="bolsistas">Bolsistas
+                  </a>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" [routerLink]="['/home']" alt="Instituições Parceiras"
                     fragment="parcerias">Instituições Parceiras</a>
                   <div class="dropdown-divider"></div>
@@ -222,6 +225,8 @@
                 Científico</a></li>
             <li><a tabindex="0" [routerLink]="['/home']" fragment="comiteOrganizador" (click)="sidenav.toggle()">Comitê
                 Organizador</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="bolsistas" (click)="sidenav.toggle()">Bolsistas
+              </a></li>
             <li><a tabindex="0" [routerLink]="['/home']" fragment="parcerias" (click)="sidenav.toggle()">Instituições
                 Parceiras</a>
             </li>
