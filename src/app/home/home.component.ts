@@ -65,8 +65,8 @@ export class HomeComponent implements OnInit {
   ];
 
   coordenacoesGerais = [
-    'Profa. Dra. Camila Lima Coimbra - UFU',
-    'Prof. Dr. Roberto Valdés Puentes - UFU'
+    'Camila Lima Coimbra - UFU',
+    'Roberto Valdés Puentes - UFU'
   ];
 
   imagensApoiadores = [
