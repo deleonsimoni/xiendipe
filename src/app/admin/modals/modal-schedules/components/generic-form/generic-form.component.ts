@@ -21,9 +21,8 @@ export class GenericFormComponent {
   public days = ["29/10", "30/10", "31/10", "01/11", "02/11", "03/11", "04/11", "05/11", "06/11", "07/11", "08/11", "09/11", "10/11", "11/11", "12/11"];
 
   constructor(private builder: FormBuilder,
-              private imageCompress: NgxImageCompressService,
-              private _sanitizer: DomSanitizer) 
-  {
+    private imageCompress: NgxImageCompressService,
+    private _sanitizer: DomSanitizer) {
     this.createForm();
   }
 
@@ -76,7 +75,7 @@ export class GenericFormComponent {
       if (key == 0) {
         form.controls[0].patchValue(el);
       } else {
-         if (keyForm == "coordinators" || keyForm == "entrevistados" || keyForm == "entrevistadores") {
+        if (keyForm == "coordinators" || keyForm == "entrevistados" || keyForm == "entrevistadores") {
           form.push(this.builder.group(el));
         } else if (keyForm == "books") {
           form.push(this.builder.group(el));
@@ -206,15 +205,15 @@ export class GenericFormComponent {
 
       var orientation = -1;
       this.imageCompress.compressFile(e.target['result'], orientation, 50, 50).then(
-      result => {
-          
+        result => {
+
           // create file from byte
           const imageName = this.miniature[0].name;
           // call method that creates a blob from dataUri
           //const imageBlob = this.dataURItoBlob(result.split(',')[1]);
           //imageFile created below is the new compressed file which can be send to API in form data
           //const img =  new File([result], imageName, { type: 'image/jpeg' });
-    
+
           (document.getElementById('imageRender' + indexArray) as HTMLImageElement).src = result;
           // this.imageRender.nativeElement.src = e.target['result']; // Set image in element
           const dataCtrel = this.form.get("books") as FormArray;
@@ -222,7 +221,7 @@ export class GenericFormComponent {
         });
 
 
-      
+
     };
   }
 
@@ -232,14 +231,14 @@ export class GenericFormComponent {
     let indexArray = 0;
     dataCtrel.value.forEach(element => {
 
-      if(dataCtrel.at(indexArray).value.nameMiniature) {
+      if (dataCtrel.at(indexArray).value.nameMiniature) {
         (document.getElementById('imageRender' + indexArray) as HTMLImageElement).src = "https://ffainfinity.s3-sa-east-1.amazonaws.com/books/" + dataCtrel.at(indexArray).value.nameMiniature;
       }
 
       indexArray++;
-      
-    }); 
-  
+
+    });
+
   }
 
   dataURItoBlob(dataURI) {
@@ -248,7 +247,7 @@ export class GenericFormComponent {
     const arrayBuffer = new ArrayBuffer(byteString.length);
     const int8Array = new Uint8Array(arrayBuffer);
     for (let i = 0; i < byteString.length; i++) {
-    int8Array[i] = byteString.charCodeAt(i);
+      int8Array[i] = byteString.charCodeAt(i);
     }
     const blob = new Blob([int8Array], { type: 'image/jpeg' });
     return blob;
