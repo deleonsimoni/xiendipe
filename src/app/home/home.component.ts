@@ -215,7 +215,7 @@ export class HomeComponent implements OnInit {
       professores.`,
       coordenacao: [
 
-        'Maria Inês Marcondes - PUC-Rio',
+        'Maria de Fátima Barbosa Abdalla – Católica-SP',
         'Martha Maria Prata-Linhares - UFTM',
         'Silvana Soares de Araujo Mesquita - PUC-Rio'
       ],
