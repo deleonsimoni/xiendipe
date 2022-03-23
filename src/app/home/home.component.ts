@@ -215,7 +215,7 @@ export class HomeComponent implements OnInit {
       professores.`,
       coordenacao: [
 
-        'Maria de Fátima Barbosa Abdalla – Católica-SP',
+        'Maria de Fátima Barbosa Abdalla – Unisantos',
         'Martha Maria Prata-Linhares - UFTM',
         'Silvana Soares de Araujo Mesquita - PUC-Rio'
       ],
