@@ -102,22 +102,41 @@ export class RegisterComponent implements OnInit {
     this.submit = true;
     this.registerForm.value.email = this.registerForm.value.email.toLowerCase();
     const form = this.validatePassword();
+
+    if (this.registerForm.get('phones').get('cellphone').errors) {
+      this.toastr.error('Número de celular inválido.', 'Atenção: ');
+      return;
+    }
+
+    if (this.registerForm.get('address').get('zip').errors) {
+      this.toastr.error('CEP inválido.', 'Atenção: ');
+      return;
+    }
+
+    if (!this.registerForm.value.icForeign && this.registerForm.value.document.length !== 11) {
+      this.toastr.error('CPF inválido.', 'Atenção: ');
+      return;
+    }
+
+    if (!this.registerForm.value.icAcceptTerms) {
+      this.toastr.error('É necessário aceitar os termos para prosseguir.', 'Atenção: ');
+      return;
+    }
+
+
+
+    if (this.registerForm.value.emailConfirm != this.registerForm.value.email) {
+      this.toastr.error('Verifique o campo email e confirmação de email.', 'Atenção: ');
+      return;
+    }
+
+    if (!this.registerForm.value.fullname) {
+      this.toastr.error('Digite o nome e sobrenome.', 'Atenção: ');
+      return;
+    }
+
+
     if (this.registerForm.valid && form != null) {
-
-      if (!this.registerForm.value.icForeign && this.registerForm.value.document.length !== 11) {
-        this.toastr.error('CPF inválido.', 'Atenção: ');
-        return;
-      }
-
-      if (this.registerForm.value.emailConfirm != this.registerForm.value.email) {
-        this.toastr.error('Verifique o campo email e confirmação de email.', 'Atenção: ');
-        return;
-      }
-
-      if (!this.registerForm.value.fullname) {
-        this.toastr.error('Digite o nome e sobrenome.', 'Atenção: ');
-        return;
-      }
 
       this.carregando = true;
       this.authService.createUser(form)
