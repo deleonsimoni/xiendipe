@@ -6,6 +6,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  socialname: {
+    type: String
+  },
   document: {
     type: String,
     required: true

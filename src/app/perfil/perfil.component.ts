@@ -28,6 +28,8 @@ export class PerfilComponent implements OnInit {
     moment.locale('pt-br');
     this.userForm = this.builder.group({
       fullname: [null, [Validators.required]],
+      socialname: [null, []],
+
       // tslint:disable-next-line: max-line-length
       email: [null, [Validators.required, Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]],
       dateBirth: [null, [Validators.required]],
@@ -60,6 +62,7 @@ export class PerfilComponent implements OnInit {
     this.userData = user;
     this.userForm.patchValue({
       fullname: user.fullname,
+      socialname: user.socialname,
       email: user.email,
       dateBirth: moment(user.dateBirth).format('L'),
       phones: user.phones,
