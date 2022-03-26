@@ -122,9 +122,9 @@ export class SubmissaoComponent implements OnInit {
 
     this.submissionForm.controls.authors.valueChanges.subscribe(res => {
 
-      if (this.submissionForm.value.modalityId === '3' && res.length >= 13) {
+      if (this.submissionForm.value.modalityId === '5' && res.length >= 12) {
         this.showAdd = false;
-      } else if (this.submissionForm.value.modalityId !== '3' && res.length >= 4) {
+      } else if (this.submissionForm.value.modalityId !== '5' && res.length >= 4) {
         this.showAdd = false;
       } else {
         this.showAdd = true;
@@ -317,9 +317,9 @@ export class SubmissaoComponent implements OnInit {
 
   public addAuthors() {
     const authors = this.submissionForm.get('authors') as FormArray;
-    if (this.submissionForm.value.modalityId === '3' && authors.controls.length < 13) {
+    if (this.submissionForm.value.modalityId === '5' && authors.controls.length < 12) {
       authors.push(this.createFields());
-    } else if (this.submissionForm.value.modalityId !== '3' && authors.controls.length < 4) {
+    } else if (this.submissionForm.value.modalityId !== '5' && authors.controls.length < 4) {
       authors.push(this.createFields());
     }
   }
