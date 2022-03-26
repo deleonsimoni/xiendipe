@@ -126,7 +126,7 @@ router.post(
   asyncHandler(insertAuthorWork)
 );
 router.post(
-  "/alterUserWorkFile/xxendiperio2020/:idWork",
+  "/alterUserWorkFile/xxiendiperio2022/:idWork",
   [
     passport.authenticate("jwt", {
       session: false,
@@ -136,7 +136,7 @@ router.post(
   asyncHandler(alterUserWorkFile)
 );
 router.post(
-  "/uploadWork/xxendiperio2020/:id",
+  "/uploadWork/xxiendiperio2022/:id",
   [
     passport.authenticate("jwt", {
       session: false,
@@ -305,7 +305,7 @@ async function getWorksValids(req, res) {
   if (user.icAdmin) {
     const works = await adminCtrl.getWorksValids(req.params.id, req.params.modality);
     res.json(works);
-  }else if (user.reviewer && user.reviewer.icCoordinator) {
+  } else if (user.reviewer && user.reviewer.icCoordinator) {
     const works = await adminCtrl.getWorksCoordinator(req.params.id);
     res.json(works);
   } else {

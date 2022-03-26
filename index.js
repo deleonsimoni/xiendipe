@@ -5,14 +5,14 @@ require('./config/mongoose');
 const https = require('https');
 const fs = require('fs')
 
-const privateKey = fs.readFileSync('etc/letsencrypt/live/xxendiperio2020.com.br/privkey.pem', 'utf8');
-const certificate = fs.readFileSync('/etc/letsencrypt/live/xxendiperio2020.com.br/cert.pem', 'utf8');
-const ca = fs.readFileSync('/etc/letsencrypt/live/xxendiperio2020.com.br/chain.pem', 'utf8');
+const privateKey = fs.readFileSync('etc/letsencrypt/live/xxiendiperio2022.com.br/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/xxiendiperio2022.com.br/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/xxiendiperio2022.com.br/chain.pem', 'utf8');
 
 const credentials = {
-	key: privateKey,
-	cert: certificate,
-	ca: ca
+  key: privateKey,
+  cert: certificate,
+  ca: ca
 };
 
 const httpsServer = https.createServer(credentials, app);

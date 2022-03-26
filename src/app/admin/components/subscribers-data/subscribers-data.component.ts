@@ -183,6 +183,7 @@ export class SubscribersDataComponent implements OnInit {
 
   }
 
+
   public deletarTrabalho(workId) {
     this.workWait = true;
     this.adminService.removeWork(workId)

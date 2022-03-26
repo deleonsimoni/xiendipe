@@ -59,23 +59,6 @@
         </div>
 
         <div class="col-6">
-            <strong>Deficiência</strong>
-
-
-            <p *ngIf='subscribed.pcdId == 1'>
-                Auditiva
-            </p>
-
-            <p *ngIf='subscribed.pcdId == 2'>
-                Visual
-            </p>
-
-            <p *ngIf='!subscribed.pcdId'>
-                -----
-            </p>
-        </div>
-
-        <div class="col-6">
             <strong>Categoria</strong>
 
 
@@ -98,6 +81,30 @@
 
         </div>
 
+        <div class="col-6">
+            <strong>Deficiência</strong>
+
+
+            <p *ngIf='subscribed.pcdId == 1'>
+                Auditiva
+            </p>
+
+            <p *ngIf='subscribed.pcdId == 2'>
+                Visual
+            </p>
+
+            <p *ngIf='!subscribed.pcdId'>
+                -----
+            </p>
+        </div>
+
+
+
+        <div *ngIf="subscribed.comprovanteAWS" class="col-12">
+            <strong>Download Comprovante:</strong>
+            <p><a [routerLink]="" (click)="download(subscribed.comprovanteAWS)">Clique aqui</a>
+            </p>
+        </div>
 
         <div class="col-12">
             <strong>Instituição:</strong>

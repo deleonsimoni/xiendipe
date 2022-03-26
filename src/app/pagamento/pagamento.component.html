@@ -15,7 +15,7 @@
                     </div>
 
                     <form [formGroup]="paymentForm" role="form" class="contactForm">
-                        <div *ngIf="!user.payment.icPaid && !carregando">
+                        <div *ngIf="!user?.payment?.icPaid && !carregando">
 
                             <div class="row">
                                 <table class="table table-responsive table-striped tabelaCronograma">
@@ -57,12 +57,12 @@
 
                         </div>
 
-                        <div *ngIf="user.payment.icPaid" class="row justify-content-center">
+                        <div *ngIf="user?.payment?.icPaid" class="row justify-content-center">
                             <h3 style="color: rgb(33, 141, 12);">Recebemos seu pagamento, aguardamos por você.</h3>
 
                         </div>
 
-                        <div *ngIf="!user.payment.icPaid" class="form-row">
+                        <div *ngIf="!user?.payment?.icPaid" class="form-row">
                             <div class="form-group">
                                 Para realizar o pagamento será necessário acessar o sistema FAU, onde será emitido um
                                 boleto para pagamento.<br>
@@ -78,7 +78,7 @@
 
 
 
-                        <div *ngIf="!user.payment.icPaid" class="row justify-content-center">
+                        <div *ngIf="!user?.payment?.icPaid" class="row justify-content-center">
                             <!--<button *ngIf="!enviando" class="btn-get-started" (click)="gerarPagamento()">Enviar Comprovante</button>-->
 
                             <a href="https://sistemas.fau.org.br/participante/index.xhtml?idevento=743" target="_blank"

@@ -9,6 +9,9 @@ const UserSchema = new mongoose.Schema({
   socialname: {
     type: String
   },
+  comprovanteAWS: {
+    type: String
+  },
   document: {
     type: String,
     required: true

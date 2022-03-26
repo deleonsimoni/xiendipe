@@ -25,8 +25,17 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/auth/resetPassword`, form);
   }
 
-  createUser(form) {
-    return this.http.post(`${this.baseUrl}/auth/register`, form);
+  createUser(form, file: File) {
+
+    const formData: FormData = new FormData();
+    if (file != null) {
+      formData.append('file', file, `${file.name}`);
+    }
+    formData.append('formulario', JSON.stringify(form));
+
+
+
+    return this.http.post(`${this.baseUrl}/auth/register`, formData);
   }
 
   refresh() {

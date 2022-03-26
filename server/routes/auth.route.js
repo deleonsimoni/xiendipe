@@ -7,11 +7,13 @@ const authCtrl = require('../controllers/auth.controller');
 const config = require('../config/config');
 const templateEmail = require('../config/templateEmails');
 const User = require('../models/user.model');
+const S3Uploader = require('../controllers/aws.controller');
+const fileUpload = require("express-fileupload");
 
 const router = express.Router();
 module.exports = router;
 
-router.post('/register', asyncHandler(register), login);
+router.post('/register', fileUpload(), asyncHandler(register), login);
 router.post('/forgotPassword', asyncHandler(forgotPassword));
 router.post('/resetPassword', asyncHandler(resetPassword));
 router.post('/login', passport.authenticate('local', { session: false }), login);
@@ -20,17 +22,36 @@ router.get('/refresh', passport.authenticate('jwt', { session: false }), refresh
 
 
 async function register(req, res, next) {
-  if (req.body.document && await userCtrl.checkDocumentDup(req.body.document)) {
+  let formulario = JSON.parse(req.body.formulario);
+  let fileName = null;
+
+  if (formulario.document && await userCtrl.checkDocumentDup(formulario.document)) {
     return res.status(500).send({ message: "cpf duplicado" });
   } else {
-    let user = await userCtrl.insert(req.body);
-    delete user.hashedPassword;
-    //emailSender.sendMail(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
-    emailSender.sendMailAWS(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
+    if (formulario.categoriaId == 1 || formulario.categoriaId == 2 && req.files.file) {
+      fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxiendiperio2022/comprovantes/' + formulario.document + "_" + req.files.file.name : 'xxiendiperio2022/comprovantes/' + formulario.document + "_" + req.files.file.name;
+      S3Uploader.uploadFile(fileName, req.files.file.data).then(async fileData => {
+        console.log('Sucesso envio comprovante para AWS ' + fileName);
+        formulario.comprovanteAWS = fileName;
+        await saveUser(formulario, req, next);
+      }).catch(err => {
+        console.log(err);
+        res.sendStatus(500);
+      });
+    } else {
+      await saveUser(formulario, req, next);
+    }
 
-    req.user = user;
-    next()
   }
+
+}
+
+async function saveUser(formulario, req, next) {
+  let user = await userCtrl.insert(formulario);
+  delete user.hashedPassword;
+  emailSender.sendMailAWS(user.email, 'Inscrição Realizada com Sucesso', templateEmail.inscricaoSucesso);
+  req.user = user;
+  next();
 }
 
 async function forgotPassword(req, res) {

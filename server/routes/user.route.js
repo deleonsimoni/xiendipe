@@ -41,16 +41,16 @@ router.get('/getWorksIncricoes', passport.authenticate('jwt', {
 }), asyncHandler(getWorksIncricoes));
 
 
-router.post('/uploadWork/xxendiperio2020/:id', [passport.authenticate('jwt', {
+router.post('/uploadWork/xxiendiperio2022/:id', [passport.authenticate('jwt', {
   session: false
 }), fileUpload()], asyncHandler(uploadWork));
-router.post('/submeterTransferencia/xxendiperio2020/:id', [passport.authenticate('jwt', {
+router.post('/submeterTransferencia/xxiendiperio2022/:id', [passport.authenticate('jwt', {
   session: false
 }), fileUpload()], asyncHandler(submeterTransferencia));
 router.post('/payment', passport.authenticate('jwt', {
   session: false
 }), payment);
-router.post('/gerarPagamento/xxendiperio2020/:id', passport.authenticate('jwt', {
+router.post('/gerarPagamento/xxiendiperio2022/:id', passport.authenticate('jwt', {
   session: false
 }), payment);
 router.post('/coordinator/:axisId', passport.authenticate('jwt', {

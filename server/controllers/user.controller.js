@@ -255,7 +255,7 @@ async function generatePayment(req, res) {
   });
 
   form.on('file', (field, file) => {
-    fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxendiperio2020/' + file.name : 'xxendiperio2020/' + file.name;
+    fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxiendiperio2022/' + file.name : 'xxiendiperio2022/' + file.name;
     buffer = fs.readFileSync(file.path);
   });
 
@@ -340,7 +340,7 @@ async function getUserByEmail(email) {
 async function submeterTransferencia(req, res) {
 
   let file = req.files.fileArray;
-  let fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxendiperio2020/' + file.name : 'xxendiperio2020/' + file.name;
+  let fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxiendiperio2022/' + file.name : 'xxiendiperio2022/' + file.name;
 
   await S3Uploader.uploadFile(fileName, file.data).then(fileData => {
 
@@ -545,7 +545,7 @@ async function uploadWorks(files) {
 
   for (let i = 0; i < files.length; i++) {
 
-    fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxendiperio2020/works/' + files[i].name : 'xxendiperio2020/works/' + files[i].name;
+    fileName = config.PATH_S3_DEV ? config.PATH_S3_DEV + 'xxiendiperio2022/works/' + files[i].name : 'xxiendiperio2022/works/' + files[i].name;
     await S3Uploader.uploadFile(fileName, files[i].data).then(fileData => {
       console.log('Arquivo submetido para AWS ' + fileName);
       retorno.filesS3.push(fileName);

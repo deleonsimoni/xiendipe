@@ -16,6 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 export class RegisterComponent implements OnInit {
 
   public registerForm: FormGroup;
+  private files: FileList;
   public carregando = false;
   public docType = 'Documento';
   public submit = false;
@@ -124,6 +125,11 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    if (!this.registerForm.value.categoriaId) {
+      this.toastr.error('É necessário selecionar a categoria de inscrição.', 'Atenção: ');
+      return;
+    }
+
 
 
     if (this.registerForm.value.emailConfirm != this.registerForm.value.email) {
@@ -136,11 +142,23 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    if (this.registerForm.value.categoriaId == 1 || this.registerForm.value.categoriaId == 2) {
+      if (!this.files) {
+        this.toastr.error('É necessário selecionar o comprovante de categoria', 'Atenção');
+        return;
+        // tslint:disable-next-line: align
+      } if (this.files[0].size > 2500 * 1027) {
+        this.toastr.error('O comprovante de categoria deve ter no máximo 2MB', 'Atenção');
+        return;
+      }
+    }
+
 
     if (this.registerForm.valid && form != null) {
 
       this.carregando = true;
-      this.authService.createUser(form)
+
+      this.authService.createUser(form, this.files ? this.files[0] : null)
         .subscribe((res: any) => {
           this.carregando = false;
           this.authService.setUser(this.authService.getDecodedAccessToken(res.token), res.token);
@@ -220,5 +238,18 @@ export class RegisterComponent implements OnInit {
 
   get institution() {
     return this.registerForm.get('institution')['controls'];
+  }
+
+  public showUpload() {
+    return this.registerForm.value.categoriaId == 1 || this.registerForm.value.categoriaId == 2
+  }
+
+  public getFileName(): string {
+    const fileName = this.files ? this.files[0].name : 'Comprovante da Categoria';
+    return fileName;
+  }
+
+  public setFileName(files: FileList): void {
+    this.files = files;
   }
 }

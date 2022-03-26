@@ -165,11 +165,26 @@
                         </div>
                     </div>
 
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group col-md-12">
+
+                        <div *ngIf="showUpload()" class="custom-file col-md-4">
+                            <input type="file" class="custom-file-input" data-max-size="2048" id="customPreReadFile"
+                                (change)="setFileName($event.target.files)" #fileInput />
+                            <label class="custom-file-label" for="customPreReadFile">{{ getFileName() }}</label>
+                        </div>
+
+
+
+                    </div>
 
 
 
                 </div>
-
 
 
 
@@ -302,7 +317,10 @@
                         </label>
                     </div>
                 </div>
-                <div class="text-center pt-5"><button type="submit">Enviar</button></div>
+                <div *ngIf="!carregando" class="text-center pt-5"><button type="submit">Enviar</button></div>
+                <div *ngIf="carregando" class="text-center pt-5"><button><i
+                            class="fas fa-spinner fa-pulse"></i>Aguarde...</button></div>
+
             </form>
         </div>
 
