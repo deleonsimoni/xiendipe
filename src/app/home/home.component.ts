@@ -345,7 +345,7 @@ export class HomeComponent implements OnInit {
         'Valéria Peres Asnis - UFU',
         'Priscila Alvarenga Cardoso - UFU',
         'Lázara Cristina Silva - UFU',
-        'Márcia Moreira Custódio - IFTM'
+        'Maria Marta Lopes Flores - UFCAT'
 
       ],
       coordenacaogeral: ` Dulcéria Tartuci - UFCAT`
@@ -362,7 +362,6 @@ export class HomeComponent implements OnInit {
       formadores de professores. Assessoria Pedagógica na Universidade.`,
       coordenacao: [
 
-        'Orlando Fernández Aquino - UNIUBE',
         'Vânia Maria Vieira - UNIUBE',
         'Maria de Lourdes Ribeiro Gaspar - IFTM',
         'Talamira Taíta Rodrigues de Brito - UESB'
