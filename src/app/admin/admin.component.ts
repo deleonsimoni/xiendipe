@@ -48,7 +48,8 @@ export class AdminComponent implements OnInit {
   ];
 
   private coordinatorRoutes = [
-    { name: 'TRABALHOS/PARECERISTAS', path: '/admin/vincular-trabalho' }
+    { name: 'TRABALHOS E PARECERISTAS', path: '/admin/vincular-trabalho' },
+    { name: 'CADASTRAR PARECERISTAS', path: '/admin/coordenadores' },
   ];
 
   private editorRoutes = [
