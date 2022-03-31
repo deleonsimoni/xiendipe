@@ -32,6 +32,17 @@
                     </section>
                 </section>
             </div>
+            <div *ngIf="!user.icAdmin" class="col-sm-2 border-right">
+                <section class="example-section">
+                    <small>COORDENADOR</small>
+                    <section *ngIf="coordinator.reviewer.icCoordinator" class="example-section">
+                        Sim
+                    </section>
+                    <section *ngIf="!coordinator.reviewer.icCoordinator" class="example-section">
+                        Não
+                    </section>
+                </section>
+            </div>
             <div class="col-sm-4 border-right">
                 <small>NOME</small>
                 <h4>{{ coordinator.fullname }}</h4>
@@ -40,7 +51,8 @@
                 <small>EMAIL</small>
                 <h4>{{ coordinator.email }}</h4>
             </div>
-            <div *ngIf="!coordinator.reviewer.icCoordinator" class="col-sm-1 text-center align-self-center pointer">
+            <div *ngIf="!coordinator.reviewer.icCoordinator || user.icAdmin"
+                class="col-sm-1 text-center align-self-center pointer">
                 <i class="fa fa-trash" (click)="removeCoordinator(coordinator._id)"></i>
             </div>
         </div>
