@@ -76,7 +76,7 @@ export class SubscribedComponent implements OnInit {
       if (documentSearch.length < 4) {
         this.toastr.warning('Digite mais caracteres para efetuar a busca', 'Atenção');
       } else {
-        this.search = { 'document': { $regex: documentSearch, $options: 'i' } };
+        this.search = { 'document': { $regex: documentSearch + '$' } };
       }
 
     } else if (this.textSearch) {
