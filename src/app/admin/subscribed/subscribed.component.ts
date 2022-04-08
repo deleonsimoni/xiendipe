@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { saveAs } from 'file-saver'
 import { PageEvent } from '@angular/material';
 import { CategoryPaymentPipe } from 'src/app/pipes/category-payment.pipe';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -37,7 +38,8 @@ export class SubscribedComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private downloadService: DownloadFileService,
-    private adminService: AdminService
+    private adminService: AdminService,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit() {
@@ -70,8 +72,12 @@ export class SubscribedComponent implements OnInit {
     let user: any = {};
 
     if (this.textSearch && !this.textSearch.includes("@")) {
-
-      this.search = { 'document': this.textSearch.replace(/[\W_]+/g, '') };
+      let documentSearch = this.textSearch.replace(/[\W_]+/g, '');
+      if (documentSearch.length < 4) {
+        this.toastr.warning('Digite mais caracteres para efetuar a busca', 'Atenção');
+      } else {
+        this.search = { 'document': { $regex: documentSearch, $options: 'i' } };
+      }
 
     } else if (this.textSearch) {
       this.search = { 'email': this.textSearch.trim() };
