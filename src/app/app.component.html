@@ -86,8 +86,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" [routerLink]="['/home']" alt="Informações Gerais"
                     fragment="contact">Informações Gerais</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" [routerLink]="['/home']" alt="Valores" fragment="valores">Valores</a>
+
                 </div>
               </li>
 
@@ -212,10 +211,15 @@
                 Tema</a></li>
             <li><a tabindex="0" [routerLink]="['/home']" fragment="clients" (click)="sidenav.toggle()">Apresentação</a>
             </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="objetivos" (click)="sidenav.toggle()">Objetivos</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="publico" (click)="sidenav.toggle()">Público
+                Alvo</a></li>
             <li><a tabindex="0" [routerLink]="['/home']" fragment="services" (click)="sidenav.toggle()">Eixos</a></li>
             <li><a tabindex="0" [routerLink]="['/home']" fragment="historico" (click)="sidenav.toggle()">Endipes
                 Anteriores</a>
             </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="valores" (click)="sidenav.toggle()">Valores</a></li>
           </ul>
         </accordion-group>
 
