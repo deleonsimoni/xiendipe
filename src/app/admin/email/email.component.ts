@@ -19,8 +19,9 @@ export class EmailComponent implements OnInit {
   public groups = [
     { id: 1, name: "Secretaria" },
     { id: 2, name: "Todos participantes com inscrição paga" },
-    { id: 3, name: "Todos autores de trabalho aceitos" },
-    { id: 4, name: "Todos inscritos em minicurso" },
+    /*{ id: 3, name: "Todos participantes com inscrição não paga" },*/
+    { id: 4, name: "Todos autores de trabalho aceitos" },
+    { id: 5, name: "Todos inscritos em minicurso" },
 
   ]
 

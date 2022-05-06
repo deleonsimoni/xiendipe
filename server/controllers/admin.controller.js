@@ -13,6 +13,7 @@ const emailSender = require("./email.controller");
 const EMAILS_GROUP_1 = require('../utils/emailsGroup1');
 const EMAILS_GROUP_2 = require('../utils/emailsGroup2');
 const EMAILS_GROUP_3 = require('../utils/emailsGroup3');
+const EMAILS_GROUP_4 = require('../utils/emailsGroup4');
 
 
 const paginate = require("jw-paginate");
@@ -552,7 +553,7 @@ async function sendEmail(req) {
       emailsSend = EMAILS_GROUP_3.EMAILS_GROUP_3
       break;
     case 4:
-      emailsSend = CONSTANTS.EMAILS_GROUP_1
+      emailsSend = EMAILS_GROUP_4.EMAILS_GROUP_4
       break;
     case 5:
       emailsSend = CONSTANTS.EMAILS_GROUP_1
