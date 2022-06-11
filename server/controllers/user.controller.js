@@ -518,7 +518,7 @@ async function validatePaymentUsers(users, modalityId) {
 
   if (!isUsuarioEducacaoBasica && modalityId == 5) {
     retorno.temErro = true;
-    retorno.mensagem = `Nenhum dos participantes está inscrito na modalidade de professores e demais profissionais da educação básica`
+    retorno.mensagem = `Um ou mais participantes já submeteram trabalho para essa modalidade.`
   }
 
   return retorno;
