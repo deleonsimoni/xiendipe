@@ -15,7 +15,7 @@ export class SimposioFormComponent {
 
     public form: FormGroup;
     public themes = THEME_SIMPOSIO;
-    public days = ["29/10", "30/10", "31/10", "01/11", "02/11", "03/11", "04/11", "05/11", "06/11", "07/11", "08/11", "09/11", "10/11", "11/11", "12/11"];
+    public days = ["20/11", "21/11", "22/11", "23/11", "24/11", "25/11", "26/11", "27/11"];
     constructor(
         private builder: FormBuilder
     ) {

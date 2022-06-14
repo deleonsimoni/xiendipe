@@ -490,7 +490,6 @@ async function validatePaymentUsers(users, modalityId) {
       if (userFind.modalityId && userFind.categoriaId == 2) {
         isUsuarioEducacaoBasica = true;
       }
-
       if (!userFind.payment || !userFind.payment.icPaid) {
         retorno.temErro = true;
         retorno.mensagem = `O usuário ${users[i].email} não possui pagamento válido`
@@ -516,9 +515,9 @@ async function validatePaymentUsers(users, modalityId) {
     }
   };
 
-  if (!isUsuarioEducacaoBasica && modalityId == 5) {
+  if (!isUsuarioEducacaoBasica && modalityId == 5 && !retorno.temErro) {
     retorno.temErro = true;
-    retorno.mensagem = `Um ou mais participantes já submeteram trabalho para essa modalidade.`
+    retorno.mensagem = `Nenhum dos participantes está inscrito na categoria de professores e demais profissionais da educação básica.`
   }
 
   return retorno;
