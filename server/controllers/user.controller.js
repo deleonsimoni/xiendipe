@@ -510,7 +510,9 @@ async function validatePaymentUsers(users, modalityId) {
       }
     } else {
       retorno.temErro = true;
-      retorno.mensagem = `O usuário ${users[i].email} não está inscrito no congresso`
+      /*retorno.mensagem = `O usuário ${users[i].email} não está inscrito no congresso`*/
+      retorno.mensagem = `O email ${users[i].email} não é de um usuário inscrito no congresso. Caso esteja, verifique se não há espaço em branco no final do email
+      ou algum caracter inválido.`
       break;
     }
   };
