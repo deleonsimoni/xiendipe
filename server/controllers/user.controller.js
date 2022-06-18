@@ -369,6 +369,11 @@ async function submeterTransferencia(req, res) {
 
 async function uploadWork(req, res) {
 
+  let retorno = {};
+  retorno.temErro = true;
+  retorno.mensagem = `Submissões encerradas!`
+  return retorno;
+
   let formulario = JSON.parse(req.body.formulario);
   console.log('Validando Usuarios' + JSON.stringify(formulario.authors));
 
