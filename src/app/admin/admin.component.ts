@@ -31,7 +31,7 @@ export class AdminComponent implements OnInit {
 
   private adminRoutes = [
     { name: 'INSCRITOS', path: '/admin/inscritos' },
-    { name: 'NOTICÍAS', path: '/admin/noticias' },
+    { name: 'NOTÍCIAS', path: '/admin/noticias' },
     { name: 'ANAIS', path: '/admin/anais' },
     { name: 'CONFERENCISTAS', path: '/admin/conferencistas' },
     { name: 'PARECERISTAS/COORDENADORES', path: '/admin/coordenadores' },

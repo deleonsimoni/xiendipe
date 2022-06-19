@@ -484,7 +484,7 @@ async function listVirtual() {
   //} else {
   //  virtual.abertura = [];
   //}
-  if (date == "12/11") {
+  if (date == "27/11") {
     virtual.encerramento = await encerramentoCtrl.listSchedule(date);
   }
   else {
