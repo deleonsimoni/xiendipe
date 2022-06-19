@@ -69,7 +69,7 @@ async function getUsers(req) {
 }
 
 async function getWorksPaginated(req) {
-  const pageSize = 5;
+  let pageSize = 5;
   const page = req.query.page || 1;
   let worksFound = [];
   let search = {};
@@ -77,7 +77,11 @@ async function getWorksPaginated(req) {
   if (req.query.axis != "undefined") search.axisId = req.query.axis;
 
   if (req.query.nameWork != "" && req.query.nameWork != "undefined") {
-    search.title = { $regex: ".*" + req.query.nameWork + ".*" };
+    if (req.query.nameWork == "todosTrabalhos") {
+      pageSize = 500;
+    } else {
+      search.title = { $regex: ".*" + req.query.nameWork + ".*" };
+    }
   } else {
     if (req.query.modality != "undefined" && req.query.modality != 0) search.modalityId = req.query.modality;
 
