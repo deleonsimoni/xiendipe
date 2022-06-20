@@ -44,7 +44,7 @@ export class AdminComponent implements OnInit {
   ];
 
   private nonAdminRoutes = [
-    { name: 'PARECERISTA', path: '/admin/review-list' }
+    { name: 'PARECERISTA - CLIQUE PARA VER OS TRABALHOS', path: '/admin/review-list' }
   ];
 
   private coordinatorRoutes = [

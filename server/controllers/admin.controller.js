@@ -72,6 +72,7 @@ async function getWorksPaginated(req) {
   let pageSize = 5;
   const page = req.query.page || 1;
   let worksFound = [];
+
   let search = {};
 
   if (req.query.axis != "undefined") search.axisId = req.query.axis;
