@@ -25,6 +25,27 @@
       <small>TÍTULO</small>
       <h4>{{ work.title }}</h4>
     </div>
+
+
+    <div class="col-md-2">
+      <button *ngIf="(work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso?.icAllow == 'Nao') || (
+          work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso == $exists)" type="button"
+        style="background-color:white; color: #a71212;" class="btn btn-primary float-left">
+        <i class="fa fa-thumbs-o-down"> Parecer Negativo</i>
+      </button>
+
+      <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso?.icAllow == 'Sim'" type="button"
+        style="background-color:white; color: #1cb616;" class="btn btn-primary float-left">
+        <i class="fa fa-thumbs-o-up"> Parecer Positivo</i>
+      </button>
+
+      <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Sim'" type="button"
+        style="background-color:white; color: #1cb616;" class="btn btn-primary float-right">
+        <i class="fa fa-thumbs-o-up"> Parecer Positivo</i>
+      </button>
+
+    </div>
+
   </div>
 
   <div class="row">

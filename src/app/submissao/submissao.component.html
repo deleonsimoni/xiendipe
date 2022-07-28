@@ -11,7 +11,7 @@
               encType="multipart/form-data">
               <!--<form role="form" class="contactForm" encType="multipart/form-data">-->
               <div class="section-header">
-                <h2>Submissões Encerradas</h2>
+                <h2>Resultado</h2>
               </div>
 
               <!--
@@ -32,7 +32,6 @@
                 <work-card [work]="work" [user]="user" [reviewers]="reviewers"
                   (selected)="receiverSelectedWork($event)">
                 </work-card>
-
                 <app-work-data [work]="work" [user]="user" *ngIf="work && work._id == workSelect"> </app-work-data>
               </div>
 
