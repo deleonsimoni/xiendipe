@@ -29,7 +29,7 @@
 
     <div class="col-md-2">
       <button *ngIf="(work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso?.icAllow == 'Nao') || (
-          work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso == $exists)" type="button"
+          work?.reviewReviewer?.review?.icAllow == 'Nao' && !work?.recurso)" type="button"
         style="background-color:white; color: #a71212;" class="btn btn-primary float-left">
         <i class="fa fa-thumbs-o-down"> Parecer Negativo</i>
       </button>
