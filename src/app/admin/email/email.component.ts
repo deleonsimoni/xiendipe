@@ -20,8 +20,8 @@ export class EmailComponent implements OnInit {
     { id: 1, name: "Secretaria" },
     { id: 2, name: "Todos participantes com inscrição paga" },
     /*{ id: 3, name: "Todos participantes com inscrição não paga" },*/
-    { id: 4, name: "Todos autores de trabalho aceitos" },
-    { id: 5, name: "Todos inscritos em minicurso" },
+    { id: 4, name: "Todos autores que submeteram trabalho" },
+    /*  { id: 5, name: "Todos inscritos em minicurso" },*/
 
   ]
 
