@@ -106,8 +106,7 @@
     </div>-->
     <hr />
 
-    <div *ngIf="work.reviewReviewer && (user.icAdmin || user?.reviewer?.icCoordinator)"
-      class="row align-items-center mb-2">
+    <div *ngIf="work.reviewReviewer" class="row align-items-center mb-2">
       <hr />
       <div class="col-md-12">
 
@@ -345,17 +344,17 @@
       </div>
     </div>-->
 
-    <div class="row">
-      <div class="col-md-12">
-        <!-- <button *ngIf="user.icAdmin" class="add" (click)="addReviewer(work)">
+    <!-- <div class="row">
+      <div class="col-md-12">-->
+    <!-- <button *ngIf="user.icAdmin" class="add" (click)="addReviewer(work)">
           <i class="fas fa-plus"></i>
           Parecer Admin
         </button>-->
-        <button *ngIf="user?.reviewer?.icCoordinator" class="add" (click)="addReviewerCoordinator(work)">
+    <!--    <button *ngIf="user?.reviewer?.icCoordinator" class="add" (click)="addReviewerCoordinator(work)">
           <i class="fas fa-check"></i>
           Parecer
         </button>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
