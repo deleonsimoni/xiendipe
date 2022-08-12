@@ -199,12 +199,6 @@ export class CertificadoComponent implements OnInit {
         (complementoDois || "_______ ") +
         " horas";
       this.exibirGT = true;
-    } else if (templateSelecionado.target.value == "MEDIAÇÃO DE RODA DE CONVERSA") {
-      this.coringa = " fez a mediação da Roda de Conversa " + (complementoUm || "______________");
-      this.exibirGT = true;
-    } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE RODA DE CONVERSA") {
-      this.coringa = " participou da Roda de Conversa " + complementoUm || "______________" + " ";
-      this.exibirGT = true;
     } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE PAINEL") {
       this.coringa = " participou do Painel " + complementoUm || "______________" + " ";
       this.exibirGT = true;
@@ -223,113 +217,100 @@ export class CertificadoComponent implements OnInit {
     {
       name: "ATIVIDADE CULTURAL",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
     {
       name: "COMITÊ CIENTÍFICO",
       value:
-        "fez parte do Comitê Científico do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "fez parte do Comitê Científico do XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
     {
       name: "COMITÊ ORGANIZADOR",
       value:
-        "participou do Comitê Organizador do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "participou do Comitê Organizador no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
     {
       name: "COORDENAÇÃO DE ATIVIDADE",
       value:
-        "do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "do XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "COORDENAÇÃO GERAL",
       value:
-        "coordenou o XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "coordenou o XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "GT",
       value:
-        "do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "MEDIAÇÃO DE MINICURSO",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
     {
       name: "MEDIAÇÃO DE PAINEL",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
-    },
-
-
-    {
-      name: "MEDIAÇÃO DE RODA DE CONVERSA",
-      value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "MONITORIA",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
 
     {
       name: "PARECERISTA",
       value:
-        "participou na condição de parecerista do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "participou na condição de parecerista no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "PARTICIPAÇÃO DE MINICURSO",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
     {
       name: "PARTICIPAÇÃO DE PAINEL",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
-    },
-
-    {
-      name: "PARTICIPAÇÃO DE RODA DE CONVERSA",
-      value:
-        " com carga horária de 02 horas no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "PARTICIPAÇÃO GERAL",
       value:
-        "participou do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "participou do XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "PÔSTER",
       value:
-        "na modalidade Pôster, durante o XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "na modalidade Pôster, durante o XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "PRESTAÇÃO DE SERVIÇO",
       value:
-        "para fins de realização do XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "para fins de realização do XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
 
     {
       name: "SESSÃO ESPECIAL",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020, com carga horária total de 180 horas.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
       name: "SIMPOSIO",
       value:
-        "no XX Encontro Nacional de Didática e Prática de Ensino – XX ENDIPE – RIO 2020 – uma promoção interinstitucional coordenada pela Universidade Federal do Rio de Janeiro e pela Universidade Federal do Estado do Rio de Janeiro, no período de 29 de outubro a 12 de novembro de 2020.",
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
   ];
 }
