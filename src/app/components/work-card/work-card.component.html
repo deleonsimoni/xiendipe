@@ -28,20 +28,35 @@
 
 
     <div class="col-md-2">
-      <button *ngIf="(work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso?.icAllow == 'Nao') || (
-          work?.reviewReviewer?.review?.icAllow == 'Nao' && !work?.recurso)" type="button"
+      <!--&& work?.recurso?.icAllow == 'Nao'-->
+      <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Nao' && !work?.recurso" type="button"
         style="background-color:white; color: #a71212;" class="btn btn-primary float-left">
         <i class="fa fa-thumbs-o-down"> Parecer Negativo</i>
       </button>
-
+      <!--
       <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Nao' && work?.recurso?.icAllow == 'Sim'" type="button"
         style="background-color:white; color: #1cb616;" class="btn btn-primary float-left">
         <i class="fa fa-thumbs-o-up"> Parecer Positivo</i>
-      </button>
+      </button>-->
 
-      <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Sim'" type="button"
+      <button *ngIf="work?.reviewReviewer?.review?.icAllow == 'Sim' && !work?.recurso" type="button"
         style="background-color:white; color: #1cb616;" class="btn btn-primary float-right">
         <i class="fa fa-thumbs-o-up"> Parecer Positivo</i>
+      </button>
+
+      <button *ngIf="!work?.recurso?.icAllow && work?.recurso?.justify" type="button"
+        style="background-color:white; color: #e12222;" class="btn btn-primary float-left">
+        <i class="fa fa-exclamation"> Recurso Solicitado</i>
+      </button>
+
+      <button *ngIf="work?.recurso?.icAllow == 'Nao'" type="button" style="background-color:white; color: #a71212;"
+        class="btn btn-primary float-left">
+        <i class="fa fa-thumbs-o-down"> Recurso Recusado</i>
+      </button>
+
+      <button *ngIf="work?.recurso?.icAllow == 'Sim'" type="button" style="background-color:white; color: #1cb616;"
+        class="btn btn-primary float-left">
+        <i class="fa fa-thumbs-o-up"> Recurso Aceito</i>
       </button>
 
     </div>

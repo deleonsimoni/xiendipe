@@ -167,7 +167,7 @@
     <!-- RECURSOS COLOCAR FALSE ATE A DATA D ELIBERACAO-->
 
     <div
-      *ngIf="false && work.reviewReviewer && work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
+      *ngIf="work.reviewReviewer && work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color:red;">Entrar com recurso</h3>
@@ -206,9 +206,8 @@
       </div>
     </div>
 
-    <div
-      *ngIf="false && work.reviewReviewer && work?.recurso?.justify && !user.icAdmin && !user?.reviewer?.icCoordinator"
-      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
+    <div *ngIf="work.reviewReviewer && work?.recurso?.justify && !user.icAdmin" class="row align-items-center mb-2"
+      style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
 
@@ -245,7 +244,8 @@
 
 
 
-    <div *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator)"
+    <div
+      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator) && user?.reviewer?.icModalityId == work.axisId"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
