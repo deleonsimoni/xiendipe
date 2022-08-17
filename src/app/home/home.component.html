@@ -2,42 +2,18 @@
 <!--==========================
     Intro Section
   ============================-->
-<section id="intro">
 
-  <div alt="Logo do evento" title="Logo do evento" class="intro-content">
-    <!--<h2>XX Endipe <span>|</span> Rio 2020</h2>
-         <div>
-            <a class="btn-get-started scrollto" style="cursor: pointer" [routerLink]="['/home']"
-                fragment="pricing">Inscreva-se</a>
-             href="#about" 
-             <a href="#portfolio" class="btn-projects scrollto">Our Projects</a> 
-        </div>-->
-  </div>
-
-</section><!-- #intro -->
 
 <main id="main">
 
-  <ngb-carousel>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="assets/img-01.jpeg" alt="Angular Carousel 1">
-      </div>
+  <carousel [itemsPerSlide]="itemsPerSlide" [noWrap]="noWrap" [interval]="38000" [startFromIndex]="0"
+    [isAnimated]="true">
+    <slide *ngFor="let slide of slides; let index=index">
+      <img [src]="slide.image" class="img-fluid">
       <div class="carousel-caption">
-        <h3>Title Goes Here</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <div class="picsum-img-wrapper">
-        <img src="assets/img-02.jpeg" alt="Angular Carousel 2">
-      </div>
-      <div class="carousel-caption">
-        <h3>Title Goes Here</h3>
-        <p>Consectetur tortor volutpat pretium.</p>
-      </div>
-    </ng-template>
-  </ngb-carousel>
+    </slide>
+  </carousel>
 
   <section id="esquenta" class="wow fadeInUp mt-4">
     <div class="container">
@@ -54,7 +30,8 @@
         <p style="text-align: justify; font-weight: bold;">
           Quando: 25 de Agosto de 2022<br />
           Horário: 17 horas<br />
-          Onde: Aqui no site ou pelo canal do Youtube Link: https://www.youtube.com/watch?v=Q8V4ve_keqg<br />
+          Onde: Aqui no site ou pelo canal do Youtube Link: <a target="_blank"
+            href="https://www.youtube.com/watch?v=Q8V4ve_keqg">https://www.youtube.com/watch?v=Q8V4ve_keqg</a><br />
           Professoras mediadoras: Cristina D`Avila (UFUBA) e Selma Pimenta (USP/Unisantos).
         </p>
         <br />
@@ -70,7 +47,8 @@
           sobre
           nossos encontros!
           <br />
-          Instagram/Facebook/Twitter/Youtube (@endipe2022)
+          Instagram/Facebook/Twitter/Youtube (<a target="_blank"
+            href="https://www.instagram.com/endipe2022/">@endipe2022</a>)
           <br />
           #endipe2022 #encontronacional #didática #uberlândia #XXIendipe
         </p>
