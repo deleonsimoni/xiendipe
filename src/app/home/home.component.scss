@@ -819,3 +819,28 @@ ngb-carousel {
 .carousel-indicators {
   z-index: 20;
 }
+
+.carousel-control span {
+  font-size: 80px;
+  color: #c8ff00;
+  display: block;
+  width: 50px;
+  height: 50px;
+  //background: #eabc4c;
+  top: 46%;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.carousel-control span:before {
+  display: block;
+  line-height: 0.45;
+}
+
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin: 1px;
+}

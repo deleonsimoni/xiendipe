@@ -6,13 +6,13 @@
 
 <main id="main">
 
-  <carousel [itemsPerSlide]="itemsPerSlide" [noWrap]="noWrap" [interval]="38000" [startFromIndex]="0"
-    [isAnimated]="true">
+  <carousel [noWrap]="noWrap" [interval]="38000" [showIndicators]="false" [startFromIndex]="0" [isAnimated]="true">
     <slide *ngFor="let slide of slides; let index=index">
       <img [src]="slide.image" class="img-fluid">
       <div class="carousel-caption">
       </div>
     </slide>
+
   </carousel>
 
   <section id="esquenta" class="wow fadeInUp mt-4">
