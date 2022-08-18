@@ -134,7 +134,7 @@ export class SubmissaoComponent implements OnInit {
 
   }
 
-  public upload() {
+  /*public upload() {
 
     const usuarioLogado = this.authService.getUserLogado();
 
@@ -150,67 +150,71 @@ export class SubmissaoComponent implements OnInit {
       //fileInput.value = '';
       return;
       // tslint:disable-next-line: align
-    } /*if (this.filesDOC[0].type.indexOf('doc') === -1
+    } 
+    
+    /*if (this.filesDOC[0].type.indexOf('doc') === -1
       && this.filesDOC[0].type.indexOf('docx') === -1
       && this.filesDOC[0].type.indexOf('msword') === -1) {
       this.toastr.error('O arquivo Upload DOC precisa ser um DOC.', 'Atenção');
       return;
       // tslint:disable-next-line: align
-    }*/ if (this.filesPDF[0].size > 2500 * 1027) {
-      this.toastr.error('O arquivo PDF deve possuir no máximo 2MB', 'Atenção');
-      return;
-    } if (this.filesDOC[0].size > 2500 * 1027) {
-      // tslint:disable-next-line: align
-      this.toastr.error('O arquivo DOC deve possuir no máximo 2MB', 'Atenção');
-      return;
-      // tslint:disable-next-line: align
-    } if (!this.submissionForm.value.axisId) {
-      this.toastr.error('Selecione um eixo.', 'Atenção');
-      return;
-    } if (!this.submissionForm.value.modalityId) {
-      // tslint:disable-next-line: align
-      this.toastr.error('Selecione uma modalidade.', 'Atenção');
-      return;
-    } if (!this.submissionForm.value.title) {
-      // tslint:disable-next-line: align
-      this.toastr.error('Selecione o titulo do trabalho.', 'Atenção');
-      return;
-    } if (this.submissionForm.value.authors && !this.submissionForm.value.authors[0].email) {
-      // tslint:disable-next-line: align
-      this.toastr.error('Indique ao menos um autor do trabalho.', 'Atenção');
-      return;
-    } else {
-      this.enviando = true;
+    }*/
 
-      this.submissionForm.value.usuarioPrincipal = usuarioLogado.email;
-      this.submissionForm.value.arquivoPDF = this.filesPDF[0];
-      this.uploadService.uploadFile(this.filesDOC[0], this.filesPDF[0], 'trabalhos', this.user.document, this.submissionForm.value)
-        .subscribe(res => {
-          this.carregando = false;
-          this.enviando = false;
+  /*if (this.filesPDF[0].size > 2500 * 1027) {
+    this.toastr.error('O arquivo PDF deve possuir no máximo 2MB', 'Atenção');
+    return;
+  } if (this.filesDOC[0].size > 2500 * 1027) {
+    // tslint:disable-next-line: align
+    this.toastr.error('O arquivo DOC deve possuir no máximo 2MB', 'Atenção');
+    return;
+    // tslint:disable-next-line: align
+  } if (!this.submissionForm.value.axisId) {
+    this.toastr.error('Selecione um eixo.', 'Atenção');
+    return;
+  } if (!this.submissionForm.value.modalityId) {
+    // tslint:disable-next-line: align
+    this.toastr.error('Selecione uma modalidade.', 'Atenção');
+    return;
+  } if (!this.submissionForm.value.title) {
+    // tslint:disable-next-line: align
+    this.toastr.error('Selecione o titulo do trabalho.', 'Atenção');
+    return;
+  } if (this.submissionForm.value.authors && !this.submissionForm.value.authors[0].email) {
+    // tslint:disable-next-line: align
+    this.toastr.error('Indique ao menos um autor do trabalho.', 'Atenção');
+    return;
+  } else {
+    this.enviando = true;
 
-          if (res && res.temErro) {
-            this.toastr.error(res.mensagem, 'Erro: ');
-          } else {
-            this.carregando = true;
-            this.authService.refresh().subscribe((res: any) => {
-              this.user = res.user;
-              this.carregando = false;
-            });
+    this.submissionForm.value.usuarioPrincipal = usuarioLogado.email;
+    this.submissionForm.value.arquivoPDF = this.filesPDF[0];
+    this.uploadService.uploadFile(this.filesDOC[0], this.filesPDF[0], 'trabalhos', this.user.document, this.submissionForm.value)
+      .subscribe(res => {
+        this.carregando = false;
+        this.enviando = false;
 
-            this.toastr.success('Trabalho submetido com sucesso.', 'Sucesso');
-            this.submissionForm.reset();
-            this.filesDOC = null;
-            this.filesPDF = null;
-          }
-        }, err => {
-          this.enviando = false;
-          this.toastr.error('Servidor momentaneamente inoperante.', 'Erro: ');
-        });
+        if (res && res.temErro) {
+          this.toastr.error(res.mensagem, 'Erro: ');
+        } else {
+          this.carregando = true;
+          this.authService.refresh().subscribe((res: any) => {
+            this.user = res.user;
+            this.carregando = false;
+          });
+
+          this.toastr.success('Trabalho submetido com sucesso.', 'Sucesso');
+          this.submissionForm.reset();
+          this.filesDOC = null;
+          this.filesPDF = null;
+        }
+      }, err => {
+        this.enviando = false;
+        this.toastr.error('Servidor momentaneamente inoperante.', 'Erro: ');
+      });
 
 
-    }
   }
+}*/
 
 
   public uploadAdmin() {

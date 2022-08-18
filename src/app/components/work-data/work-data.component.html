@@ -206,7 +206,7 @@
       </div>
     </div>
 
-    <div *ngIf="work.reviewReviewer && work?.recurso?.justify && !user.icAdmin" class="row align-items-center mb-2"
+    <div *ngIf="work.reviewReviewer && work?.recurso?.justify && user.icAdmin" class="row align-items-center mb-2"
       style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
@@ -245,7 +245,7 @@
 
 
     <div
-      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator) && user?.reviewer?.icModalityId == work.axisId"
+      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator) && (user?.reviewer?.icModalityId == work.axisId)"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
