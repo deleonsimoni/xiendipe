@@ -40,6 +40,14 @@ export class HomeComponent implements OnInit {
   noticias = [];
   anais = [];
 
+  slides = [
+    { image: '../../assets/img/banner.png', text: 'First' },
+    { image: '../../assets/img/banner.png', text: 'Second' },
+    { image: '../../assets/img/banner.png', text: 'Third' }
+  ];
+  noWrapSlides = false;
+  showIndicator = true;
+
   configuracaoCarrossel = {
     nav: true,
     slideBy: 2,

@@ -756,3 +756,91 @@
 #noticias a {
   color: #0c2d89;
 }
+
+.aoVivo {
+  font: bold 18px Helvetica;
+  color: #ffffff !important;
+  text-decoration: none;
+  background-color: rgb(252, 25, 42);
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  margin: 10px 0px 0px 0px;
+}
+
+.pulse {
+  animation: pulse 0.7s infinite;
+  display: table;
+  animation-direction: alternate;
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+ngb-carousel {
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+ngb-carousel img {
+  width: 100%;
+  outline: none;
+}
+
+ngb-carousel {
+  width: inherit;
+  height: inherit;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+
+.carousel-item {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease-in-out, visibility 1.2s;
+  z-index: -1;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.carousel-control-prev {
+  z-index: 20;
+}
+
+.carousel-control-next {
+  z-index: 20;
+}
+
+.carousel-indicators {
+  z-index: 20;
+}
+
+.carousel-control span {
+  font-size: 80px;
+  color: #c8ff00;
+  display: block;
+  width: 50px;
+  height: 50px;
+  //background: #eabc4c;
+  top: 46%;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.carousel-control span:before {
+  display: block;
+  line-height: 0.45;
+}
+
+.carousel-indicators li {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin: 1px;
+}
