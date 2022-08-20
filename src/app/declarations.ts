@@ -40,7 +40,7 @@ export const SCHEDULE_TYPE = [
   { id: 4, name: "Minicurso" },
   { id: 5, name: "Painel" },
   { id: 3, name: "Pôster" },
-  { id: 11, name: "Conexão Entrevista" },
+  /* { id: 11, name: "Conexão Entrevista" },*/
   { id: 10, name: "Sessões Especiais" },
   { id: 8, name: "Simpósio" },
 ];

@@ -33,10 +33,10 @@ export class ProgramacaoAbertaComponent implements OnInit {
       name: 'Atividade Cultural',
       type: 7
     },
-    {
-      name: 'Conexão Entrevista',
-      type: 11
-    },
+    /*  {
+        name: 'Conexão Entrevista',
+        type: 11
+      },*/
     {
       name: 'Encerramento',
       type: 12

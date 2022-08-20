@@ -14,6 +14,7 @@ const EMAILS_GROUP_1 = require('../utils/emailsGroup1');
 const EMAILS_GROUP_2 = require('../utils/emailsGroup2');
 const EMAILS_GROUP_3 = require('../utils/emailsGroup3');
 const EMAILS_GROUP_4 = require('../utils/emailsGroup4');
+const EMAILS_GROUP_7 = require('../utils/emailsGroup7');
 
 
 const paginate = require("jw-paginate");
@@ -538,6 +539,27 @@ async function insertAuthorWork(req) {
   );
 }
 
+
+async function getUserEmail() {
+
+  return await User.find()
+
+    .select(
+      "-_id email"
+
+    )
+    .sort({
+      createdAt: -1,
+    })
+    .distinct("email")
+    ;
+
+
+}
+
+
+
+
 async function sendEmail(req) {
 
   let emailsSend;
@@ -545,7 +567,7 @@ async function sendEmail(req) {
 
   let formulario = JSON.parse(req.body.formulario);
 
-  console.log(`########## ENVIANDO EMAILS PARA GRUPO ${req.body.formulario.groupId} ##########`);
+  console.log(`########## ENVIANDO EMAILS PARA GRUPO ${formulario.groupId} ##########`);
 
   switch (Number(formulario.groupId)) {
     case 1:
@@ -563,8 +585,28 @@ async function sendEmail(req) {
     case 5:
       emailsSend = CONSTANTS.EMAILS_GROUP_1
       break;
+    case 6:
+      let emailsSendGet = await getUserEmail();
+      emailsSend = [];
+      for (var key in emailsSendGet) {
+        emailsSend.push(emailsSendGet[key]);
+        // key.toString().replace('email:', '');
+
+        // emailsSend = emailsSendGet.toString().replace(' { email: ', '');
+        // console.log(emailsSend);
+      }
+
+      break;
+    case 7:
+      emailsSend = EMAILS_GROUP_7.EMAILS_GROUP_7
+      break;
 
   }
+
+  // emailsSend.push('tatiana_sodre@yahoo.com.br,');
+
+  //console.log(emailsSend);
+  //return;
 
   if (req.files) {
     attachment = {};
@@ -589,7 +631,7 @@ async function sendEmail(req) {
           formulario.description,
           attachment
         );
-
+        console.log(emailsSend);
       }
 
     } else {

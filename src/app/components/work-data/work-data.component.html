@@ -168,15 +168,15 @@
 
     <div
       *ngIf="work.reviewReviewer && work.reviewReviewer.review.icAllow == 'Nao' && !user.icAdmin && !user?.reviewer?.icCoordinator && !work.recurso?.justify"
-      class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
+      class="row align-items-center mb-2">
       <div class="col-md-12">
-        <h3 style="color:red;">Entrar com recurso</h3>
+        <!--<h3 style="color:red;">Entrar com recurso</h3>-->
 
         <div>
 
           <div class="form-row justify-content-center">
             <div class="form-group col-md-12">
-              <label id="example-radio-group-label">Justificativa</label>
+              <!--<label id="example-radio-group-label">Justificativa</label>
 
               <textarea *ngIf="!work.recurso?.icAllow" maxlength="2000" class="form-control" rows="5"
                 [(ngModel)]="justificativaRecurso">
@@ -184,7 +184,7 @@
               <span *ngIf="work.recurso?.icAllow">
                 <hr />
                 {{work.recurso?.justify}}
-              </span>
+              </span>-->
 
               <div *ngIf="work.recurso?.icAllow == 'Sim'" class="row justify-content-end">
                 <b style="color: green">Recurso aceito</b>
@@ -194,9 +194,9 @@
                 <b style="color: red">Recurso recusado</b>
               </div>
 
-              <div *ngIf="!work.recurso?.icAllow" class="row justify-content-end">
+              <!--  <div *ngIf="!work.recurso?.icAllow" class="row justify-content-end">
                 <button class="btn-get-started" (click)="aplicarRecurso()">Enviar Recurso</button>
-              </div>
+              </div>-->
 
             </div>
           </div>
@@ -206,7 +206,7 @@
       </div>
     </div>
 
-    <div *ngIf="work.reviewReviewer && work?.recurso?.justify && user.icAdmin" class="row align-items-center mb-2"
+    <div *ngIf="work.reviewReviewer && work?.recurso?.justify" class="row align-items-center mb-2"
       style="border: crimson; margin: 1px; border-style: dotted;">
       <div class="col-md-12">
         <h3 style="color: red;">Recurso</h3>
@@ -245,7 +245,7 @@
 
 
     <div
-      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator) && (user?.reviewer?.icModalityId == work.axisId)"
+      *ngIf="work.recurso?.justify && (user.icAdmin || user?.reviewer?.icCoordinator) && (user?.reviewer?.icModalityId == work.axisId) && !work.recurso?.icAllow"
       class="row align-items-center mb-2" style="border: crimson; margin: 1px; border-style: dotted;">
       <hr />
       <div class="col-md-12">
