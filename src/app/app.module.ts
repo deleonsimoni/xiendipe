@@ -66,6 +66,7 @@ import { getPtBRPaginatorINTL } from './ptBR-paginator-intl';
 import { ModalBemVindoComponent } from './modal-bem-vindo/modal-bem-vindo.component';
 import { AnaisVirtualComponent } from './endipe-virtual/anais-virtual/anais-virtual.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ModalTermoComponent } from './modal-normas/modal-termo.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
         ModalNormasRodaConversaComponent,
         ModalNormasPainelComponent,
         ModalNormasPosterComponent,
+        ModalTermoComponent,
         ModalApoiadoresComponent,
         RegisterComponent,
         LoginComponent,
