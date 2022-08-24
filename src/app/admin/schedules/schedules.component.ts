@@ -15,7 +15,7 @@ import { Router } from "@angular/router";
 export class SchedulesComponent implements OnInit {
   public schedules$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
   public programacoes = SCHEDULE_TYPE;
-  public days = ["20/11", "21/11", "22/11", "23/11", "24/11", "24/11", "24/11", "27/11"];
+  public days = ["20/11", "21/11", "22/11", "23/11", "24/11", "25/11", "26/11", "27/11"];
   public daySelected$: BehaviorSubject<string> = new BehaviorSubject<string>("20/11");
   public label = "Abertura";
   public typeId: any;
