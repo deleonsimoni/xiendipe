@@ -32,7 +32,7 @@
                             </ng-container>
                         </div>-->
 
-                        <div *ngIf="!carregando && user?.payment?.icPaid && type != '3'">
+                        <div *ngIf="!carregando && user?.payment?.icPaid">
                             <ng-container
                                 *ngIf="!isSubscribe(schedule) && schedule.qtdSubscribers - (schedule.subscribers ? schedule.subscribers.length : 0) > 0">
                                 <h4 class="mb-4"><button (click)="signUp(type, schedule)"
@@ -68,19 +68,19 @@
 
             <div class="work-content">
                 <div *ngIf="schedule._id == scheduleSelect">
-                    <div *ngIf="type != '3'" class="row align-items-center">
-                        <div class="col-12">
-                            <strong>Autores</strong>
-                            <p *ngFor="let item of schedule.authors"
-                                style="text-align: justify; text-justify: inter-word;">{{ item }}</p>
-                        </div>
-                        <div class="col-12">
-                            <strong>Resumo</strong>
-                            <p style="text-align: justify; text-justify: inter-word;">{{ schedule.resumePropose }}</p>
-                        </div>
+                    <!-- <div *ngIf="type != '3'" class="row align-items-center">-->
+                    <div class="col-12">
+                        <strong>Autores</strong>
+                        <p *ngFor="let item of schedule.authors" style="text-align: justify; text-justify: inter-word;">
+                            {{ item }}</p>
                     </div>
+                    <div class="col-12">
+                        <strong>Resumo</strong>
+                        <p style="text-align: justify; text-justify: inter-word;">{{ schedule.resumePropose }}</p>
+                    </div>
+                    <!-- </div>-->
 
-                    <div *ngIf="type == '3'" class="row align-items-center">
+                    <!--<div *ngIf="type == '3'" class="row align-items-center">
                         <div class="col-12">
                             <div *ngFor="let item of schedule.worksPoster"
                                 style="text-align: justify; text-justify: inter-word;">
@@ -105,7 +105,7 @@
                                 <br />
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
 
@@ -113,7 +113,82 @@
         </div>
 
         <!-- TRABALHOS SEM INSCRICOES - ATIVIDADES ABERTAS -->
-        <div *ngIf="type == '1' || type == '7' || type == '8' || type == '10' || type == '11' || type == '12' ">
+
+        <div *ngIf="type == '3'">
+            <div class="card-works">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5 style="color: #20959b">{{type | modalities}} - {{schedule.axis | axis}}</h5>
+                        <h3 *ngIf="type != '3'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 *ngIf="type == '3'" tabindex="0" alt="Pôster"><b>Apresentação de trabalhos</b></h3>
+                        <h4 tabindex="0" *ngFor="let day of schedule.dates">{{day.date + ' ' + (day.startTime ?
+                            day.startTime : '') + ' - ' + (day.endTime ? day.endTime : '')}}</h4>
+
+
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="type == '3'" class="row align-items-center">
+                <div class="col-12">
+                    <div *ngFor="let item of schedule.worksPoster"
+                        style="text-align: justify; text-justify: inter-word;">
+                        <div class="row">
+                            <div class="col-sm-8 align-self-center">
+                                <strong>Nome do Pôster</strong>
+                                <p>{{ item.workTitle }}</p>
+                            </div>
+                            <div class="col-sm-4 align-self-center">
+                                <strong>Acesse o Conteúdo</strong>
+                                <p><a *ngIf="item.linkPPT.includes('http')" [attr.href]="item.linkPPT"
+                                        target="_blank">Clique aqui</a></p>
+                                <p><span *ngIf="!item.linkPPT.includes('http')">Banner não enviado</span></p>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="item.workAuthor">
+                            <div class="col-sm-12 align-self-center">
+                                <strong>Autores</strong>
+                                <p *ngFor="let autores of item.workAuthor">{{ autores.fullname }}</p>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="type == '5'">
+            <div class="card-works">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5 style="color: #20959b">{{type | modalities}} - {{schedule.axis | axis}}</h5>
+                        <h3 *ngIf="type != '3'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 *ngIf="type == '3'" tabindex="0" alt="Pôster"><b>Apresentação de trabalhos</b></h3>
+                        <h4 tabindex="0" *ngFor="let day of schedule.dates">{{day.date + ' ' + (day.startTime ?
+                            day.startTime : '') + ' - ' + (day.endTime ? day.endTime : '')}}</h4>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="work-content">
+                <div *ngIf="schedule._id == scheduleSelect">
+                    <div *ngIf="type == '5'" class="row align-items-center">
+                        <div class="col-12">
+                            <strong>Autores</strong>
+                            <p *ngFor="let item of schedule.authors"
+                                style="text-align: justify; text-justify: inter-word;">
+                                {{ item }}</p>
+                        </div>
+                        <div class="col-12">
+                            <strong>Resumo</strong>
+                            <p style="text-align: justify; text-justify: inter-word;">{{ schedule.resumePropose }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="type == '1' || type == '7' || type == '8' || type == '10' || type == '11' || type == '12'">
 
             <div class="card-works">
                 <div class="row">
@@ -122,7 +197,8 @@
                         <h5 *ngIf="type == '8'" style="color: #20959b">{{schedule.theme | themeSimposio}}</h5>
                         <h3 tabindex="0" *ngIf="type != '8'"><b>{{schedule?.titles[0]}}</b></h3>
                         <h3 tabindex="0" *ngIf="type  == '8'"><b>{{schedule.themeSpeeches}}</b></h3>
-                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + ' - '
+                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
+                            - '
                             + (schedule.endTime ? schedule.endTime : '')}}</h4>
                     </div>
 
@@ -191,7 +267,8 @@
                     <div class="col-sm-10">
                         <h5 style="color: #20959b">{{type | modalitiesWork}}</h5>
                         <h3 tabindex="0"><b>{{schedule?.titles[0]}}</b></h3>
-                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + ' - '
+                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
+                            - '
                             + (schedule.endTime ? schedule.endTime : '')}}</h4>
                         <h4 tabindex="0" class="mb-1">
                             Link para acesso: <b>
@@ -263,7 +340,8 @@
                                     </div>
                                     <div class="form-group col-md-12">
                                         <strong>Resumo</strong>
-                                        <p style="text-align: justify; text-justify: inter-word;">{{item.resume}}</p>
+                                        <p style="text-align: justify; text-justify: inter-word;">{{item.resume}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
