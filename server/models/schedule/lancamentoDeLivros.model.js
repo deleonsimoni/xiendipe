@@ -13,8 +13,14 @@ const ScheduleSchema = new mongoose.Schema({
     title: {
       type: String,
     },
+    editora: {
+      type: String
+    },
     author: {
       type: String,
+    },
+    ano: {
+      type: String
     },
     resume: {
       type: String,
@@ -25,6 +31,7 @@ const ScheduleSchema = new mongoose.Schema({
     nameMiniature: {
       type: String,
     }
+
 
   }],
   startTime: {
@@ -60,6 +67,7 @@ const ScheduleSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+
 });
 
 
