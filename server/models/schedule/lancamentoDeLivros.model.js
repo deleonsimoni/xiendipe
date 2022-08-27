@@ -13,7 +13,13 @@ const ScheduleSchema = new mongoose.Schema({
     title: {
       type: String,
     },
+    editora: {
+      type: String,
+    },
     author: {
+      type: String,
+    },
+    ano: {
       type: String,
     },
     resume: {
