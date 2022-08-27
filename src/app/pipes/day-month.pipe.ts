@@ -27,10 +27,6 @@ export class DayMonthPipe implements PipeTransform {
         return dayWithMont + " - Domingo"
 
 
-=======
-
->>>>>>> 759f68fec68615d0f69033e6b899c48291048ecf
-
       default:
         return null
         break;
