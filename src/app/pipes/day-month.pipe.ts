@@ -26,6 +26,10 @@ export class DayMonthPipe implements PipeTransform {
       case "27":
         return dayWithMont + " - Domingo"
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 759f68fec68615d0f69033e6b899c48291048ecf
 
       default:
         return null

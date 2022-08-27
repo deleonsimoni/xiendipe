@@ -14,13 +14,21 @@ const ScheduleSchema = new mongoose.Schema({
       type: String,
     },
     editora: {
+<<<<<<< HEAD
       type: String,
+=======
+      type: String
+>>>>>>> 759f68fec68615d0f69033e6b899c48291048ecf
     },
     author: {
       type: String,
     },
     ano: {
+<<<<<<< HEAD
       type: String,
+=======
+      type: String
+>>>>>>> 759f68fec68615d0f69033e6b899c48291048ecf
     },
     resume: {
       type: String,
@@ -31,6 +39,7 @@ const ScheduleSchema = new mongoose.Schema({
     nameMiniature: {
       type: String,
     }
+
 
   }],
   startTime: {
@@ -66,6 +75,7 @@ const ScheduleSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+
 });
 
 
