@@ -41,9 +41,16 @@ export class HomeComponent implements OnInit {
   anais = [];
 
   slides = [
-    { image: '../../assets/img/banner.png', text: 'First' },
-    { image: '../../assets/img/banner.png', text: 'Second' },
-    { image: '../../assets/img/banner.png', text: 'Third' }
+    { image: '../../assets/img/carrossel/0.png', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/2.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/3.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/4.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/5.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/6.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/7.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/8.jpeg', text: 'Esquenta ENDIPE' },
+
+
   ];
   noWrapSlides = false;
   showIndicator = true;

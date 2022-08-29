@@ -107,9 +107,12 @@
                   <a class="dropdown-item" alt="Inscreva-se" [routerLink]="['/inscrevase']"
                     fragment="inscreva">Atividades Fechadas</a>
 
-                  <!-- <div class="dropdown-divider"></div>
+                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" alt="Conferencistas" [routerLink]="['/home']"
-                    (click)="openConferencistasModal()">Conferencistas</a>-->
+                    (click)="openConferencistasModal()">Conferencistas</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" alt="Lançamento de livros" [routerLink]="['/lancamento-livros']">Lançamento
+                    de Livros</a>
                 </div>
               </li>
 
@@ -268,7 +271,9 @@
                 (click)="sidenav.toggle()">Atividades Abertas</a></li>-->
             <!--  <li><a tabindex="0" accordion-heading [routerLink]="['/inscrevase']" (click)="sidenav.toggle()">Atividades
                 Fechadas</a></li>-->
-            <!-- <li> <a tabindex="0" accordion-heading (click)="openConferencistasModal()">Conferencistas</a></li>-->
+            <li> <a tabindex="0" accordion-heading (click)="openConferencistasModal()">Conferencistas</a></li>
+            <li> <a tabindex="0" accordion-heading [routerLink]="['/lancamento-livros']">Lançamento de Livros</a>
+
           </ul>
         </accordion-group>
 

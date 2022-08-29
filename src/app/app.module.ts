@@ -67,6 +67,7 @@ import { ModalBemVindoComponent } from './modal-bem-vindo/modal-bem-vindo.compon
 import { AnaisVirtualComponent } from './endipe-virtual/anais-virtual/anais-virtual.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalTermoComponent } from './modal-normas/modal-termo.component';
+import { LancamentoLivrosComponent } from './lancamento-livros/lancamento-livros.component';
 
 
 @NgModule({
@@ -113,6 +114,7 @@ import { ModalTermoComponent } from './modal-normas/modal-termo.component';
         TimeLineVirtualComponent,
         ModalBemVindoComponent,
         AnaisVirtualComponent,
+        LancamentoLivrosComponent,
     ],
     imports: [
         BrowserModule,

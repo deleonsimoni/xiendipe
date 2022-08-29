@@ -11,27 +11,25 @@
     </div>
     <mat-dialog-content>
 
-      <!-- <div *ngIf="conferencistas.length > 0" class="row">
-        <div class="mt-4">
-          <div class="row align-items-center">
+      <div>
 
-            <div class="col-md-2 text-center" *ngFor="let conf of conferencistas| sort:'fullname'">
-              <img [src]="conf.imagem ? _DomSanitizationService.bypassSecurityTrustUrl(conf.imagem) : conf.imagemLocal"
-                title="{{conf.fullname}}">
+
+        <div class="container " *ngFor="let conf of conferencistas| sort:'fullname'">
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <img width="304" height="236" src="https://xiendipe.s3.sa-east-1.amazonaws.com/{{conf.imagePathS3}}"
+                class="img-fluid img-thumbnail capa-livro" />
+
             </div>
+            <div class="col-sm-12 text-center"><strong>{{conf.fullname}}</strong></div>
+            <div class="col-sm-11 text-align: justify;">{{conf.description}}</div>
+          </div>
 
-          </div>
         </div>
-      </div> -->
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="box wow fadeInLeft">
-            <!--    <h4 class="title">EM PREPARAÇÃO</h4>-->
-            <p class="description" style="text-align: justify;">
-              EM PREPARAÇÃO </p>
-          </div>
-        </div>
+
+
       </div>
+
     </mat-dialog-content>
   </div>
 </section>

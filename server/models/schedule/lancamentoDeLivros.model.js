@@ -17,8 +17,6 @@ const ScheduleSchema = new mongoose.Schema({
 
       type: String,
 
-      type: String
-
     },
     author: {
       type: String,
@@ -26,8 +24,6 @@ const ScheduleSchema = new mongoose.Schema({
     ano: {
 
       type: String,
-
-      type: String
 
     },
     resume: {
