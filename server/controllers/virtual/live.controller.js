@@ -71,7 +71,8 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1
+          'dates.startTime': 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -97,7 +98,8 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1
+          'dates.startTime': 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -123,7 +125,8 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1
+          'dates.startTime': 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -149,7 +152,8 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1
+          'dates.startTime': 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -172,7 +176,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -191,7 +196,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -207,7 +213,8 @@ async function listScheduleWorkPaginate(req) {
         date: date
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -226,7 +233,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .select('-books')
         .skip(pageSize * page - pageSize)
@@ -246,7 +254,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -265,7 +274,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -284,7 +294,8 @@ async function listScheduleWorkPaginate(req) {
         ]
       })
         .sort({
-          startTime: 1
+          startTime: 1,
+          workTitle: 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
