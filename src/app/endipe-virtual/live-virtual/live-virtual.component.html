@@ -16,9 +16,9 @@
                             <div class="card-works">
                                 <div class="row">
                                     <div class="col-sm-10 mb-4">
-                                        <h5 tabindex="0" *ngIf="schedule.type != '8'" style="color: #20959b">
+                                        <h5 tabindex="0" *ngIf="schedule.type != '8'" style="color: white">
                                             {{schedule.type | modalitiesWork}}</h5>
-                                        <h5 tabindex="0" *ngIf="schedule.type == '8'" style="color: #20959b">
+                                        <h5 tabindex="0" *ngIf="schedule.type == '8'" style="color: white">
                                             {{schedule.theme | themeSimposio}}</h5>
                                         <h3 tabindex="0" *ngIf="schedule.type != '8'"><b>{{schedule?.titles[0]}}</b>
                                         </h3>
@@ -106,7 +106,7 @@
                             <div class="card-works">
                                 <div class="row">
                                     <div class="col-sm-10">
-                                        <h5 style="color: #20959b">{{schedule.type | modalitiesWork}}</h5>
+                                        <h5 style="color: white">{{schedule.type | modalitiesWork}}</h5>
                                         <h3 tabindex="0"><b>{{schedule?.titles[0]}}</b></h3>
                                         <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ?
                                             schedule.startTime : '') + ' - ' + (schedule.endTime ? schedule.endTime :
