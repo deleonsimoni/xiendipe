@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root",
 })
 export class AdminService {
-  constructor(@Inject("BASE_API_URL") private baseUrl: string, private http: HttpClient) {}
+  constructor(@Inject("BASE_API_URL") private baseUrl: string, private http: HttpClient) { }
 
   public validatePayment(id) {
     return this.http.post(`${this.baseUrl}/admin/validatePayment/${id}`, {});
@@ -91,10 +91,10 @@ export class AdminService {
 
   public sendEmail(form) {
     const formData: FormData = new FormData();
-    if(form.files){
+    if (form.files) {
       formData.append('fileArray', <File>form.files[0], form.files[0].name);
     }
-    formData.append('formulario', JSON.stringify({groupId: form.groupId, description: form.description, title: form.title}));
+    formData.append('formulario', JSON.stringify({ groupId: form.groupId, description: form.description, title: form.title }));
     return this.http.post<any>(`${this.baseUrl}/admin/sendEmail`, formData);
   }
 

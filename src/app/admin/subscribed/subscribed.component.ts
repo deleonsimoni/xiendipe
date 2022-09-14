@@ -50,10 +50,10 @@ export class SubscribedComponent implements OnInit {
     this.user = this.authService.getDecodedAccessToken(this.authService.getToken());
 
     if (this.user && !this.user.icAdmin) {
-      this.retrieveWorks(this.user.coordinator || this.user.reviewer)
-        .subscribe(res => {
-          //console.log(res);
-        });
+      /* this.retrieveWorks(this.user.coordinator || this.user.reviewer)
+         .subscribe(res => {
+           //console.log(res);
+         });*/
     } else {
       this.retrieveAdminData(null);
     }
