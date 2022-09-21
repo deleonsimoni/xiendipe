@@ -7,37 +7,22 @@ const ScheduleSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
-
+  work: {
+    type: mongoose.Schema.Types.ObjectId
+  },
+  workTitle: {
+    type: String,
+  },
+  workAuthor: [{
+    type: String
+  }],
+  
   axis: {
     type: String
   },
 
-  monitor: {
-    type: String
-  },
-
-  mediator: {
-    type: String
-  },
-
-
-  worksPainel: [{
-    work: {
-      type: mongoose.Schema.Types.ObjectId
-    },
-    workTitle: {
-      type: String,
-    },
-    workAuthor: [{}],
-    linkPPT: {
-      type: String,
-    },
-    resumePropose: {
-      type: String
-    },
-  }],
-
   dates: [{
+
     startTime: {
       type: String,
     },
@@ -56,8 +41,26 @@ const ScheduleSchema = new mongoose.Schema({
     linkLibras: {
       type: String
     }
+
   }],
 
+  monitor: {
+    type: String
+  },
+
+  place: {
+    type: String,
+  },
+  address: {
+    type: String,
+  },
+
+  pdf: {
+    type: String
+  },
+  qtdSubscribers: {
+    type: String,
+  },
   subscribers: [{
     userId: {
       type: mongoose.Schema.Types.ObjectId
@@ -66,7 +69,15 @@ const ScheduleSchema = new mongoose.Schema({
       type: String
     },
   }],
-
+  authors: {
+    type: String
+  },
+  resumePropose: {
+    type: String
+  },
+  date: {
+    type: String
+  },
   createAt: {
     type: Date,
     default: Date.now

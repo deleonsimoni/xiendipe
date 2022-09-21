@@ -22,15 +22,16 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item pointer" (click)="showSubscribers(schedule.workTitle, schedule.subscribers)">Ver Inscritos</a>
+              <a class="dropdown-item pointer" (click)="showSubscribers(schedule.workTitle, schedule.subscribers)">Ver
+                Inscritos</a>
               <a class="dropdown-item pointer" (click)="editSchedule()">Editar</a>
               <!--<a class="dropdown-item pointer" (click)="removeSchedule(schedule._id)">Excluir</a>-->
             </div>
           </div>
 
           <div *ngIf="!admin">
-           
-           
+
+
 
           </div>
         </div>
@@ -39,7 +40,7 @@
     <br />
     <div class="row">
       <div class="col-12">
-        <div class="group" *ngIf="type != '3'">
+        <div class="group" *ngIf="type != '3' && type != '5' ">
           <p class="label">Título</p>
           <p class="title">
             {{ schedule.workTitle }}
@@ -63,6 +64,23 @@
 
         <!-- FIM WORK POSTER-->
 
+        <!-- EXIBICAO WORK PAINEL-->
+
+        <div class="group" *ngIf="type == '5'">
+          <p class="label">Paineis</p>
+          <div *ngFor="let work of schedule.worksPainel">
+            <p class="title">
+              {{ work.workTitle }}
+            </p>
+            <p class="label">Resumo da proposta</p>
+            <p class="title not-dash" style="text-align: justify !important;">
+              {{ work.resumePropose }}
+            </p>
+          </div>
+        </div>
+
+        <!-- FIM WORK PAINEL-->
+
 
         <div class="group">
           <p class="label">Eixo</p>
@@ -79,19 +97,19 @@
             </p> 
           </div>
         </div> -->
-        <div class="group" *ngIf="type != '3'">
+        <div class="group" *ngIf="type != '3' && type != '5'">
           <p class="label">Resumo da proposta</p>
           <p class="title not-dash" style="text-align: justify !important;">
             {{ schedule.resumePropose }}
           </p>
         </div>
-        <div class="group" *ngIf="type != '3'">
+        <div class="group" *ngIf="type != '3' && type != '5'">
           <p class="label">Autores</p>
           <p class="title not-dash">
             {{ schedule.authors }}
           </p>
         </div>
-        <div class="group" *ngIf="type != '3'">
+        <div class="group" *ngIf="type != '3' && type != '5'">
           <p class="label">Vagas</p>
           <p class="hour">
             {{ schedule.qtdSubscribers - (schedule.subscribers ? schedule.subscribers.length : 0) }}
@@ -105,7 +123,7 @@
           <p class="label">E-mail do monitor</p>
           <p class="title not-dash">{{ schedule.monitor }}</p>
         </div>
-        <div class="group" *ngIf="type == '3'">
+        <div class="group" *ngIf="type == '3' && type != '5'">
           <p class="label">E-mail do mediador</p>
           <p class="title not-dash">{{ schedule.mediator }}</p>
         </div>

@@ -20,6 +20,7 @@ export class WorkScheduleFormComponent {
   public days = ["20/11", "21/11", "22/11", "23/11", "24/11", "25/11", "26/11", "27/11"];
   public selectedWork;
   public selectedWorkPoster = [];
+  public selectedWorkPainel = [];
 
   public modelConfig = { standalone: true };
 
@@ -34,6 +35,7 @@ export class WorkScheduleFormComponent {
       monitor: [null],
       mediator: [null],
       worksPoster: this.builder.array([this.builder.group({ work: [null], workTitle: [null], linkPPT: [null] })]),
+      worksPainel: this.builder.array([this.builder.group({ work: [null], workTitle: [null], resumePropose: [null] })]),
       dates: this.builder.array([this.builder.group({ startTime: [null], endTime: [null], date: [null], linkZoom: [null] })]),
       virtual: this.builder.group({ linkZoom: [null], monitor: [null], mediator: [null], ppt: [null] }),
       workTitle: [null],
@@ -69,7 +71,11 @@ export class WorkScheduleFormComponent {
         } else if (key == "worksPoster") {
           this.selectedWorkPoster = data.worksPoster;
           this.fillArray(data.worksPoster, key);
-        } else {
+        } else if (key == "worksPainel") {
+          this.selectedWorkPainel = data.worksPainel;
+          this.fillArray(data.worksPainel, key);
+        }
+        else {
           this.form.get(key).patchValue(data[key]);
         }
       }
@@ -104,7 +110,21 @@ export class WorkScheduleFormComponent {
               return workFor[index].work == e._id
             })[0];
           }
-        } else {
+        }
+        else if (this.type == 5) {
+          let workFor = this.selectedWorkPainel;
+
+          for (let index = 0; index < workFor.length; index++) {
+            this.selectedWorkPainel[index] = this.works.filter(e => {
+              return workFor[index].work == e._id
+            })[0];
+          }
+
+
+        }
+
+
+        else {
           this.selectedWork = this.works.filter(e => {
             return this.form.get("work").value == e._id
           })[0];
@@ -146,6 +166,26 @@ export class WorkScheduleFormComponent {
 
   public removeWorkPoster(pos) {
     const dataCtrel = this.form.get("worksPoster") as FormArray;
+    dataCtrel.removeAt(pos);
+  }
+
+  get worksPainel() {
+    return this.form.get("worksPainel");
+  }
+
+  public addWorkPainel() {
+    const dataCtrel = this.form.get("worksPainel") as FormArray;
+    dataCtrel.push(this.builder.group({ work: [null], workTitle: [null], resumePropose: [null] }));
+  }
+
+  public setWorkFormPainel(workForm, i) {
+    const dataCtrel = this.form.get("worksPainel") as FormArray;
+    dataCtrel.at(i).patchValue({ "work": workForm._id, "workTitle": workForm.title });
+    //{ "work": workForm._id, "workTitle": workForm.title}
+  }
+
+  public removeWorkPainel(pos) {
+    const dataCtrel = this.form.get("worksPainel") as FormArray;
     dataCtrel.removeAt(pos);
   }
 

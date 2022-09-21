@@ -30,14 +30,14 @@ export class InscrevaseComponent implements OnInit {
       name: 'Minicurso',
       type: 4
     },
-    /* {
-       name: 'Painel',
-       type: 5
-     },
-     {
-       name: 'Pôster',
-       type: 3
-     },*/
+    {
+      name: 'Painel',
+      type: 5
+    },
+    {
+      name: 'Pôster',
+      type: 3
+    },
 
   ];
 
