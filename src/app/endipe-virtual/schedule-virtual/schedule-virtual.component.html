@@ -93,7 +93,7 @@
                     <div class="col-12">
                         <div *ngFor="let item of schedule.worksPoster"
                             style="text-align: justify; text-justify: inter-word;">
-                            <div class="row" *ngIf="item.workTitle">
+                            <div class="row">
                                 <div class="col-sm-8 align-self-center">
                                     <strong>Nome do Pôster</strong>
                                     <p>{{ item.workTitle }}</p>
@@ -134,12 +134,12 @@
 
 
                             </div>
-                            <!--<div class="row" *ngIf="item.workAuthor">
+                            <div class="row" *ngIf="item.workAuthor">
                                 <div class="col-sm-12 align-self-center">
                                     <strong>Autores</strong>
                                     <p *ngFor="let autores of item.workAuthor">{{ autores.fullname }}</p>
                                 </div>
-                            </div>-->
+                            </div>
 
                             <br />
                         </div>
