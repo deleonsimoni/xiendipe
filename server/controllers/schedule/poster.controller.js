@@ -2,6 +2,9 @@ const Poster = require('../../models/schedule/poster.model');
 const User = require('../../models/user.model');
 const Work = require('../../models/work.model');
 const ChatWork = require('../../models/virtual/chatWork.model');
+const Painel = require('../../models/schedule/painel.model');
+const Minicurso = require('../../models/schedule/minicurso.model');
+
 
 module.exports = {
   listSchedule,
@@ -15,8 +18,8 @@ module.exports = {
 
 async function listSchedule(date) {
   return await Poster.find({
-      'dates.date': { $in: date }
-    })
+    'dates.date': { $in: date }
+  })
     .sort({
       'dates.startTime': 1
     });
@@ -36,28 +39,28 @@ async function insertSchedule(schedule, oldId) {
     }
   });
 
-  if(poster.monitor){
+  if (poster.monitor) {
     let monitors = poster.monitor.trim().split(';');
     monitors.forEach(element => {
       registerMonitor(poster._id, element.toLowerCase());
     });
   }
 
-  if(poster.mediator){
+  if (poster.mediator) {
     registerMediator(poster._id, poster.mediator.toLowerCase());
   }
 
   let workWithUser;
 
-  if(poster.worksPoster){
+  if (poster.worksPoster) {
     for (let index = 0; index < poster.worksPoster.length; index++) {
-      workWithUser = await Work.findById({_id: poster.worksPoster[index].work}).select('authors');
-      if(workWithUser.authors){
-
-        for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
-          await subscribePoster(poster._id, workWithUser.authors[userCount].userId, workWithUser.authors[userCount].email);
-        }
-      }
+      workWithUser = await Work.findById({ _id: poster.worksPoster[index].work }).select('authors');
+      /*      if (workWithUser.authors) {
+      
+              for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
+                await subscribePoster(poster._id, workWithUser.authors[userCount].userId, workWithUser.authors[userCount].email);
+              }
+            }*/
     }
   }
 
@@ -66,39 +69,53 @@ async function insertSchedule(schedule, oldId) {
 
 async function updateSchedule(id, schedule) {
 
-  let oldId = await deleteSchedule(id);
-  delete schedule._id;
-  return await insertSchedule(schedule, oldId);
 
+  let posterOld = await Poster.findById(id);
+
+  if (posterOld.monitor) {
+    let monitors = posterOld.monitor.trim().split(';');
+    monitors.forEach(element => {
+      unRegisterMonitor(id, element.toLowerCase());
+    });
+  }
+
+  if (schedule.monitor) {
+    let monitors = schedule.monitor.trim().split(';');
+    monitors.forEach(element => {
+      registerMonitor(id, element.toLowerCase());
+    });
+  }
+
+  return await Poster.findOneAndUpdate({ _id: id }, schedule);
 
 }
 
 async function deleteSchedule(id) {
 
-  const poster = await Poster.findById({_id: id});
+  const poster = await Poster.findById({ _id: id });
   let workWithUser;
 
-  if(poster.monitor){
+  if (poster.monitor) {
     let monitors = poster.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
     });
   }
 
-  if(poster.mediator){
+  if (poster.mediator) {
     unRegisterMediator(id, poster.mediator.toLowerCase());
   }
 
 
-  if(poster.worksPoster){
+  if (poster.worksPoster) {
     for (let index = 0; index < poster.worksPoster.length; index++) {
-      workWithUser = await Work.findById({_id: poster.worksPoster[index].work}).select('authors');
-      if(workWithUser.authors){
-
-        for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
-          await unsubscribePoster(poster._id, workWithUser.authors[userCount].userId);
-        }
-      }
+      workWithUser = await Work.findById({ _id: poster.worksPoster[index].work }).select('authors');
+      /*     if (workWithUser.authors) {
+     
+             for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
+               await unsubscribePoster(poster._id, workWithUser.authors[userCount].userId);
+             }
+           }*/
     }
   }
 
@@ -110,27 +127,27 @@ async function deleteSchedule(id) {
 
 
 async function setAuthorsInPoster(posters) {
-  
+
   let workWithUser;
   let namesAuthors = [];
 
-    if(posters.worksPoster){
-      for (let index = 0; index < posters.worksPoster.length; index++) {
-        if(!posters.worksPoster[index].workTitle) continue;
-        namesAuthors = [];
-        workWithUser = await Work.findById({_id: posters.worksPoster[index].work}).select('authors');
-        if(workWithUser.authors){
-          
-          for (let autores = 0; autores < workWithUser.authors.length; autores++) {
-            const autoresTrabalho = workWithUser.authors[autores];
-            namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
-          }
-
-          posters.worksPoster[index].workAuthor = namesAuthors
-
-        }
-      }
+  if (posters.worksPoster) {
+    for (let index = 0; index < posters.worksPoster.length; index++) {
+      if (!posters.worksPoster[index].workTitle) continue;
+      namesAuthors = [];
+      workWithUser = await Work.findById({ _id: posters.worksPoster[index].work }).select('authors');
+      /* if (workWithUser.authors) {
+ 
+         for (let autores = 0; autores < workWithUser.authors.length; autores++) {
+           const autoresTrabalho = workWithUser.authors[autores];
+           namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
+         }
+ 
+         posters.worksPoster[index].workAuthor = namesAuthors
+ 
+       }*/
     }
+  }
 
   return await posters;
 }
@@ -142,10 +159,10 @@ async function unsubscribePoster(workId, userId) {
     _id: userId
   }, {
     $pull: {
-      cursosInscritos:{
+      cursosInscritos: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {
@@ -168,38 +185,116 @@ async function unsubscribePoster(workId, userId) {
   });
 }
 
-async function subscribePoster(workId, userId, email) {
-  let userInsert = {
-    userId: userId,
-    userEmail: email
+async function getSchedulesDates(mySchedules) {
+
+  let schedulesDatesCheck = [];
+  for (let index = 0; index < mySchedules.cursosInscritos.length; index++) {
+    switch (mySchedules.cursosInscritos[index].icModalityId) {
+      case 3: //Poster
+        await schedulesDatesCheck.push(await Poster.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+      case 4: //minicurso
+        await schedulesDatesCheck.push(await Minicurso.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+      case 5: //painel
+        await schedulesDatesCheck.push(await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+    }
   }
 
-  await User.findOneAndUpdate({
-    _id: userId
-  }, {
-    $addToSet: {
-      cursosInscritos: {
-        idSchedule: workId,
-        icModalityId: 3
-      }
-    }
-  }, (err, doc) => {
-    if (err) {
-      console.log("Erro ao atualizar o usuario subscribeMinicurso -> " + err);
-    }
-  });
+  return await schedulesDatesCheck;
 
-
-  return await Poster.findOneAndUpdate({
-    _id: workId
-  }, {
-    $addToSet: {
-      'subscribers': userInsert
-    }
-  }, {
-    new: true
-  });
 }
+
+async function checkSubscribeDup(workId, userId) {
+
+  let msg = 'Inscrição realizada com sucesso';
+
+  let scheduleCompare = await Poster.findById(workId);
+
+  if ((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers) {
+    return { isDup: true, msg: 'Vagas Esgotadas' };
+  } else {
+
+    let mySchedules = await User.findById(userId).select('cursosInscritos');
+
+    if (mySchedules.cursosInscritos) {
+
+      let schedulesDatesCheck = await getSchedulesDates(mySchedules);
+
+      if (schedulesDatesCheck) {
+
+        for (let index = 0; index < schedulesDatesCheck.length; index++) {
+          for (let k = 0; k < schedulesDatesCheck[index].dates.length; k++) {
+            const scheduleDateCheck = schedulesDatesCheck[index].dates[k];
+
+            for (let j = 0; j < scheduleCompare.dates.length; j++) {
+
+              if (scheduleCompare.dates[j].date == scheduleDateCheck.date &&
+                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') &&
+                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')) {
+
+                return { isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário' };
+
+              }
+            }
+          }
+        }
+      }
+
+    } else {
+
+      return { isDup: false, msg: msg };
+
+    }
+  }
+}
+
+async function subscribePoster(workId, userId, email) {
+  let checkIsDup = await checkSubscribeDup(workId, userId);
+
+  if (checkIsDup && checkIsDup.isDup) {
+
+    return checkIsDup;
+
+  } else {
+
+    let userInsert = {
+      userId: userId,
+      userEmail: email
+    }
+
+    await User.findOneAndUpdate({
+      _id: userId
+    }, {
+      $addToSet: {
+        'cursosInscritos': {
+          idSchedule: workId,
+          icModalityId: 3
+        }
+      }
+    }, {
+      upsert: true,
+      new: true
+    }, (err, doc) => {
+      if (err) {
+        console.log("Erro ao atualizar o usuario painel -> " + err);
+      }
+    });
+
+    return Poster.findOneAndUpdate({
+      _id: workId
+    }, {
+      $addToSet: {
+        'subscribers': userInsert
+      }
+    }, {
+      new: true
+    });
+
+  }
+}
+
 
 async function registerMonitor(workId, email) {
   await User.findOneAndUpdate({
@@ -224,10 +319,10 @@ async function unRegisterMonitor(workId, email) {
     email: email
   }, {
     $pull: {
-      monitor:{
+      monitor: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {
@@ -262,10 +357,10 @@ async function unRegisterMediator(workId, email) {
     email: email
   }, {
     $pull: {
-      mediador:{
+      mediador: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {

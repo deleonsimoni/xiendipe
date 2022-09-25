@@ -53,10 +53,10 @@ export class WorkScheduleCardComponent {
     public showSubscribers(titulo, inscritos) {
         this.dialog.open(ModalSubscribersScheduleComponent, {
             data: {
-              workTitle: titulo,
-              subscribers: inscritos
+                workTitle: titulo,
+                subscribers: inscritos
             }
-          });
+        });
     }
 
 
@@ -84,7 +84,7 @@ export class WorkScheduleCardComponent {
                 });
         }
         else {
-            this.scheduleService.enrollScheduleRodaDeConversa(this.schedule._id)
+            this.scheduleService.enrollSchedulePoster(this.schedule._id)
                 .subscribe(res => {
                     this.schedule = res;
                     this.toastr.success('Inscrição realizada com sucesso', 'Sucesso');
@@ -121,7 +121,7 @@ export class WorkScheduleCardComponent {
                 });
 
         } else {
-            this.scheduleService.cancelEnrollScheduleRodaDeConversa(this.schedule._id)
+            this.scheduleService.cancelEnrollSchedulePoster(this.schedule._id)
                 .subscribe(res => {
                     this.schedule = res;
                     this.toastr.success('Cancelamento de inscrição realizada com sucesso', 'Sucesso');

@@ -56,9 +56,9 @@
             <p class="title">
               {{ work.workTitle }}
             </p>
-            <p class="title not-dash" style="margin: 0px 0px 4px 24px !important;">
+            <!--<p class="title not-dash" style="margin: 0px 0px 4px 24px !important;">
               Link da apresentação: <a href="{{  work.linkPPT  }}" target="_blank">{{ work.linkPPT }}</a>
-            </p>
+            </p>-->
           </div>
         </div>
 
@@ -109,7 +109,7 @@
             {{ schedule.authors }}
           </p>
         </div>
-        <div class="group" *ngIf="type != '3' && type != '5'">
+        <div class="group">
           <p class="label">Vagas</p>
           <p class="hour">
             {{ schedule.qtdSubscribers - (schedule.subscribers ? schedule.subscribers.length : 0) }}
@@ -123,7 +123,7 @@
           <p class="label">E-mail do monitor</p>
           <p class="title not-dash">{{ schedule.monitor }}</p>
         </div>
-        <div class="group" *ngIf="type == '3' && type != '5'">
+        <div class="group" *ngIf="type == '3' && type == '5'">
           <p class="label">E-mail do mediador</p>
           <p class="title not-dash">{{ schedule.mediator }}</p>
         </div>

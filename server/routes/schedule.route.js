@@ -7,7 +7,6 @@ const simposioCtrl = require('../controllers/schedule/simposio.controller');
 const posterCtrl = require('../controllers/schedule/poster.controller');
 const lancamentoDeLivrosCtrl = require('../controllers/schedule/lancamentoDeLivros.controller');
 const atividadeCulturalCtrl = require('../controllers/schedule/atividadeCultural.controller');
-const rodasDeConversaCtrl = require('../controllers/schedule/rodasDeConversa.controller');
 const painelCtrl = require('../controllers/schedule/painel.controller');
 const sessoesEspeciaisCtrl = require('../controllers/schedule/sessoesEspeciais.controller');
 const rodaReunioesEntidadesRedesCtrl = require('../controllers/schedule/rodaReunioesEntidadesRedes.controller');
@@ -34,13 +33,13 @@ router.post('/subscribeMinicurso/:workId', passport.authenticate('jwt', {
   session: false
 }), asyncHandler(subscribeMinicurso));
 
-router.post('/unsubscribeRodadeConversa/:workId', passport.authenticate('jwt', {
+router.post('/unsubscribePoster/:workId', passport.authenticate('jwt', {
   session: false
-}), asyncHandler(unsubscribeRodadeConversa));
+}), asyncHandler(unsubscribePoster));
 
-router.post('/subscribeRodadeConversa/:workId', passport.authenticate('jwt', {
+router.post('/subscribePoster/:workId', passport.authenticate('jwt', {
   session: false
-}), asyncHandler(subscribeRodadeConversa));
+}), asyncHandler(subscribePoster));
 
 router.post('/unsubscribePainel/:workId', passport.authenticate('jwt', {
   session: false
@@ -69,13 +68,13 @@ async function subscribeMinicurso(req, res) {
   res.json(users);
 }
 
-async function unsubscribeRodadeConversa(req, res) {
-  let users = await rodasDeConversaCtrl.unsubscribeRodadeConversa(req.params.workId, req.user._id);
+async function unsubscribePoster(req, res) {
+  let users = await posterCtrl.unsubscribePoster(req.params.workId, req.user._id);
   res.json(users);
 }
 
-async function subscribeRodadeConversa(req, res) {
-  let users = await rodasDeConversaCtrl.subscribeRodadeConversa(req.params.workId, req.user._id, req.user.email);
+async function subscribePoster(req, res) {
+  let users = await posterCtrl.subscribePoster(req.params.workId, req.user._id, req.user.email);
   res.json(users);
 }
 
@@ -100,10 +99,10 @@ async function listSchedule(req, res) {
       schedules = await aberturaCtrl.listSchedule(data);
       res.json(schedules);
       break;
-    case 2:
-      schedules = await rodasDeConversaCtrl.listSchedule(data); 
-      res.json(schedules);
-      break;
+    /* case 2:
+       schedules = await rodasDeConversaCtrl.listSchedule(data); 
+       res.json(schedules);
+       break;*/
     case 3:
       schedules = await posterCtrl.listSchedule(data);
       res.json(schedules);
@@ -113,7 +112,7 @@ async function listSchedule(req, res) {
       res.json(schedules);
       break;
     case 5:
-      schedules = await painelCtrl.listSchedule(data); 
+      schedules = await painelCtrl.listSchedule(data);
       res.json(schedules);
       break;
     case 7:
@@ -121,7 +120,7 @@ async function listSchedule(req, res) {
       res.json(schedules);
       break;
     case 8:
-      schedules = await simposioCtrl.listSchedule(data); 
+      schedules = await simposioCtrl.listSchedule(data);
       res.json(schedules);
       break;
     case 9:
@@ -156,10 +155,10 @@ async function insertSchedule(req, res) {
         schedules = await aberturaCtrl.insertSchedule(req.body);
         res.json(schedules);
         break;
-      case 2:
-        schedules = await rodasDeConversaCtrl.insertSchedule(req.body);
-        res.json(schedules);
-        break;
+      /*  case 2:
+          schedules = await rodasDeConversaCtrl.insertSchedule(req.body);
+          res.json(schedules);
+          break;*/
       case 3:
         schedules = await posterCtrl.insertSchedule(req.body);
         res.json(schedules);
@@ -213,10 +212,10 @@ async function updateSchedule(req, res) {
         schedules = await aberturaCtrl.updateSchedule(req.params.id, req.body);
         res.json(schedules);
         break;
-      case 2:
-        schedules = await rodasDeConversaCtrl.updateSchedule(req.params.id, req.body);
-        res.json(schedules);
-        break;
+      /*  case 2:
+          schedules = await rodasDeConversaCtrl.updateSchedule(req.params.id, req.body);
+          res.json(schedules);
+          break;*/
       case 3:
         schedules = await posterCtrl.updateSchedule(req.params.id, req.body);
         res.json(schedules);
@@ -271,10 +270,10 @@ async function deleteSchedule(req, res) {
         schedules = await aberturaCtrl.deleteSchedule(req.params.id);
         res.json(schedules);
         break;
-      case 2:
-        schedules = await rodasDeConversaCtrl.deleteSchedule(req.params.id);
-        res.json(schedules);
-        break;
+      /*  case 2:
+          schedules = await rodasDeConversaCtrl.deleteSchedule(req.params.id);
+          res.json(schedules);
+          break;*/
       case 3:
         schedules = await posterCtrl.deleteSchedule(req.params.id);
         res.json(schedules);

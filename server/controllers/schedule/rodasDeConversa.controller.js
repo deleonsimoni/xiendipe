@@ -14,8 +14,8 @@ module.exports = {
 
 async function listSchedule(date) {
   return await RodasDeConversa.find({
-      'dates.date': { $in: date }
-    })
+    'dates.date': { $in: date }
+  })
     .sort({
       createAt: 1
     });
@@ -25,7 +25,7 @@ async function insertSchedule(schedule) {
 
   let roda = await new RodasDeConversa(schedule).save();
 
-  if(roda.monitor){
+  if (roda.monitor) {
     let monitors = roda.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(roda._id, element.toLowerCase());
@@ -39,14 +39,14 @@ async function updateSchedule(id, schedule) {
 
   let rodaOld = await RodasDeConversa.findById(id);
 
-  if(rodaOld.monitor){
+  if (rodaOld.monitor) {
     let monitors = rodaOld.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
     });
   }
 
-  if(schedule.monitor){
+  if (schedule.monitor) {
     let monitors = schedule.monitor.trim().split(';');
     monitors.forEach(element => {
       registerMonitor(id, element.toLowerCase());
@@ -60,7 +60,7 @@ async function deleteSchedule(id) {
 
   let rodaOld = await RodasDeConversa.findById(id);
 
-  if(rodaOld.monitor){
+  if (rodaOld.monitor) {
     let monitors = rodaOld.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
@@ -80,7 +80,7 @@ async function unsubscribeRodadeConversa(workId, userId) {
     _id: userId
   }, {
     $pull: {
-      cursosInscritos:{
+      cursosInscritos: {
         'idSchedule': workId
       }
     }
@@ -110,15 +110,15 @@ async function getSchedulesDates(mySchedules) {
   let schedulesDatesCheck = [];
   for (let index = 0; index < mySchedules.cursosInscritos.length; index++) {
     switch (mySchedules.cursosInscritos[index].icModalityId) {
-      case 2: //rodaDeConversa
+      case 3: //rodaDeConversa
         await schedulesDatesCheck.push(await RodasDeConversa.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+        break;
       case 4: //minicurso
         await schedulesDatesCheck.push(await Minicurso.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+        break;
       case 5: //painel
         await schedulesDatesCheck.push(await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+        break;
     }
   }
 
@@ -132,17 +132,17 @@ async function checkSubscribeDup(workId, userId) {
 
   let scheduleCompare = await RodasDeConversa.findById(workId);
 
-  if((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers){
-    return {isDup: true, msg: 'Vagas Esgotadas'};
+  if ((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers) {
+    return { isDup: true, msg: 'Vagas Esgotadas' };
   } else {
 
     let mySchedules = await User.findById(userId).select('cursosInscritos');
 
-    if(mySchedules.cursosInscritos){
+    if (mySchedules.cursosInscritos) {
 
       let schedulesDatesCheck = await getSchedulesDates(mySchedules);
-    
-      if(schedulesDatesCheck){
+
+      if (schedulesDatesCheck) {
 
         for (let index = 0; index < schedulesDatesCheck.length; index++) {
           for (let k = 0; k < schedulesDatesCheck[index].dates.length; k++) {
@@ -150,11 +150,11 @@ async function checkSubscribeDup(workId, userId) {
 
             for (let j = 0; j < scheduleCompare.dates.length; j++) {
 
-              if(scheduleCompare.dates[j].date == scheduleDateCheck.date &&
-                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') && 
-                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')){
-                
-                  return {isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário'};
+              if (scheduleCompare.dates[j].date == scheduleDateCheck.date &&
+                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') &&
+                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')) {
+
+                return { isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário' };
 
               }
             }
@@ -164,7 +164,7 @@ async function checkSubscribeDup(workId, userId) {
 
     } else {
 
-      return {isDup: false, msg: msg};
+      return { isDup: false, msg: msg };
 
     }
   }
@@ -174,7 +174,7 @@ async function subscribeRodadeConversa(workId, userId, email) {
 
   let checkIsDup = await checkSubscribeDup(workId, userId);
 
-  if(checkIsDup && checkIsDup.isDup){
+  if (checkIsDup && checkIsDup.isDup) {
 
     return checkIsDup;
 
@@ -240,10 +240,10 @@ async function unRegisterMonitor(workId, email) {
     email: email
   }, {
     $pull: {
-      monitor:{
+      monitor: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {

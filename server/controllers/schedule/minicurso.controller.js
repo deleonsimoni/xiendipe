@@ -1,6 +1,6 @@
 const minicursoModel = require('../../models/schedule/minicurso.model');
 const Minicurso = require('../../models/schedule/minicurso.model');
-const RodaDeConversa = require('../../models/schedule/rodasDeConversa.model');
+const poster = require('../../models/schedule/poster.model');
 const Painel = require('../../models/schedule/painel.model');
 
 const User = require('../../models/user.model');
@@ -16,8 +16,8 @@ module.exports = {
 
 async function listSchedule(date) {
   return await Minicurso.find({
-      'dates.date': { $in: date }
-    })
+    'dates.date': { $in: date }
+  })
     .sort({
       createAt: 1
     });
@@ -26,7 +26,7 @@ async function listSchedule(date) {
 async function insertSchedule(schedule) {
   let minicurso = await new Minicurso(schedule).save();
 
-  if(minicurso.monitor){
+  if (minicurso.monitor) {
     let monitors = minicurso.monitor.trim().split(';');
     monitors.forEach(element => {
       registerMonitor(minicurso._id, element.toLowerCase());
@@ -40,20 +40,20 @@ async function updateSchedule(id, schedule) {
 
   let minicursoOld = await Minicurso.findById(id);
 
-  if(minicursoOld.monitor){
+  if (minicursoOld.monitor) {
     let monitors = minicursoOld.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
     });
   }
 
-  if(schedule.monitor){
+  if (schedule.monitor) {
 
     let monitors = schedule.monitor.trim().split(';');
     monitors.forEach(element => {
       registerMonitor(id, element.toLowerCase());
     });
-  
+
   }
 
   return await Minicurso.findOneAndUpdate({ _id: id }, schedule);
@@ -64,7 +64,7 @@ async function deleteSchedule(id) {
 
   let minicursoOld = await Minicurso.findById(id);
 
-  if(minicursoOld.monitor){
+  if (minicursoOld.monitor) {
     let monitors = minicursoOld.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
@@ -83,10 +83,10 @@ async function unsubscribeMinicurso(workId, userId) {
     _id: userId
   }, {
     $pull: {
-      cursosInscritos:{
+      cursosInscritos: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {
@@ -114,15 +114,15 @@ async function getSchedulesDates(mySchedules) {
   let schedulesDatesCheck = [];
   for (let index = 0; index < mySchedules.cursosInscritos.length; index++) {
     switch (mySchedules.cursosInscritos[index].icModalityId) {
-      case 2: //rodaDeConversa
-        await schedulesDatesCheck.push(await RodaDeConversa.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+      case 3: //poster
+        await schedulesDatesCheck.push(await Poster.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
       case 4: //minicurso
         await schedulesDatesCheck.push(await Minicurso.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+        break;
       case 5: //painel
         await schedulesDatesCheck.push(await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
-      break;
+        break;
     }
   }
 
@@ -136,17 +136,17 @@ async function checkSubscribeDup(workId, userId) {
 
   let scheduleCompare = await Minicurso.findById(workId);
 
-  if((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers){
-    return {isDup: true, msg: 'Vagas Esgotadas'};
+  if ((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers) {
+    return { isDup: true, msg: 'Vagas Esgotadas' };
   } else {
 
     let mySchedules = await User.findById(userId).select('cursosInscritos');
 
-    if(mySchedules.cursosInscritos){
+    if (mySchedules.cursosInscritos) {
 
       let schedulesDatesCheck = await getSchedulesDates(mySchedules);
-      
-      if(schedulesDatesCheck){
+
+      if (schedulesDatesCheck) {
 
         for (let index = 0; index < schedulesDatesCheck.length; index++) {
           for (let k = 0; k < schedulesDatesCheck[index].dates.length; k++) {
@@ -154,11 +154,11 @@ async function checkSubscribeDup(workId, userId) {
 
             for (let j = 0; j < scheduleCompare.dates.length; j++) {
 
-              if(scheduleCompare.dates[j].date == scheduleDateCheck.date &&
-                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') && 
-                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')){
-                
-                  return {isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário'};
+              if (scheduleCompare.dates[j].date == scheduleDateCheck.date &&
+                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') &&
+                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')) {
+
+                return { isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário' };
 
               }
             }
@@ -168,7 +168,7 @@ async function checkSubscribeDup(workId, userId) {
 
     } else {
 
-      return {isDup: false, msg: msg};
+      return { isDup: false, msg: msg };
 
     }
   }
@@ -177,17 +177,17 @@ async function checkSubscribeDup(workId, userId) {
 async function subscribeMinicurso(workId, userId, email) {
 
   let checkIsDup = await checkSubscribeDup(workId, userId);
-  if(checkIsDup && checkIsDup.isDup){
+  if (checkIsDup && checkIsDup.isDup) {
 
     return checkIsDup;
 
   } else {
-    
+
     let userInsert = {
       userId: userId,
       userEmail: email
     }
-  
+
     await User.findOneAndUpdate({
       _id: userId
     }, {
@@ -202,8 +202,8 @@ async function subscribeMinicurso(workId, userId, email) {
         console.log("Erro ao atualizar o usuario subscribeMinicurso -> " + err);
       }
     });
-  
-  
+
+
     return await Minicurso.findOneAndUpdate({
       _id: workId
     }, {
@@ -241,10 +241,10 @@ async function unRegisterMonitor(workId, email) {
     email: email
   }, {
     $pull: {
-      monitor:{
+      monitor: {
         'idSchedule': workId
       }
-      
+
     }
   }, function (err, doc) {
     if (err) {

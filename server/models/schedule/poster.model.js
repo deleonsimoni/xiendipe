@@ -7,7 +7,7 @@ const ScheduleSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
-  
+
   axis: {
     type: String
   },
@@ -19,7 +19,9 @@ const ScheduleSchema = new mongoose.Schema({
   mediator: {
     type: String
   },
-  
+  qtdSubscribers: {
+    type: String,
+  },
 
   worksPoster: [{
     work: {
@@ -29,7 +31,7 @@ const ScheduleSchema = new mongoose.Schema({
       type: String,
     },
     workAuthor: [{}],
-    linkPPT:{
+    linkPPT: {
       type: String,
     }
   }],

@@ -1,7 +1,7 @@
 const Painel = require('../../models/schedule/painel.model');
+const Minicurso = require('../../models/schedule/minicurso.model');
+const Poster = require('../../models/schedule/poster.model');
 const User = require('../../models/user.model');
-const Work = require('../../models/work.model');
-const ChatWork = require('../../models/virtual/chatWork.model');
 
 module.exports = {
   listSchedule,
@@ -10,6 +10,7 @@ module.exports = {
   deleteSchedule,
   unsubscribePainel,
   subscribePainel,
+
 }
 
 async function listSchedule(date) {
@@ -17,23 +18,13 @@ async function listSchedule(date) {
     'dates.date': { $in: date }
   })
     .sort({
-      'dates.startTime': 1
+      createAt: 1
     });
 }
 
-async function insertSchedule(schedule, oldId) {
+async function insertSchedule(schedule) {
 
-  schedule = await setAuthorsInPainel(schedule);
-
-  const painel = await new Painel(schedule).save();
-
-  await ChatWork.findOneAndUpdate({
-    idWork: oldId
-  }, {
-    $set: {
-      idWork: painel._id
-    }
-  });
+  let painel = await new Painel(schedule).save();
 
   if (painel.monitor) {
     let monitors = painel.monitor.trim().split(';');
@@ -42,98 +33,49 @@ async function insertSchedule(schedule, oldId) {
     });
   }
 
-  if (painel.mediator) {
-    registerMediator(painel._id, painel.mediator.toLowerCase());
-  }
+  return await painel;
 
-  let workWithUser;
-
-  if (painel.worksPainel) {
-    for (let index = 0; index < painel.worksPainel.length; index++) {
-      workWithUser = await Work.findById({ _id: painel.worksPainel[index].work }).select('authors');
-      if (workWithUser.authors) {
-
-        for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
-          await subscribePainel(painel._id, workWithUser.authors[userCount].userId, workWithUser.authors[userCount].email);
-        }
-      }
-    }
-  }
-
-  return painel;
 }
 
 async function updateSchedule(id, schedule) {
 
-  let oldId = await deleteSchedule(id);
-  delete schedule._id;
-  return await insertSchedule(schedule, oldId);
+  let painelOld = await Painel.findById(id);
 
-
-}
-
-async function deleteSchedule(id) {
-
-  const painel = await Painel.findById({ _id: id });
-  let workWithUser;
-
-  if (painel.monitor) {
-    let monitors = painel.monitor.trim().split(';');
+  if (painelOld.monitor) {
+    let monitors = painelOld.monitor.trim().split(';');
     monitors.forEach(element => {
       unRegisterMonitor(id, element.toLowerCase());
     });
   }
 
-  if (painel.mediator) {
-    unRegisterMediator(id, painel.mediator.toLowerCase());
+  if (schedule.monitor) {
+    let monitors = schedule.monitor.trim().split(';');
+    monitors.forEach(element => {
+      registerMonitor(id, element.toLowerCase());
+    });
   }
 
-
-  if (painel.worksPainel) {
-    for (let index = 0; index < painel.worksPainel.length; index++) {
-      workWithUser = await Work.findById({ _id: painel.worksPainel[index].work }).select('authors');
-      if (workWithUser.authors) {
-
-        for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
-          await unsubscribePainel(painel._id, workWithUser.authors[userCount].userId);
-        }
-      }
-    }
-  }
-
-  await Painel.findOneAndRemove({ _id: id });
-  return await painel._id;
+  return await Painel.findOneAndUpdate({ _id: id }, schedule);
 
 }
 
+async function deleteSchedule(id) {
 
+  let painelOld = await Painel.findById(id);
 
-async function setAuthorsInPainel(painels) {
-
-  let workWithUser;
-  let namesAuthors = [];
-
-  if (painels.worksPainel) {
-    for (let index = 0; index < painels.worksPainel.length; index++) {
-      if (!painels.worksPainel[index].workTitle) continue;
-      namesAuthors = [];
-      workWithUser = await Work.findById({ _id: painels.worksPainel[index].work }).select('authors');
-      if (workWithUser.authors) {
-
-        for (let autores = 0; autores < workWithUser.authors.length; autores++) {
-          const autoresTrabalho = workWithUser.authors[autores];
-          namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
-        }
-
-        painels.worksPainel[index].workAuthor = namesAuthors
-
-      }
-    }
+  if (painelOld.monitor) {
+    let monitors = painelOld.monitor.trim().split(';');
+    monitors.forEach(element => {
+      unRegisterMonitor(id, element.toLowerCase());
+    });
   }
 
-  return await painels;
-}
+  return await Painel.findOneAndRemove({
+    _id: id
+  });
 
+
+}
 
 async function unsubscribePainel(workId, userId) {
 
@@ -144,7 +86,6 @@ async function unsubscribePainel(workId, userId) {
       cursosInscritos: {
         'idSchedule': workId
       }
-
     }
   }, function (err, doc) {
     if (err) {
@@ -154,7 +95,7 @@ async function unsubscribePainel(workId, userId) {
     }
   });
 
-  return await Painel.findOneAndUpdate({
+  return Painel.findOneAndUpdate({
     _id: workId
   }, {
     $pull: {
@@ -167,37 +108,115 @@ async function unsubscribePainel(workId, userId) {
   });
 }
 
-async function subscribePainel(workId, userId, email) {
-  let userInsert = {
-    userId: userId,
-    userEmail: email
+async function getSchedulesDates(mySchedules) {
+
+  let schedulesDatesCheck = [];
+  for (let index = 0; index < mySchedules.cursosInscritos.length; index++) {
+    switch (mySchedules.cursosInscritos[index].icModalityId) {
+      case 3: //Poster
+        await schedulesDatesCheck.push(await Poster.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+      case 4: //minicurso
+        await schedulesDatesCheck.push(await Minicurso.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+      case 5: //painel
+        await schedulesDatesCheck.push(await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        break;
+    }
   }
 
-  await User.findOneAndUpdate({
-    _id: userId
-  }, {
-    $addToSet: {
-      cursosInscritos: {
-        idSchedule: workId,
-        icModalityId: 5
+  return await schedulesDatesCheck;
+
+}
+
+async function checkSubscribeDup(workId, userId) {
+
+  let msg = 'Inscrição realizada com sucesso';
+
+  let scheduleCompare = await Painel.findById(workId);
+
+  if ((scheduleCompare.subscribers.length + 1) > scheduleCompare.qtdSubscribers) {
+    return { isDup: true, msg: 'Vagas Esgotadas' };
+  } else {
+
+    let mySchedules = await User.findById(userId).select('cursosInscritos');
+
+    if (mySchedules.cursosInscritos) {
+
+      let schedulesDatesCheck = await getSchedulesDates(mySchedules);
+
+      if (schedulesDatesCheck) {
+
+        for (let index = 0; index < schedulesDatesCheck.length; index++) {
+          for (let k = 0; k < schedulesDatesCheck[index].dates.length; k++) {
+            const scheduleDateCheck = schedulesDatesCheck[index].dates[k];
+
+            for (let j = 0; j < scheduleCompare.dates.length; j++) {
+
+              if (scheduleCompare.dates[j].date == scheduleDateCheck.date &&
+                scheduleCompare.dates[j].startTime.replace(':', '') >= scheduleDateCheck.startTime.replace(':', '') &&
+                scheduleCompare.dates[j].endTime.replace(':', '') <= scheduleDateCheck.endTime.replace(':', '')) {
+
+                return { isDup: true, msg: 'Você possui inscrição em uma atividade nesse mesmo dia e horário' };
+
+              }
+            }
+          }
+        }
       }
-    }
-  }, (err, doc) => {
-    if (err) {
-      console.log("Erro ao atualizar o usuario subscribeMinicurso -> " + err);
-    }
-  });
 
+    } else {
 
-  return await Painel.findOneAndUpdate({
-    _id: workId
-  }, {
-    $addToSet: {
-      'subscribers': userInsert
+      return { isDup: false, msg: msg };
+
     }
-  }, {
-    new: true
-  });
+  }
+}
+
+async function subscribePainel(workId, userId, email) {
+
+  let checkIsDup = await checkSubscribeDup(workId, userId);
+
+  if (checkIsDup && checkIsDup.isDup) {
+
+    return checkIsDup;
+
+  } else {
+
+    let userInsert = {
+      userId: userId,
+      userEmail: email
+    }
+
+    await User.findOneAndUpdate({
+      _id: userId
+    }, {
+      $addToSet: {
+        'cursosInscritos': {
+          idSchedule: workId,
+          icModalityId: 5
+        }
+      }
+    }, {
+      upsert: true,
+      new: true
+    }, (err, doc) => {
+      if (err) {
+        console.log("Erro ao atualizar o usuario painel -> " + err);
+      }
+    });
+
+    return Painel.findOneAndUpdate({
+      _id: workId
+    }, {
+      $addToSet: {
+        'subscribers': userInsert
+      }
+    }, {
+      new: true
+    });
+
+  }
 }
 
 async function registerMonitor(workId, email) {
@@ -224,44 +243,6 @@ async function unRegisterMonitor(workId, email) {
   }, {
     $pull: {
       monitor: {
-        'idSchedule': workId
-      }
-
-    }
-  }, function (err, doc) {
-    if (err) {
-      console.log("Erro ao remover monitor", err);
-    } else {
-      console.log("Sucesso ao remover monitor ", err);
-    }
-  });
-}
-
-
-async function registerMediator(workId, email) {
-  await User.findOneAndUpdate({
-    email: email
-  }, {
-    $addToSet: {
-      mediador: {
-        idSchedule: workId,
-        icModalityId: 5
-      }
-    }
-  }, (err, doc) => {
-    if (err) {
-      console.log("erro ao registrar mediador -> " + err);
-    }
-  });
-}
-
-
-async function unRegisterMediator(workId, email) {
-  await User.findOneAndUpdate({
-    email: email
-  }, {
-    $pull: {
-      mediador: {
         'idSchedule': workId
       }
 

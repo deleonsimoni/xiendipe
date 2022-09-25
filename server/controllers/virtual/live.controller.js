@@ -9,7 +9,6 @@ const encerramentoCtrl = require('../schedule/encerramento.controller');
 const paginate = require("jw-paginate");
 const Minicurso = require('../../models/schedule/minicurso.model');
 const Painel = require('../../models/schedule/painel.model');
-const RodasDeConversa = require('../../models/schedule/rodasDeConversa.model');
 const Poster = require('../../models/schedule/poster.model');
 const User = require('../../models/user.model');
 const Work = require('../../models/work.model');
@@ -105,7 +104,7 @@ async function listScheduleWorkPaginate(req) {
         .limit(pageSize);
       break;
 
-    case 2:
+    /*case 2:
       total = await RodasDeConversa.find(
         {
           $and:
@@ -130,7 +129,7 @@ async function listScheduleWorkPaginate(req) {
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
-      break;
+      break;*/
 
     case 3:
       total = await Poster.find(
@@ -350,10 +349,10 @@ async function getSubscribersUser(user) {
           schedule = await Painel.findById({ _id: user.cursosInscritos[index].idSchedule }).lean();
           if (schedule) schedule.type = 5;
           break;
-        case 2:
-          schedule = await RodasDeConversa.findById({ _id: user.cursosInscritos[index].idSchedule }).lean();
-          if (schedule) schedule.type = 2;
-          break;
+        /*  case 2:
+            schedule = await RodasDeConversa.findById({ _id: user.cursosInscritos[index].idSchedule }).lean();
+            if (schedule) schedule.type = 2;
+            break;*/
         case 3:
           schedule = await Poster.findById({ _id: user.cursosInscritos[index].idSchedule }).lean();
           if (schedule) schedule.type = 3;
@@ -394,8 +393,8 @@ async function getPresentationsUser(req) {
           if (schedule) schedule.type = 5;
           response.push(schedule);
           break;
-        case 2:
-          schedule = await RodasDeConversa.findOne({ work: work[index]._id }).lean();
+        case 3:
+          schedule = await Poster.findOne({ work: work[index]._id }).lean();
           if (schedule) schedule.type = 2;
           response.push(schedule);
           break;
@@ -427,11 +426,11 @@ async function getUserMediator(req) {
           if (schedule) schedule.type = 5;
           response.push(schedule);
           break;
-        case 2: //rodaDeConversa
-          schedule = await RodasDeConversa.findById(req.user.mediador[index].idSchedule).lean();
-          if (schedule) schedule.type = 2;
-          response.push(schedule);
-          break;
+        /*   case 2: //rodaDeConversa
+             schedule = await RodasDeConversa.findById(req.user.mediador[index].idSchedule).lean();
+             if (schedule) schedule.type = 2;
+             response.push(schedule);
+             break;*/
         case 3: //pôster
           schedule = await Poster.findById(req.user.mediador[index].idSchedule).lean();
           if (schedule) schedule.type = 3;
@@ -461,11 +460,11 @@ async function getUserMonitors(req) {
           if (schedule) schedule.type = 5;
           response.push(schedule);
           break;
-        case 2: //rodaDeConversa
-          schedule = await RodasDeConversa.findById(req.user.monitor[index].idSchedule).lean();
-          if (schedule) schedule.type = 2;
-          response.push(schedule);
-          break;
+        /* case 2: //rodaDeConversa
+           schedule = await RodasDeConversa.findById(req.user.monitor[index].idSchedule).lean();
+           if (schedule) schedule.type = 2;
+           response.push(schedule);
+           break;*/
         case 3: //pôster
           schedule = await Poster.findById(req.user.monitor[index].idSchedule).lean();
           if (schedule) schedule.type = 3;
@@ -532,7 +531,7 @@ async function listVirtual() {
 async function calibrateAllWorksAuthors() {
   const posters = await Poster.find();
   const minicursos = await Minicurso.find();
-  const rodaDeConversas = await RodasDeConversa.find();
+
   const painels = await Painel.find();
 
   let workWithUser;

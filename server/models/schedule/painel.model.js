@@ -19,7 +19,9 @@ const ScheduleSchema = new mongoose.Schema({
   mediator: {
     type: String
   },
-
+  qtdSubscribers: {
+    type: String,
+  },
 
   worksPainel: [{
     work: {
