@@ -95,6 +95,10 @@ export class CertificadoComponent implements OnInit {
         this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PAINEL";
         this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
       }
+      else if (this.user.cursosInscritos[control].icModalityId == 3) {
+        this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PÔSTER";
+        this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
+      }
       control++;
     });
   }
@@ -208,7 +212,11 @@ export class CertificadoComponent implements OnInit {
     } else if (templateSelecionado.target.value == "PÔSTER") {
       this.coringa = " apresentou o trabalho " + (complementoUm || "______________");
       this.exibirGT = true;
+    } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE PÔSTER") {
+      this.coringa = " participou do Pôster " + complementoUm || "______________" + " ";
+      this.exibirGT = true;
     }
+
 
     this.certificados.push({ nome: this.nome, coringa: this.coringa, textoTemplate: this.textoTemplate });
   }
@@ -281,6 +289,12 @@ export class CertificadoComponent implements OnInit {
       value:
         "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
+    {
+      name: "PARTICIPAÇÃO DE PÔSTER",
+      value:
+        "no XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
+    },
+
 
     {
       name: "PARTICIPAÇÃO GERAL",
