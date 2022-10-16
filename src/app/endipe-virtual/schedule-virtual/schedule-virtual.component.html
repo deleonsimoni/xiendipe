@@ -150,11 +150,11 @@
             </div>
         </div>
 
-    </div>
 
-    <!-- TRABALHOS SEM INSCRICOES - ATIVIDADES ABERTAS -->
 
-    <!--  <div *ngIf="type == '3'">
+        <!-- TRABALHOS SEM INSCRICOES - ATIVIDADES ABERTAS -->
+
+        <!--  <div *ngIf="type == '3'">
             <div class="card-works">
                 <div class="row">
                     <div class="col-sm-10">
@@ -200,7 +200,7 @@
 
 
 
-    <!--<div *ngIf="type == '5'">
+        <!--<div *ngIf="type == '5'">
             <div class="card-works">
                 <div class="row">
                     <div class="col-sm-10">
@@ -232,182 +232,184 @@
             </div>
         </div>-->
 
-    <div *ngIf="type == '1' || type == '7' || type == '8' || type == '10' || type == '11' || type == '12'">
+        <div *ngIf="type == '1' || type == '7' || type == '8' || type == '10' || type == '11' || type == '12'">
 
-        <div class="card-works">
-            <div class="row">
-                <div class="col-sm-10">
-                    <h5 *ngIf="type != '8'" style="color: white">{{type | modalitiesWork}}</h5>
-                    <h5 *ngIf="type == '8'" style="color: white">{{schedule.theme | themeSimposio}}</h5>
-                    <h3 tabindex="0" *ngIf="type != '8'"><b>{{schedule?.titles[0]}}</b></h3>
-                    <h3 tabindex="0" *ngIf="type  == '8'"><b>{{schedule.themeSpeeches}}</b></h3>
-                    <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
-                        - '
-                        + (schedule.endTime ? schedule.endTime : '')}}</h4>
-                </div>
-
-                <div class="col-sm-2">
-                    <div *ngIf="carregando">
-                        <h4 class="mb-4"><button class="btn btn-inscrever"><i
-                                    class="fas fa-spinner fa-pulse"></i></button>
-                        </h4>
+            <div class="card-works">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5 *ngIf="type != '8'" style="color: white">{{type | modalitiesWork}}</h5>
+                        <h5 *ngIf="type == '8'" style="color: white">{{schedule.theme | themeSimposio}}</h5>
+                        <h3 tabindex="0" *ngIf="type != '8'"><b>{{schedule?.titles[0]}}</b></h3>
+                        <h3 tabindex="0" *ngIf="type  == '8'"><b>{{schedule.themeSpeeches}}</b></h3>
+                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
+                            - '
+                            + (schedule.endTime ? schedule.endTime : '')}}</h4>
                     </div>
-                    <div style="cursor: pointer !important;">
-                        <h4 style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;"
-                            (click)="selectSchedule(schedule);">Mais detalhes <i class="fa fa-chevron-down"></i>
-                        </h4>
+
+                    <div class="col-sm-2">
+                        <div *ngIf="carregando">
+                            <h4 class="mb-4"><button class="btn btn-inscrever"><i
+                                        class="fas fa-spinner fa-pulse"></i></button>
+                            </h4>
+                        </div>
+                        <div style="cursor: pointer !important;">
+                            <h4 style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;"
+                                (click)="selectSchedule(schedule);">Mais detalhes <i class="fa fa-chevron-down"></i>
+                            </h4>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="work-content">
-            <div *ngIf="schedule._id == scheduleSelect">
-                <div class="row align-items-center">
-                    <div *ngIf="type != '8'" class="col-12">
-                        <strong>Título</strong>
-                        <p *ngFor="let item of schedule.titles" style="text-align: justify; text-justify: inter-word;">
-                            {{ item }}</p>
-                    </div>
-                    <div *ngIf=" type != '11' && (schedule.coordinators || schedule.coordinator)" class="col-12">
-                        <strong>Conferencistas</strong>
-                        <div *ngIf="schedule.coordinators">
-                            <p *ngFor="let item of schedule.coordinators"
-                                style="text-align: justify; text-justify: inter-word;">{{ item.name }} {{
-                                item.isCoordinator ? '(Coordenador)' : '' }}</p>
+            <div class="work-content">
+                <div *ngIf="schedule._id == scheduleSelect">
+                    <div class="row align-items-center">
+                        <div *ngIf="type != '8'" class="col-12">
+                            <strong>Título</strong>
+                            <p *ngFor="let item of schedule.titles"
+                                style="text-align: justify; text-justify: inter-word;">
+                                {{ item }}</p>
                         </div>
-                        <div *ngIf="schedule.coordinator">
-                            <p *ngFor="let item of schedule.coordinator"
-                                style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
-                        </div>
-                    </div>
-                    <div *ngIf="type == '11'" class="col-12">
-                        <strong>Entrevistados</strong>
-                        <div *ngIf="schedule.entrevistados">
-                            <p *ngFor="let item of schedule.entrevistados"
-                                style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
-                        </div>
-                        <strong>Entrevistadores</strong>
-                        <div *ngIf="schedule.entrevistadores">
-                            <p *ngFor="let item of schedule.entrevistadores"
-                                style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
-                        </div>
-
-                    </div>
-                    <hr />
-                    <div *ngIf="schedule?.virtual?.linkYoutube" class="row col-12 justify-content-center">
-                        <iframe tabindex="0" alt="clique para assistir" width="100%" height="400"
-                            [src]='linkYoutubeSafe' frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- LANÇAMENTO DE LIVROS -->
-    <div *ngIf="type == '9'">
-
-        <div class="card-works">
-            <div class="row">
-                <div class="col-sm-10">
-                    <h5 style="color: white">{{type | modalitiesWork}}</h5>
-                    <h3 tabindex="0"><b>{{schedule?.titles[0]}}</b></h3>
-                    <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
-                        - '
-                        + (schedule.endTime ? schedule.endTime : '')}}</h4>
-                    <h4 tabindex="0" class="mb-1">
-                        Link para acesso: <b>
-                            <a tabindex="0" *ngIf="schedule?.virtual?.linkZoom"
-                                [attr.href]="schedule?.virtual?.linkZoom" target="_blank">Clique Aqui</a>
-                            <span tabindex="0" *ngIf="schedule?.virtual?.linkZoom"> ou copie
-                                {{schedule?.virtual?.linkZoom}}</span>
-                            <span tabindex="0" *ngIf="!schedule?.virtual?.linkZoom">Em breve</span></b>
-                    </h4>
-                </div>
-
-                <div class="col-sm-2">
-                    <div *ngIf="carregando">
-                        <h4 class="mb-4"><button class="btn btn-inscrever"><i
-                                    class="fas fa-spinner fa-pulse"></i></button>
-                        </h4>
-                    </div>
-                    <div style="cursor: pointer !important;">
-                        <h4 *ngIf="!carregando"
-                            style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;"
-                            (click)="selectBookSchedule(schedule)">Mais detalhes <i class="fa fa-chevron-down"></i>
-                        </h4>
-                        <h4 *ngIf="carregando"
-                            style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;">
-                            <i class="fas fa-spinner fa-pulse"></i>Carregando
-                        </h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="work-content">
-            <div *ngIf="schedule._id == scheduleSelect">
-                <div class="row justify-content-center" *ngFor="let item of schedule.books; let i = index">
-                    <div class="form-group col-md-12">
-                        <strong>Título</strong>
-                        <p style="text-align: justify; text-justify: inter-word;">{{ item.title }}</p>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <strong>Editora</strong>
-                        <p style="text-align: justify; text-justify: inter-word;">{{ item.editora }}</p>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <strong>Autores</strong>
-                        <p style="text-align: justify; text-justify: inter-word;">{{item.author}}</p>
-                    </div>
-
-                    <div class="form-group col-md-12">
-                        <strong>Ano de Publicação</strong>
-                        <p style="text-align: justify; text-justify: inter-word;">{{ item.ano }}</p>
-                    </div>
-
-                    <div #images class="row form-group col-md-12">
-
-                        <div class="form-group col-md-2">
-                            <div class="miniature-img ">
-                                <img width="100px" height="150px"
-                                    src="https://ffainfinity.s3-sa-east-1.amazonaws.com/books/{{item.nameMiniature}}">
+                        <div *ngIf=" type != '11' && (schedule.coordinators || schedule.coordinator)" class="col-12">
+                            <strong>Conferencistas</strong>
+                            <div *ngIf="schedule.coordinators">
+                                <p *ngFor="let item of schedule.coordinators"
+                                    style="text-align: justify; text-justify: inter-word;">{{ item.name }} {{
+                                    item.isCoordinator ? '(Coordenador)' : '' }}</p>
+                            </div>
+                            <div *ngIf="schedule.coordinator">
+                                <p *ngFor="let item of schedule.coordinator"
+                                    style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
                             </div>
                         </div>
+                        <div *ngIf="type == '11'" class="col-12">
+                            <strong>Entrevistados</strong>
+                            <div *ngIf="schedule.entrevistados">
+                                <p *ngFor="let item of schedule.entrevistados"
+                                    style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
+                            </div>
+                            <strong>Entrevistadores</strong>
+                            <div *ngIf="schedule.entrevistadores">
+                                <p *ngFor="let item of schedule.entrevistadores"
+                                    style="text-align: justify; text-justify: inter-word;">{{ item.name }}</p>
+                            </div>
 
-                        <div class="col-md-10">
-                            <div class="row">
-                                <div class="form-group col-md-12">
-                                    <strong>Acesse</strong>
-                                    <p style="text-align: justify; text-justify: inter-word;"><a
-                                            [attr.href]="item.linkSale" target="_blank">Clique aqui</a></p>
+                        </div>
+                        <hr />
+                        <div *ngIf="schedule?.virtual?.linkYoutube" class="row col-12 justify-content-center">
+                            <iframe tabindex="0" alt="clique para assistir" width="100%" height="400"
+                                [src]='linkYoutubeSafe' frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANÇAMENTO DE LIVROS -->
+        <div *ngIf="type == '9'">
+
+            <div class="card-works">
+                <div class="row">
+                    <div class="col-sm-10">
+                        <h5 style="color: white">{{type | modalitiesWork}}</h5>
+                        <h3 tabindex="0"><b>{{schedule?.titles[0]}}</b></h3>
+                        <h4 tabindex="0">{{schedule.date + ' ' + (schedule.startTime ? schedule.startTime : '') + '
+                            - '
+                            + (schedule.endTime ? schedule.endTime : '')}}</h4>
+                        <h4 tabindex="0" class="mb-1">
+                            Link para acesso: <b>
+                                <a tabindex="0" *ngIf="schedule?.virtual?.linkZoom"
+                                    [attr.href]="schedule?.virtual?.linkZoom" target="_blank">Clique Aqui</a>
+                                <span tabindex="0" *ngIf="schedule?.virtual?.linkZoom"> ou copie
+                                    {{schedule?.virtual?.linkZoom}}</span>
+                                <span tabindex="0" *ngIf="!schedule?.virtual?.linkZoom">Em breve</span></b>
+                        </h4>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div *ngIf="carregando">
+                            <h4 class="mb-4"><button class="btn btn-inscrever"><i
+                                        class="fas fa-spinner fa-pulse"></i></button>
+                            </h4>
+                        </div>
+                        <div style="cursor: pointer !important;">
+                            <h4 *ngIf="!carregando"
+                                style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;"
+                                (click)="selectBookSchedule(schedule)">Mais detalhes <i class="fa fa-chevron-down"></i>
+                            </h4>
+                            <h4 *ngIf="carregando"
+                                style="color: black; position: absolute; bottom: 0; left: 0; cursor: pointer !important;">
+                                <i class="fas fa-spinner fa-pulse"></i>Carregando
+                            </h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-content">
+                <div *ngIf="schedule._id == scheduleSelect">
+                    <div class="row justify-content-center" *ngFor="let item of schedule.books; let i = index">
+                        <div class="form-group col-md-12">
+                            <strong>Título</strong>
+                            <p style="text-align: justify; text-justify: inter-word;">{{ item.title }}</p>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <strong>Editora</strong>
+                            <p style="text-align: justify; text-justify: inter-word;">{{ item.editora }}</p>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <strong>Autores</strong>
+                            <p style="text-align: justify; text-justify: inter-word;">{{item.author}}</p>
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <strong>Ano de Publicação</strong>
+                            <p style="text-align: justify; text-justify: inter-word;">{{ item.ano }}</p>
+                        </div>
+
+                        <div #images class="row form-group col-md-12">
+
+                            <div class="form-group col-md-2">
+                                <div class="miniature-img ">
+                                    <img width="100px" height="150px"
+                                        src="https://ffainfinity.s3-sa-east-1.amazonaws.com/books/{{item.nameMiniature}}">
                                 </div>
-                                <div class="form-group col-md-12">
-                                    <strong>Resumo</strong>
-                                    <p style="text-align: justify; text-justify: inter-word;">{{item.resume}}
-                                    </p>
+                            </div>
+
+                            <div class="col-md-10">
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <strong>Acesse</strong>
+                                        <p style="text-align: justify; text-justify: inter-word;"><a
+                                                [attr.href]="item.linkSale" target="_blank">Clique aqui</a></p>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <strong>Resumo</strong>
+                                        <p style="text-align: justify; text-justify: inter-word;">{{item.resume}}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <hr />
                     </div>
-                    <hr />
+
+                    <div *ngIf="pagerBooks.totalItems" class="pagination justify-content-center">
+
+                        <mat-paginator [length]="pagerBooks.totalItems" [pageSize]="pagerBooks.pageSize"
+                            (page)="pageEventBooks = getBooksPaginated(schedule, $event)">
+                        </mat-paginator>
+
+                    </div>
+
                 </div>
-
-                <div *ngIf="pagerBooks.totalItems" class="pagination justify-content-center">
-
-                    <mat-paginator [length]="pagerBooks.totalItems" [pageSize]="pagerBooks.pageSize"
-                        (page)="pageEventBooks = getBooksPaginated(schedule, $event)">
-                    </mat-paginator>
-
-                </div>
-
             </div>
         </div>
-    </div>
 
+    </div>
 </div>
 
 <div *ngIf="pager.totalItems" class="pagination justify-content-center">

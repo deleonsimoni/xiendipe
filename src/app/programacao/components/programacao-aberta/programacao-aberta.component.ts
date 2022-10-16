@@ -30,14 +30,6 @@ export class ProgramacaoAbertaComponent implements OnInit {
       type: 1
     },
     {
-      name: 'Painel',
-      type: 5
-    },
-    {
-      name: 'Pôster',
-      type: 3
-    },
-    {
       name: 'Atividade Cultural',
       type: 7
     },
