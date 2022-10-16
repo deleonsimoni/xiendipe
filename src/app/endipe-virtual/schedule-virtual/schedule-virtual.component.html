@@ -30,14 +30,14 @@
 
 
 
-                        <!--<div>
+                        <div>
 
                             <ng-container *ngIf="type != '3'">
                                 <h4 class="mb-4"><button class="btn btn-warning">Inscrições Encerradas</button></h4>
                             </ng-container>
-                        </div>-->
+                        </div>
 
-
+                        <!--
                         <div *ngIf="!carregando && user?.payment?.icPaid">
 
                             <ng-container
@@ -56,7 +56,7 @@
                                         class="btn btn-danger">Cancelar Inscrição</button></h4>
                             </ng-container>
 
-                        </div>
+                        </div>-->
 
                         <div *ngIf="carregando">
                             <h4 class="mb-4"><button class="btn btn-inscrever"><i
@@ -105,12 +105,12 @@
                                         <p><span *ngIf="!item.linkPPT.includes('http')">Banner não enviado</span></p>
                                     </div>-->
                             </div>
-                            <div class="row" *ngIf="item.workAuthor">
+                            <!--<div class="row" *ngIf="item.workAuthor">
                                 <div class="col-sm-12 align-self-center">
                                     <strong>Autores</strong>
                                     <p *ngFor="let autores of item.workAuthor">{{ autores.fullname }}</p>
                                 </div>
-                            </div>
+                            </div>-->
                             <br />
                         </div>
                     </div>
