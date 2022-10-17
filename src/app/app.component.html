@@ -43,6 +43,7 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" [routerLink]="['/home']" alt="Apresentação"
                     fragment="clients">Apresentação</a>
+
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" [routerLink]="['/home']" alt="Objetivos" fragment="objetivos">Objetivos</a>
                   <div class="dropdown-divider"></div>
@@ -128,18 +129,23 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" [routerLink]="['/home']" fragment="prazos">Prazos</a>
                   <div class="dropdown-divider"></div>
-              <li><a tabindex="0" [routerLink]="['/home']" fragment="templateApresentacao">Template para
-                  Apresentação</a>
+                  <a tabindex="0" [routerLink]="['/home']" fragment="templateApresentacao">Template para
+                    Apresentação</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" alt="monitor" target="_blank"
+                    href="https://drive.google.com/file/d/1RT_UILQ5agwCy2wzYWZRXCC2d1VbEy4R/view?usp=sharing">Edital
+                    Monitoria</a>
+
+
+                  <div class="dropdown-divider"></div>
+
+                  <!--<a class="dropdown-item" [routerLink]="['/anais-virtual']" fragment="anais">Anais</a>-->
+                </div>
               </li>
-              <div class="dropdown-divider"></div>
-
-              <!--<a class="dropdown-item" [routerLink]="['/anais-virtual']" fragment="anais">Anais</a>-->
-        </div>
-        </li>
 
 
 
-        <!--
+              <!--
               <li class="menu-has-children pointer">
                 <a tabindex="0" (keydown)="expandMenu($event, 'dicas')">RIO DE JANEIRO <i class="fa fa-chevron-down"></i></a>
                 <ul class="dicas">
@@ -150,155 +156,159 @@
                   <li><a tabindex="0" alt="clima" [routerLink]="['/home']" fragment="Clima">Clima</a></li>
                 </ul>
               </li>-->
-        <li class="pointer">
-          <a tabindex="0" class="pulse" style="color:#195809" *ngIf="!isAuth" [routerLink]="['/register']"
-            fragment="">INSCRIÇÃO</a>
-        </li>
-        <li tabindex="0" class="pointer" *ngIf="!isAuth"><a tabindex="0" [routerLink]="['/login']">LOGIN</a></li>
+              <li class="pointer">
+                <a tabindex="0" class="pulse" style="color:#195809" *ngIf="!isAuth" [routerLink]="['/register']"
+                  fragment="">INSCRIÇÃO</a>
+              </li>
+              <li tabindex="0" class="pointer" *ngIf="!isAuth"><a tabindex="0" [routerLink]="['/login']">LOGIN</a></li>
 
-        <li *ngIf="isAuth" class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" alt="Ações" href="#" id="acoesMenu" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            AÇÕES
-          </a>
-          <div class="dropdown-menu" aria-labelledby="acoesMenu">
+              <li *ngIf="isAuth" class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" alt="Ações" href="#" id="acoesMenu" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  AÇÕES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="acoesMenu">
 
-            <a class="dropdown-item" alt="Pagamento" [routerLink]="['/pagamento']">Pagamento</a>
-            <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" alt="Pagamento" [routerLink]="['/pagamento']">Pagamento</a>
+                  <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" alt="Submissão" [routerLink]="['/meus-trabalhos']">Submissão</a>
-            <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" alt="Submissão" [routerLink]="['/meus-trabalhos']">Submissão</a>
+                  <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" alt="Perfil" [routerLink]="['/perfil']">Perfil</a>
+                  <a class="dropdown-item" alt="Perfil" [routerLink]="['/perfil']">Perfil</a>
 
-            <div class="dropdown-divider"></div>
+                  <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" alt="Lançamento de livros" target="_blank"
-              href="https://forms.gle/rF7ixeszQcKmMWp19">Lançamento de
-              livros</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" alt="Periódicos" target="_blank"
-              href="https://docs.google.com/forms/d/16CA6_HmWvD1prMs4nplj0eEYJF77xywerJtPLR4yqWs/viewform?edit_requested=true">Periódicos</a>
-
-
+                  <a class="dropdown-item" alt="Lançamento de livros" target="_blank"
+                    href="https://forms.gle/rF7ixeszQcKmMWp19">Lançamento de
+                    livros</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" alt="Periódicos" target="_blank"
+                    href="https://docs.google.com/forms/d/16CA6_HmWvD1prMs4nplj0eEYJF77xywerJtPLR4yqWs/viewform?edit_requested=true">Periódicos</a>
 
 
-            <div *ngIf="verifyAcess()" class="dropdown-divider"></div>
 
-            <a class="dropdown-item aoVivo pulse" alt="Meu Endipe" [routerLink]="['/meu-endipe']"
-              fragment="programacao">Meu Endipe</a>
-            <div class="dropdown-divider"></div>
-            <!--  <a class="dropdown-item" alt="Certificados" [routerLink]="['/certificados']" fragment="certificados">Certificados</a>
+
+                  <div *ngIf="verifyAcess()" class="dropdown-divider"></div>
+
+                  <a class="dropdown-item aoVivo pulse" alt="Meu Endipe" [routerLink]="['/meu-endipe']"
+                    fragment="programacao">Meu Endipe</a>
+                  <div class="dropdown-divider"></div>
+                  <!--  <a class="dropdown-item" alt="Certificados" [routerLink]="['/certificados']" fragment="certificados">Certificados</a>
                   <div class="dropdown-divider"></div>-->
-            <a *ngIf="verifyAcess()" class="dropdown-item" [routerLink]="['/admin']">Dashboard</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" [routerLink]="['/home']" (click)="logout()">Sair</a>
+                  <a *ngIf="verifyAcess()" class="dropdown-item" [routerLink]="['/admin']">Dashboard</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" [routerLink]="['/home']" (click)="logout()">Sair</a>
+                </div>
+              </li>
+
+
+            </ul>
+          </nav>
+
+          <div id="logo" class="pull-right" [hidden]="isMobile == false">
+            <ul class="nav-menu pointer">
+              <li>
+                <i class="fa fa-bars" (click)="sidenav.toggle()"></i>
+              </li>
+            </ul>
           </div>
-        </li>
-
-
-        </ul>
-        </nav>
-
-        <div id="logo" class="pull-right" [hidden]="isMobile == false">
-          <ul class="nav-menu pointer">
-            <li>
-              <i class="fa fa-bars" (click)="sidenav.toggle()"></i>
-            </li>
-          </ul>
         </div>
+      </header>
     </div>
-    </header>
-</div>
-</mat-toolbar>
+  </mat-toolbar>
 
-<mat-sidenav-container class="example-sidenav-container">
+  <mat-sidenav-container class="example-sidenav-container">
 
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-  <mat-sidenav #sidenav mode="over">
-    <accordion #accordion [isAnimated]="true" [closeOthers]="true">
-      <!--
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+    <mat-sidenav #sidenav mode="over">
+      <accordion #accordion [isAnimated]="true" [closeOthers]="true">
+        <!--
         <ul class="child-list">
           <li>
             <a tabindex="0" accordion-heading class="menu-has-children aoVivo pulse" [routerLink]="['/endipe-virtual']" (click)="sidenav.toggle()">ENDIPE VIRTUAL</a>
           </li>
         </ul>-->
 
-      <accordion-group>
-        <a tabindex="0" accordion-heading>SOBRE <i class="fa "
-            [ngClass]="{'fa-chevron-down': !accordion.isOpen, 'fa-chevron-up': accordion.isOpen}"></i></a>
-        <ul class="child-list">
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="about" (click)="sidenav.toggle()">Tema</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="escolha" (click)="sidenav.toggle()">Escolha do
-              Tema</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="clients" (click)="sidenav.toggle()">Apresentação</a>
-          </li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="objetivos" (click)="sidenav.toggle()">Objetivos</a>
-          </li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="publico" (click)="sidenav.toggle()">Público
-              Alvo</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="services" (click)="sidenav.toggle()">Eixos</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="historico" (click)="sidenav.toggle()">Endipes
-              Anteriores</a>
-          </li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="valores" (click)="sidenav.toggle()">Valores</a></li>
-        </ul>
-      </accordion-group>
+        <accordion-group>
+          <a tabindex="0" accordion-heading>SOBRE <i class="fa "
+              [ngClass]="{'fa-chevron-down': !accordion.isOpen, 'fa-chevron-up': accordion.isOpen}"></i></a>
+          <ul class="child-list">
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="about" (click)="sidenav.toggle()">Tema</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="escolha" (click)="sidenav.toggle()">Escolha do
+                Tema</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="clients" (click)="sidenav.toggle()">Apresentação</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="objetivos" (click)="sidenav.toggle()">Objetivos</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="publico" (click)="sidenav.toggle()">Público
+                Alvo</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="services" (click)="sidenav.toggle()">Eixos</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="historico" (click)="sidenav.toggle()">Endipes
+                Anteriores</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="valores" (click)="sidenav.toggle()">Valores</a></li>
+          </ul>
+        </accordion-group>
 
-      <accordion-group>
-        <a accordion-heading>ORGANIZAÇÃO <i class="fa fa-chevron-down"></i></a>
-        <ul class="child-list">
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="team" (click)="sidenav.toggle()">Coordenação</a></li>
-          <!--<li><a tabindex="0" [routerLink]="['/home']" fragment="team" (click)="sidenav.toggle()">Comitê
+        <accordion-group>
+          <a accordion-heading>ORGANIZAÇÃO <i class="fa fa-chevron-down"></i></a>
+          <ul class="child-list">
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="team" (click)="sidenav.toggle()">Coordenação</a></li>
+            <!--<li><a tabindex="0" [routerLink]="['/home']" fragment="team" (click)="sidenav.toggle()">Comitê
                 Organizador</a></li>-->
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="comiteCientifico" (click)="sidenav.toggle()">Comitê
-              Científico</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="comiteOrganizador" (click)="sidenav.toggle()">Comitê
-              Organizador</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="bolsistas" (click)="sidenav.toggle()">Bolsistas
-            </a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="parcerias" (click)="sidenav.toggle()">Instituições
-              Parceiras</a>
-          </li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="contact" (click)="sidenav.toggle()">Informações
-              Gerais</a></li>
-        </ul>
-      </accordion-group>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="comiteCientifico" (click)="sidenav.toggle()">Comitê
+                Científico</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="comiteOrganizador" (click)="sidenav.toggle()">Comitê
+                Organizador</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="bolsistas" (click)="sidenav.toggle()">Bolsistas
+              </a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="parcerias" (click)="sidenav.toggle()">Instituições
+                Parceiras</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="contact" (click)="sidenav.toggle()">Informações
+                Gerais</a></li>
+          </ul>
+        </accordion-group>
 
 
-      <accordion-group>
-        <a accordion-heading>PROGRAMAÇÃO <i class="fa fa-chevron-down"></i></a>
-        <ul class="child-list">
-          <li> <a tabindex="0" accordion-heading [routerLink]="['/programacao']" (click)="sidenav.toggle()">Geral</a>
-          </li>
-          <li><a tabindex="0" accordion-heading [routerLink]="['/programacao-aberta']"
-              (click)="sidenav.toggle()">Atividades Abertas</a></li>
-          <li><a tabindex="0" accordion-heading [routerLink]="['/inscrevase']" (click)="sidenav.toggle()">Atividades
-              Fechadas</a></li>
-          <li> <a tabindex="0" accordion-heading (click)="openConferencistasModal()">Conferencistas</a></li>
-          <li> <a tabindex="0" accordion-heading [routerLink]="['/lancamento-livros']">Lançamento de Livros</a>
+        <accordion-group>
+          <a accordion-heading>PROGRAMAÇÃO <i class="fa fa-chevron-down"></i></a>
+          <ul class="child-list">
+            <li> <a tabindex="0" accordion-heading [routerLink]="['/programacao']" (click)="sidenav.toggle()">Geral</a>
+            </li>
+            <li><a tabindex="0" accordion-heading [routerLink]="['/programacao-aberta']"
+                (click)="sidenav.toggle()">Atividades Abertas</a></li>
+            <li><a tabindex="0" accordion-heading [routerLink]="['/inscrevase']" (click)="sidenav.toggle()">Atividades
+                Fechadas</a></li>
+            <li> <a tabindex="0" accordion-heading (click)="openConferencistasModal()">Conferencistas</a></li>
+            <li> <a tabindex="0" accordion-heading [routerLink]="['/lancamento-livros']">Lançamento de Livros</a>
 
-        </ul>
-      </accordion-group>
+          </ul>
+        </accordion-group>
 
-      <accordion-group>
-        <a tabindex="0" accordion-heading>ORIENTAÇÕES <i class="fa fa-chevron-down"></i></a>
-        <ul class="child-list">
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="modalidades" (click)="sidenav.toggle()">Modalidades</a>
-          </li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="normas" (click)="sidenav.toggle()">Normas</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="prazos" (click)="sidenav.toggle()">Prazos</a></li>
-          <li><a tabindex="0" [routerLink]="['/home']" fragment="templateApresentacao"
-              (click)="sidenav.toggle()">Template para Apresentação</a></li>
+        <accordion-group>
+          <a tabindex="0" accordion-heading>ORIENTAÇÕES <i class="fa fa-chevron-down"></i></a>
+          <ul class="child-list">
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="modalidades"
+                (click)="sidenav.toggle()">Modalidades</a>
+            </li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="normas" (click)="sidenav.toggle()">Normas</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="prazos" (click)="sidenav.toggle()">Prazos</a></li>
+            <li><a tabindex="0" [routerLink]="['/home']" fragment="templateApresentacao"
+                (click)="sidenav.toggle()">Template para Apresentação</a></li>
+            <li><a tabindex="0" (click)="sidenav.toggle()"
+                href="https://drive.google.com/file/d/1RT_UILQ5agwCy2wzYWZRXCC2d1VbEy4R/view?usp=sharing">Edital
+                Monitoria</a></li>
 
-          <!--<li><a tabindex="0" [routerLink]="['/anais-virtual']" fragment="anais" (click)="sidenav.toggle()">Anais</a>
+            <!--<li><a tabindex="0" [routerLink]="['/anais-virtual']" fragment="anais" (click)="sidenav.toggle()">Anais</a>
             </li>-->
-        </ul>
-      </accordion-group>
+          </ul>
+        </accordion-group>
 
-      <!--    <accordion-group>
+        <!--    <accordion-group>
           <a tabindex="0" accordion-heading>RIO DE JANEIRO <i class="fa fa-chevron-down"></i></a>
           <ul class="child-list">
             <li><a tabindex="0" [routerLink]="['/home']" fragment="hospedagem" (click)="sidenav.toggle()">Hospedagem</a>
@@ -314,44 +324,45 @@
           </ul>
         </accordion-group>-->
 
-      <ul class="child-list" *ngIf="!isAuth">
-        <li>
-          <a accordion-heading [routerLink]="['/register']" (click)="sidenav.toggle()">INSCRIÇÃO</a>
-        </li>
-      </ul>
-
-      <ul class="child-list" *ngIf="!isAuth">
-        <li>
-          <a tabindex="0" accordion-heading [routerLink]="['/login']" (click)="sidenav.toggle()">LOGIN</a>
-        </li>
-
-      </ul>
-
-      <accordion-group>
-        <a tabindex="0" accordion-heading *ngIf="isAuth" [routerLink]="">AÇÕES <i class="fa fa-chevron-down"></i></a>
-        <ul class="child-list">
-          <li><a tabindex="0" [routerLink]="['/pagamento']" (click)="sidenav.toggle()">Pagamento</a></li>
-          <li><a tabindex="0" [routerLink]="['/meus-trabalhos']" (click)="sidenav.toggle()">Submissão</a></li>
-          <li><a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/meu-endipe']">Meu Endipe</a></li>
-          <!-- <li><a tabindex="0" [routerLink]="['/certificados']" (click)="sidenav.toggle()">Certificados</a></li>-->
-          <li><a [routerLink]="['/perfil']" (click)="sidenav.toggle()">Perfil</a></li>
-          <li><a href="https://forms.gle/rF7ixeszQcKmMWp19" target="_blank" (click)="sidenav.toggle()">Lançamento de
-              Livros</a></li>
-          <li><a
-              href="https://docs.google.com/forms/d/16CA6_HmWvD1prMs4nplj0eEYJF77xywerJtPLR4yqWs/viewform?edit_requested=true"
-              target="_blank" (click)="sidenav.toggle()">Periódicos</a></li>
-
-          <li *ngIf="verifyAcess()">
-            <a tabindex="0" [routerLink]="['/admin']" (click)="sidenav.toggle()">Dashboard</a>
+        <ul class="child-list" *ngIf="!isAuth">
+          <li>
+            <a accordion-heading [routerLink]="['/register']" (click)="sidenav.toggle()">INSCRIÇÃO</a>
           </li>
-          <li><a tabindex="0" class="pointer" [routerLink]="" (click)="logout()" (click)="sidenav.toggle()">Sair</a>
+        </ul>
+
+        <ul class="child-list" *ngIf="!isAuth">
+          <li>
+            <a tabindex="0" accordion-heading [routerLink]="['/login']" (click)="sidenav.toggle()">LOGIN</a>
           </li>
 
         </ul>
-      </accordion-group>
-    </accordion>
-  </mat-sidenav>
-</mat-sidenav-container>
+
+        <accordion-group>
+          <a tabindex="0" accordion-heading *ngIf="isAuth" [routerLink]="">AÇÕES <i class="fa fa-chevron-down"></i></a>
+          <ul class="child-list">
+            <li><a tabindex="0" [routerLink]="['/pagamento']" (click)="sidenav.toggle()">Pagamento</a></li>
+            <li><a tabindex="0" [routerLink]="['/meus-trabalhos']" (click)="sidenav.toggle()">Submissão</a></li>
+            <li><a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/meu-endipe']">Meu Endipe</a>
+            </li>
+            <!-- <li><a tabindex="0" [routerLink]="['/certificados']" (click)="sidenav.toggle()">Certificados</a></li>-->
+            <li><a [routerLink]="['/perfil']" (click)="sidenav.toggle()">Perfil</a></li>
+            <li><a href="https://forms.gle/rF7ixeszQcKmMWp19" target="_blank" (click)="sidenav.toggle()">Lançamento de
+                Livros</a></li>
+            <li><a
+                href="https://docs.google.com/forms/d/16CA6_HmWvD1prMs4nplj0eEYJF77xywerJtPLR4yqWs/viewform?edit_requested=true"
+                target="_blank" (click)="sidenav.toggle()">Periódicos</a></li>
+
+            <li *ngIf="verifyAcess()">
+              <a tabindex="0" [routerLink]="['/admin']" (click)="sidenav.toggle()">Dashboard</a>
+            </li>
+            <li><a tabindex="0" class="pointer" [routerLink]="" (click)="logout()" (click)="sidenav.toggle()">Sair</a>
+            </li>
+
+          </ul>
+        </accordion-group>
+      </accordion>
+    </mat-sidenav>
+  </mat-sidenav-container>
 </div>
 
 <!--
