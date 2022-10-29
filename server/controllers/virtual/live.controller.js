@@ -259,7 +259,7 @@ async function listScheduleWorkPaginate(req) {
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
       break;
-    case 11:
+    /*case 11:
       total = await ConexaoEntrevista.find({
         $and: [
           { date: date },
@@ -278,7 +278,7 @@ async function listScheduleWorkPaginate(req) {
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
-      break;
+      break;*/
     case 12:
       total = await Encerramento.find({
         $and: [
@@ -503,7 +503,7 @@ async function listVirtual() {
 
   virtual.atividadeCultural = await atividadeCulturalCtrl.listSchedule(date);
   virtual.lancamentoDeLivros = await lancamentoDeLivrosCtrl.listSchedule(date);
-  virtual.rodaReunioesEntidadesRedes = await rodaReunioesEntidadesRedesCtrl.listSchedule(date);
+  /*virtual.rodaReunioesEntidadesRedes = await rodaReunioesEntidadesRedesCtrl.listSchedule(date);*/
   virtual.sessoesEspeciais = await sessoesEspeciaisCtrl.listSchedule(date);
   virtual.simposio = await simposioCtrl.listSchedule(date);
 

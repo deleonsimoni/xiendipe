@@ -131,10 +131,10 @@ async function listSchedule(req, res) {
       schedules = await sessoesEspeciaisCtrl.listSchedule(data);
       res.json(schedules);
       break;
-    case 11:
-      schedules = await rodaReunioesEntidadesRedesCtrl.listSchedule(data);
-      res.json(schedules);
-      break;
+    /* case 11:
+       schedules = await rodaReunioesEntidadesRedesCtrl.listSchedule(data);
+       res.json(schedules);
+       break;*/
     case 12:
       schedules = await encerramentoCtrl.listSchedule(data);
       res.json(schedules);
@@ -187,10 +187,10 @@ async function insertSchedule(req, res) {
         schedules = await sessoesEspeciaisCtrl.insertSchedule(req.body);
         res.json(schedules);
         break;
-      case 11:
-        schedules = await rodaReunioesEntidadesRedesCtrl.insertSchedule(req.body);
-        res.json(schedules);
-        break;
+      /*  case 11:
+          schedules = await rodaReunioesEntidadesRedesCtrl.insertSchedule(req.body);
+          res.json(schedules);
+          break;*/
       case 12:
         schedules = await encerramentoCtrl.insertSchedule(req.body);
         res.json(schedules);
@@ -244,10 +244,10 @@ async function updateSchedule(req, res) {
         schedules = await sessoesEspeciaisCtrl.updateSchedule(req.params.id, req.body);
         res.json(schedules);
         break;
-      case 11:
-        schedules = await rodaReunioesEntidadesRedesCtrl.updateSchedule(req.params.id, req.body);
-        res.json(schedules);
-        break;
+      /* case 11:
+         schedules = await rodaReunioesEntidadesRedesCtrl.updateSchedule(req.params.id, req.body);
+         res.json(schedules);
+         break;*/
       case 12:
         schedules = await encerramentoCtrl.updateSchedule(req.params.id, req.body);
         res.json(schedules);
@@ -302,10 +302,10 @@ async function deleteSchedule(req, res) {
         schedules = await sessoesEspeciaisCtrl.deleteSchedule(req.params.id);
         res.json(schedules);
         break;
-      case 11:
-        schedules = await rodaReunioesEntidadesRedesCtrl.deleteSchedule(req.params.id);
-        res.json(schedules);
-        break;
+      /* case 11:
+         schedules = await rodaReunioesEntidadesRedesCtrl.deleteSchedule(req.params.id);
+         res.json(schedules);
+         break;*/
       case 12:
         schedules = await encerramentoCtrl.deleteSchedule(req.params.id);
         res.json(schedules);
