@@ -146,10 +146,10 @@
                                 </div>
                             </div>-->
 
-                            <div class="row" *ngIf="item.workAuthor">
+                            <div class="row" *ngIf="item.work.authors">
                                 <div class="col-sm-12 align-self-center">
                                     <strong>Autores</strong>
-                                    <p *ngFor="let autores of item.workAuthor">{{ autores.fullname }}</p>
+                                    <p *ngFor="let autores of item.work.authors">{{ autores.userEmail }}</p>
                                 </div>
                             </div>
 

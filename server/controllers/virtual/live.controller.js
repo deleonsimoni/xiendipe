@@ -32,8 +32,9 @@ module.exports = {
   scheduleBooksPaginate,
   getPresentationsUser,
   getUserMonitors,
-  getUserMediator
+  getUserMediator,
 }
+
 
 
 async function listScheduleWorkPaginate(req) {
@@ -95,6 +96,13 @@ async function listScheduleWorkPaginate(req) {
               search
 
             ]
+        }).populate({
+          path: 'worksPainel',
+          populate: [{
+            path: 'work',
+            model: 'Work',
+            select: 'authors'
+          }]
         })
         .sort({
           'dates.startTime': 1,

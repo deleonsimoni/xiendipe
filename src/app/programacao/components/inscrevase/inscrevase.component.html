@@ -45,7 +45,7 @@
           </div>
 
 
-          <div class="col-lg-6 col-sm-12">
+          <div *ngIf="modalitySelect != 3 && modalitySelect != 5" class="col-lg-6 col-sm-12">
             Pesquisar trabalho por nome
             <input type="text" class="form-control mb-1" [(ngModel)]="workTitle"
               placeholder="Digite o nome do trabalho que deseja pesquisar" />
