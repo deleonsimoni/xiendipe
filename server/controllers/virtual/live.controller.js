@@ -397,13 +397,13 @@ async function getPresentationsUser(req) {
           response.push(schedule);
           break;
         case 5:
-          schedule = await Painel.findOne({ work: work[index]._id }).lean();
+          schedule = await Painel.findOne({ 'worksPainel.work': { $in: [work[index]._id] } }).lean();
           if (schedule) schedule.type = 5;
           response.push(schedule);
           break;
         case 3:
-          schedule = await Poster.findOne({ work: work[index]._id }).lean();
-          if (schedule) schedule.type = 2;
+          schedule = await Poster.findOne({ 'worksPoster.work': { $in: [work[index]._id] } }).lean();
+          if (schedule) schedule.type = 3;
           response.push(schedule);
           break;
       }
