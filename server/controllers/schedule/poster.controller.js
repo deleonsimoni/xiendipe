@@ -26,7 +26,7 @@ async function listSchedule(date) {
 }
 
 async function fixAuthorsPoster() {
-  console.log('Corrigindo')
+  console.log('Corrigi')
   let posters = await Poster.find({});
 
   posters.forEach(async poster => {
