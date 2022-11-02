@@ -14,6 +14,7 @@ module.exports = {
   subscribePoster,
   unsubscribePoster,
   fixAuthorsPoster,
+  fixAuthorsPainel,
 }
 
 async function listSchedule(date) {
@@ -23,6 +24,21 @@ async function listSchedule(date) {
     .sort({
       'dates.startTime': 1
     });
+}
+
+async function fixAuthorsPainel() {
+  console.log('Corrigia')
+  let posters = await Painel.find({});
+
+  posters.forEach(async poster => {
+    let schedule = await setAuthorsInPainel(poster);
+    let id = schedule._id;
+    delete schedule._id;
+
+    await Painel.findOneAndUpdate({ _id: id }, schedule);
+  });
+
+
 }
 
 async function fixAuthorsPoster() {
@@ -139,7 +155,31 @@ async function deleteSchedule(id) {
 
 }
 
+async function setAuthorsInPainel(posters) {
 
+  let workWithUser;
+  let namesAuthors = [];
+
+  if (posters.worksPainel) {
+    for (let index = 0; index < posters.worksPainel.length; index++) {
+      if (!posters.worksPainel[index].workTitle) continue;
+      namesAuthors = [];
+      workWithUser = await Work.findById({ _id: posters.worksPainel[index].work }).select('authors');
+      if (workWithUser.authors) {
+
+        for (let autores = 0; autores < workWithUser.authors.length; autores++) {
+          const autoresTrabalho = workWithUser.authors[autores];
+          namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
+        }
+
+        posters.worksPainel[index].workAuthor = namesAuthors
+
+      }
+    }
+  }
+
+  return await posters;
+}
 
 async function setAuthorsInPoster(posters) {
 

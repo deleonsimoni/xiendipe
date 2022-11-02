@@ -23,6 +23,9 @@ router.get('/:idType/:data', asyncHandler(listSchedule));
 
 router.get('/corrigirAutoresPoster', asyncHandler(corrigirAutoresPoster));
 
+router.get('/corrigirAutoresPainel', asyncHandler(corrigirAutoresPainel));
+
+
 router.post('/:idType', [passport.authenticate('jwt', {
   session: false
 }), fileUpload()], asyncHandler(insertSchedule));
@@ -92,7 +95,12 @@ async function subscribePainel(req, res) {
 
 async function corrigirAutoresPoster(req, res) {
   await posterCtrl.fixAuthorsPoster();
-  res.json('ok');
+  res.json('poster ok');
+}
+
+async function corrigirAutoresPainel(req, res) {
+  await posterCtrl.fixAuthorsPainel();
+  res.json('painel ok');
 }
 
 async function listSchedule(req, res) {
