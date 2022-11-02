@@ -111,7 +111,7 @@
                                             <div class="col-sm-12 align-self-center">
                                                 <strong tabindex="0">Autores</strong>
                                                 <p tabindex="0" *ngFor="let autores of item.workAuthor">{{
-                                                    autores.fullname }}</p>
+                                                    autores.fullname | titlecase }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +144,7 @@
                                             <div class="col-sm-12 align-self-center">
                                                 <strong tabindex="0">Autores</strong>
                                                 <p tabindex="0" *ngFor="let autores of item.workAuthor">{{
-                                                    autores.fullname }}</p>
+                                                    autores.fullname | titlecase }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -405,7 +405,8 @@
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
                                         <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname }}
+                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
+                                            titlecase }}
                                         </p>
                                     </div>
                                 </div>
@@ -546,7 +547,8 @@
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
                                         <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname }}
+                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
+                                            titlecase }}
                                         </p>
                                     </div>
                                 </div>
@@ -573,7 +575,8 @@
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
                                         <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname }}
+                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
+                                            titlecase }}
                                         </p>
                                     </div>
                                 </div>
