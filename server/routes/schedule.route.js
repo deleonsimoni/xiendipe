@@ -21,6 +21,8 @@ module.exports = router;
 
 router.get('/:idType/:data', asyncHandler(listSchedule));
 
+router.get('/corrigirAutoresPoster', asyncHandler(corrigirAutoresPoster));
+
 router.post('/:idType', [passport.authenticate('jwt', {
   session: false
 }), fileUpload()], asyncHandler(insertSchedule));
@@ -88,6 +90,10 @@ async function subscribePainel(req, res) {
   res.json(users);
 }
 
+async function corrigirAutoresPoster(req, res) {
+  await posterCtrl.fixAuthorsPoster();
+  res.json('ok');
+}
 
 async function listSchedule(req, res) {
 

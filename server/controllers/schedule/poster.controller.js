@@ -13,7 +13,7 @@ module.exports = {
   deleteSchedule,
   subscribePoster,
   unsubscribePoster,
-
+  fixAuthorsPoster,
 }
 
 async function listSchedule(date) {
@@ -23,6 +23,21 @@ async function listSchedule(date) {
     .sort({
       'dates.startTime': 1
     });
+}
+
+async function fixAuthorsPoster() {
+  console.log('Corrigindo')
+  let posters = await Poster.find({});
+
+  posters.forEach(async poster => {
+    let schedule = await setAuthorsInPoster(poster);
+    let id = schedule._id;
+    delete schedule._id;
+
+    await Poster.findOneAndUpdate({ _id: id }, schedule);
+  });
+
+
 }
 
 async function insertSchedule(schedule, oldId) {
@@ -110,12 +125,12 @@ async function deleteSchedule(id) {
   if (poster.worksPoster) {
     for (let index = 0; index < poster.worksPoster.length; index++) {
       workWithUser = await Work.findById({ _id: poster.worksPoster[index].work }).select('authors');
-      /*     if (workWithUser.authors) {
-     
-             for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
-               await unsubscribePoster(poster._id, workWithUser.authors[userCount].userId);
-             }
-           }*/
+      if (workWithUser.authors) {
+
+        for (let userCount = 0; userCount < workWithUser.authors.length; userCount++) {
+          await unsubscribePoster(poster._id, workWithUser.authors[userCount].userId);
+        }
+      }
     }
   }
 
@@ -136,16 +151,16 @@ async function setAuthorsInPoster(posters) {
       if (!posters.worksPoster[index].workTitle) continue;
       namesAuthors = [];
       workWithUser = await Work.findById({ _id: posters.worksPoster[index].work }).select('authors');
-      /* if (workWithUser.authors) {
- 
-         for (let autores = 0; autores < workWithUser.authors.length; autores++) {
-           const autoresTrabalho = workWithUser.authors[autores];
-           namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
-         }
- 
-         posters.worksPoster[index].workAuthor = namesAuthors
- 
-       }*/
+      if (workWithUser.authors) {
+
+        for (let autores = 0; autores < workWithUser.authors.length; autores++) {
+          const autoresTrabalho = workWithUser.authors[autores];
+          namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
+        }
+
+        posters.worksPoster[index].workAuthor = namesAuthors
+
+      }
     }
   }
 
