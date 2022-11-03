@@ -21,10 +21,6 @@ module.exports = router;
 
 router.get('/:idType/:data', asyncHandler(listSchedule));
 
-router.get('/corrigirAutoresPoster', asyncHandler(corrigirAutoresPoster));
-
-router.get('/corrigirAutoresPainel', asyncHandler(corrigirAutoresPainel));
-
 
 router.post('/:idType', [passport.authenticate('jwt', {
   session: false
