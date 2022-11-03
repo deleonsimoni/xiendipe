@@ -30,9 +30,19 @@
                             <h3 tabindex="0" *ngIf="schedule.type != '3' && schedule.type != '5'">
                                 <b>{{schedule.workTitle}}</b>
                             </h3>
-                            <h3 tabindex="0" *ngIf="schedule.type == '3' && schedule.type == '5'"><b>Apresentação de
+                            <h3 tabindex="0" *ngIf="schedule.type == '3'"><b>Apresentação de
                                     trabalhos</b></h3>
 
+                            <h3 *ngIf="type == '5'" tabindex="0" alt="Painel"></h3>
+                            <div *ngFor="let item of schedule.worksPainel"
+                                style="text-align: justify; text-justify: inter-word;">
+                                <div class="row">
+                                    <div class="col-sm-12 align-self-center">
+                                        <strong>Nome do Painel</strong>
+                                        <p>{{ item.workTitle }}</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div *ngFor="let day of schedule.dates">
                                 <h4 tabindex="0">
                                     {{day.date + ' ' + day.startTime + ' - ' + day.endTime}}
@@ -111,7 +121,7 @@
                                             <div class="col-sm-12 align-self-center">
                                                 <strong tabindex="0">Autores</strong>
                                                 <p tabindex="0" *ngFor="let autores of item.workAuthor">{{
-                                                    autores.fullname | titlecase }}</p>
+                                                    autores.fullname }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -130,10 +140,7 @@
                                     <div class="align-items-center"
                                         style="text-align: justify; text-justify: inter-word;">
                                         <div class="row">
-                                            <div class="col-sm-8 align-self-center">
-                                                <strong tabindex="0">Nome do Painel</strong>
-                                                <p tabindex="0">{{ item.workTitle }}</p>
-                                            </div>
+
                                             <div class="col-12">
                                                 <strong tabindex="0">Resumo</strong>
                                                 <p tabindex="0" style="text-align: justify; text-justify: inter-word;">
@@ -142,9 +149,9 @@
                                         </div>
                                         <div class="row" *ngIf="item.workAuthor">
                                             <div class="col-sm-12 align-self-center">
-                                                <strong tabindex="0">Autores</strong>
-                                                <p tabindex="0" *ngFor="let autores of item.workAuthor">{{
-                                                    autores.fullname | titlecase }}</p>
+                                                <strong>Autores</strong>
+                                                <p *ngFor="let autores of item.workAuthor">{{ autores.fullname |
+                                                    titlecase }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -157,7 +164,7 @@
 
                         <!-- CHAT -->
                         <br />
-                        <section id="forum" class="wow fadeInUp">
+                        <!--      <section id="forum" class="wow fadeInUp">
 
                             <h2 tabindex="0" style="color: #2c8d13;">Chat - Discuta sobre o trabalho</h2>
 
@@ -171,17 +178,17 @@
                                                 {{ comment.publisher.name }}
                                             </h1>
 
-                                            <!--<div>
+                                           <div>
                                         <button (click)="love(comment.id)" [ngClass]="{ 'loved': comment.loved }"></button>
                                         <button (click)="reply(comment.publisher.name)"></button>
-                                    </div>-->
+                                    </div>
 
                                         </header>
                                         <p tabindex="0" [innerHTML]="parseContent(comment.content)"></p>
 
                                     </li>
                                 </ul>
-                                <!--
+                                
                                 <form name="form" (ngSubmit)="addNewComment()" novalidate>
                                 <button tabindex="0" type="button" *ngIf="!carregando" class="btn btn-primary" (click)="atualizarChat()">Ver novas mensagens</button>
                                 <button tabindex="0" type="button" *ngIf="carregando" class="btn btn-primary"><i class="fa fa-spinner fa-pulse"></i></button> 
@@ -198,10 +205,10 @@
         
                                 </div>
         
-                                </form>-->
+                                </form>
 
                             </div>
-                        </section>
+                        </section>-->
                         <!-- FIM CHAT -->
 
 
@@ -242,8 +249,21 @@
                     <div class="col-sm-10">
                         <h5 tabindex="0" style="color: white">{{schedule.type | modalities}} - {{schedule.axis |
                             axis}}</h5>
-                        <h3 tabindex="0"><b>{{schedule.workTitle}}</b></h3>
 
+                        <h3 *ngIf="type != '3' && schedule.type != '5'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 tabindex="0" *ngIf="schedule.type == '3'"><b>Apresentação de
+                                trabalhos</b></h3>
+
+                        <h3 *ngIf="type == '5'" tabindex="0" alt="Painel"></h3>
+                        <div *ngFor="let item of schedule.worksPainel"
+                            style="text-align: justify; text-justify: inter-word;">
+                            <div class="row">
+                                <div class="col-sm-12 align-self-center">
+                                    <strong>Nome do Painel</strong>
+                                    <p>{{ item.workTitle }}</p>
+                                </div>
+                            </div>
+                        </div>
                         <div *ngFor="let day of schedule.dates">
                             <h4 tabindex="0">
                                 {{day.date + ' ' + day.startTime + ' - ' + day.endTime}}
@@ -274,7 +294,8 @@
 
             <div class="work-content">
                 <div *ngIf="schedule._id == scheduleSelect">
-                    <div class="row align-items-center">
+                    <div *ngIf="schedule.type != '3' && schedule.type != '5'" class="row align-items-center">
+
                         <div class="col-12">
                             <strong tabindex="0">Autores</strong>
                             <p tabindex="0" *ngFor="let item of schedule.authors"
@@ -285,10 +306,73 @@
                             <p tabindex="0" style="text-align: justify; text-justify: inter-word;">{{
                                 schedule.resumePropose }}</p>
                         </div>
+
+                    </div>
+
+                    <div *ngIf="schedule.type == '3'">
+                        <div class="col-12">
+                            <div *ngFor="let item of schedule.worksPoster">
+
+                                <div class="align-items-center" style="text-align: justify; text-justify: inter-word;">
+                                    <div class="row">
+                                        <div class="col-sm-8 align-self-center">
+                                            <strong tabindex="0">Nome do Pôster</strong>
+                                            <p tabindex="0">{{ item.workTitle }}</p>
+                                        </div>
+                                        <!--  <div class="col-sm-4 align-self-center">
+                                            <strong tabindex="0">Acesse o Conteúdo</strong>
+                                            <p tabindex="0"><a *ngIf="item.linkPPT.includes('http')"
+                                                    [attr.href]="item.linkPPT" target="_blank">Clique aqui</a></p>
+                                            <p tabindex="0"><span *ngIf="!item.linkPPT.includes('http')">Banner não
+                                                    enviado</span></p>
+                                        </div>-->
+                                    </div>
+                                    <div class="row" *ngIf="item.workAuthor">
+                                        <div class="col-sm-12 align-self-center">
+                                            <strong tabindex="0">Autores</strong>
+                                            <p tabindex="0" *ngFor="let autores of item.workAuthor">{{
+                                                autores.fullname }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br />
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div *ngIf="schedule.type == '5'">
+                        <div class="col-12">
+                            <div *ngFor="let item of schedule.worksPainel">
+
+                                <div class="align-items-center" style="text-align: justify; text-justify: inter-word;">
+                                    <div class="row">
+
+                                        <div class="col-12">
+                                            <strong tabindex="0">Resumo</strong>
+                                            <p tabindex="0" style="text-align: justify; text-justify: inter-word;">
+                                                {{item.resumePropose }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row" *ngIf="item.workAuthor">
+                                        <div class="col-sm-12 align-self-center">
+                                            <strong>Autores</strong>
+                                            <p *ngFor="let autores of item.workAuthor">{{ autores.fullname | titlecase
+                                                }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <br />
+
+                            </div>
+                        </div>
                     </div>
 
                     <!-- CHAT -->
-                    <br />
+                    <!--<br />
                     <section id="forum" class="wow fadeInUp">
 
                         <h2 tabindex="0" style="color: #2c8d13;">Chat - Discuta sobre o trabalho</h2>
@@ -302,17 +386,17 @@
                                             {{ comment.publisher.name }}
                                         </h1>
 
-                                        <!--<div>
+                                        <div>
                                     <button (click)="love(comment.id)" [ngClass]="{ 'loved': comment.loved }"></button>
                                     <button (click)="reply(comment.publisher.name)"></button>
-                                </div>-->
+                                </div>
 
                                     </header>
                                     <p tabindex="0" [innerHTML]="parseContent(comment.content)"></p>
 
                                 </li>
                             </ul>
-                            <!--
+                            
                             <form name="form" (ngSubmit)="addNewComment()" novalidate>
                             <button tabindex="0" type="button" *ngIf="!carregando" class="btn btn-primary" (click)="atualizarChat()">Ver novas mensagens</button>
                             <button tabindex="0" type="button" *ngIf="carregando" class="btn btn-primary"><i class="fa fa-spinner fa-pulse"></i></button>    
@@ -329,10 +413,10 @@
     
                             </div>
     
-                            </form>-->
+                            </form>
 
                         </div>
-                    </section>
+                    </section>-->
                     <!-- FIM CHAT -->
                 </div>
             </div>
@@ -354,7 +438,20 @@
                     <div class="col-sm-10">
                         <h5 tabindex="0" style="color: white">{{schedule.type | modalities}} - {{schedule.axis |
                             axis}}</h5>
-                        <h3 tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 *ngIf="type != '3' && schedule.type != '5'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 tabindex="0" *ngIf="schedule.type == '3'"><b>Apresentação de
+                                trabalhos</b></h3>
+
+                        <h3 *ngIf="type == '5'" tabindex="0" alt="Painel"></h3>
+                        <div *ngFor="let item of schedule.worksPainel"
+                            style="text-align: justify; text-justify: inter-word;">
+                            <div class="row">
+                                <div class="col-sm-12 align-self-center">
+                                    <strong>Nome do Painel</strong>
+                                    <p>{{ item.workTitle }}</p>
+                                </div>
+                            </div>
+                        </div>
 
                         <div *ngFor="let day of schedule.dates">
                             <h4 tabindex="0">
@@ -385,7 +482,7 @@
 
             <div class="work-content">
                 <div *ngIf="schedule._id == scheduleSelect">
-                    <div class="row align-items-center">
+                    <div *ngIf="type == '3'" class="row align-items-center">
                         <div class="col-12">
                             <div *ngFor="let item of schedule.worksPoster"
                                 style="text-align: justify; text-justify: inter-word;">
@@ -405,8 +502,7 @@
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
                                         <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
-                                            titlecase }}
+                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname }}
                                         </p>
                                     </div>
                                 </div>
@@ -416,7 +512,7 @@
                     </div>
 
                     <!-- CHAT -->
-                    <br />
+                    <!--<br />
                     <section id="forum" class="wow fadeInUp">
 
                         <h2 tabindex="0" style="color: #2c8d13;">Chat - Discuta sobre o trabalho</h2>
@@ -430,17 +526,17 @@
                                             {{ comment.publisher.name }}
                                         </h1>
 
-                                        <!--<div>
+                                        <div>
                                     <button (click)="love(comment.id)" [ngClass]="{ 'loved': comment.loved }"></button>
                                     <button (click)="reply(comment.publisher.name)"></button>
-                                </div>-->
+                                </div>
 
                                     </header>
                                     <p tabindex="0" [innerHTML]="parseContent(comment.content)"></p>
 
                                 </li>
                             </ul>
-                            <!--
+                            
                             <form name="form" (ngSubmit)="addNewComment()" novalidate>
                             <button tabindex="0" type="button" *ngIf="!carregando" class="btn btn-primary" (click)="atualizarChat()">Ver novas mensagens</button>
                             <button tabindex="0" type="button" *ngIf="carregando" class="btn btn-primary"><i class="fas fa-spinner fa-pulse"></i></button>    
@@ -457,10 +553,10 @@
     
                             </div>
     
-                            </form>-->
+                            </form>
 
                         </div>
-                    </section>
+                    </section>-->
                     <!-- FIM CHAT -->
 
                 </div>
@@ -483,8 +579,20 @@
                     <div class="col-sm-10">
                         <h5 tabindex="0" style="color: white">{{schedule.type | modalities}} - {{schedule.axis |
                             axis}}</h5>
-                        <h3 tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 *ngIf="type != '3' && schedule.type != '5'" tabindex="0"><b>{{schedule.workTitle}}</b></h3>
+                        <h3 tabindex="0" *ngIf="schedule.type == '3'"><b>Apresentação de
+                                trabalhos</b></h3>
 
+                        <h3 *ngIf="type == '5'" tabindex="0" alt="Painel"></h3>
+                        <div *ngFor="let item of schedule.worksPainel"
+                            style="text-align: justify; text-justify: inter-word;">
+                            <div class="row">
+                                <div class="col-sm-12 align-self-center">
+                                    <strong>Nome do Painel</strong>
+                                    <p>{{ item.workTitle }}</p>
+                                </div>
+                            </div>
+                        </div>
                         <div *ngFor="let day of schedule.dates">
                             <h4 tabindex="0">
                                 {{day.date + ' ' + day.startTime + ' - ' + day.endTime}}
@@ -536,19 +644,12 @@
                                         <strong tabindex="0">Nome do Pôster</strong>
                                         <p tabindex="0">{{ item.workTitle }}</p>
                                     </div>
-                                    <div class="col-sm-4 align-self-center">
-                                        <strong tabindex="0">Acesse o Conteúdo</strong>
-                                        <p tabindex="0"><a *ngIf="item.linkPPT.includes('http')"
-                                                [attr.href]="item.linkPPT" target="_blank">Clique aqui</a></p>
-                                        <p tabindex="0"><span *ngIf="!item.linkPPT.includes('http')">Banner não
-                                                enviado</span></p>
-                                    </div>
+
                                 </div>
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
                                         <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
-                                            titlecase }}
+                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname }}
                                         </p>
                                     </div>
                                 </div>
@@ -574,9 +675,8 @@
                                 </div>
                                 <div class="row" *ngIf="item.workAuthor">
                                     <div class="col-sm-12 align-self-center">
-                                        <strong tabindex="0">Autores</strong>
-                                        <p tabindex="0" *ngFor="let autores of item.workAuthor">{{ autores.fullname |
-                                            titlecase }}
+                                        <strong>Autores</strong>
+                                        <p *ngFor="let autores of item.workAuthor">{{ autores.fullname | titlecase }}
                                         </p>
                                     </div>
                                 </div>
@@ -585,7 +685,7 @@
                         </div>
                     </div>
                     <!-- CHAT -->
-                    <br />
+                    <!--  <br />
                     <section id="forum" class="wow fadeInUp">
 
                         <h2 tabindex="0" style="color: #2c8d13;">Chat - Discuta sobre o trabalho</h2>
@@ -599,17 +699,17 @@
                                             {{ comment.publisher.name }}
                                         </h1>
 
-                                        <!--<div>
+                                        <div>
                                     <button (click)="love(comment.id)" [ngClass]="{ 'loved': comment.loved }"></button>
                                     <button (click)="reply(comment.publisher.name)"></button>
-                                </div>-->
+                                </div>
 
                                     </header>
                                     <p tabindex="0" [innerHTML]="parseContent(comment.content)"></p>
 
                                 </li>
                             </ul>
-                            <!--
+                            
                             <form name="form" (ngSubmit)="addNewComment()" novalidate>
                             <button tabindex="0" type="button" *ngIf="!carregando" class="btn btn-primary" (click)="atualizarChat()">Ver novas mensagens</button>
                             <button tabindex="0" type="button" *ngIf="carregando" class="btn btn-primary"><i class="fas fa-spinner fa-pulse"></i></button>
@@ -626,10 +726,10 @@
     
                             </div>
     
-                            </form>-->
+                            </form>
 
                         </div>
-                    </section>
+                    </section>-->
                     <!-- FIM CHAT -->
                 </div>
             </div>
