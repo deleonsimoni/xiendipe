@@ -172,7 +172,7 @@ export class CertificadoComponent implements OnInit {
         " atuou como monitora, perfazendo um total de ______ horas de trabalho de pré-produção, produção e pós produção ";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "COORDENAÇÃO DE ATIVIDADE") {
-      this.coringa = "coordenou ";
+      this.coringa = " coordenou ";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "SESSÃO ESPECIAL") {
       this.coringa =
@@ -240,7 +240,7 @@ export class CertificadoComponent implements OnInit {
     {
       name: "COORDENAÇÃO DE ATIVIDADE",
       value:
-        "do XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
+        " o XXI Encontro Nacional de Didática e Prática de Ensino – XXI Endipe – Uberlândia 2022 – sediado pela Universidade Federal de Uberlândia, no período de 20 a 27 de novembro, com a carga horária total de 72 horas.",
     },
 
     {
