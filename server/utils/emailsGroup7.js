@@ -1362,6 +1362,7 @@ module.exports = Object.freeze({
         'brunostosgeo@gmail.com',
         'rogeriomanzano7@gmail.com',
         'michel.costa@unimes.br',
-        'vanessalaja@gmail.com'
+        'vanessalaja@gmail.com',
+        'luciana@ensinodeciencias.com',
     ],
 });

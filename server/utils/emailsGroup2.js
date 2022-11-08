@@ -492,7 +492,8 @@ module.exports = Object.freeze({
         "antoniogeovaneribeiro@outlook.com",
         "anairfs@yahoo.com.br",
         "olga.rosa@unisantos.br",
-        "andreiacarvalhocm@hotmail.com"
+        "andreiacarvalhocm@hotmail.com",
+        "luciana@ensinodeciencias.com",
     ],
 
 });
