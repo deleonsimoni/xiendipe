@@ -1752,7 +1752,6 @@ module.exports = Object.freeze({
         'nayavieirailustracoes@gmail.com',
         'rfleuri@gmail.com',
         'junior-cello@hotmail.com',
-        'luciana@ensinodeciencias.com',
 
     ],
 });
