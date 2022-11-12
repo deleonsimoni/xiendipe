@@ -59,6 +59,11 @@ router.delete('/:idType/:id', passport.authenticate('jwt', {
   session: false
 }), asyncHandler(deleteSchedule));
 
+router.get('/corrigirAutoresPoster', asyncHandler(corrigirAutoresPoster));
+
+router.get('/corrigirAutoresPainel', asyncHandler(corrigirAutoresPainel));
+
+
 async function unsubscribeMinicurso(req, res) {
   let users = await minicursoCtrl.unsubscribeMinicurso(req.params.workId, req.user._id);
   res.json(users);

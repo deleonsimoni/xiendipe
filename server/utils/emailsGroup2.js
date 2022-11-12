@@ -2262,8 +2262,11 @@ module.exports = Object.freeze({
         'odairjsawa@gmail.com',
         'dominguesedomingues@terra.com.br',
         'marianadasilvaribeiro93@gmail.com',
+        'marineidegomes@hotmail.com.br',
         'olgamatiasteles2019@gmail.com',
         'tania.brabo@unesp.br',
         'fabiano.goulart@hotmail.com',
+        'camilasaldanha@hotmail.com',
+        'rosanacarruda@yahoo.com.br',
     ],
 });
