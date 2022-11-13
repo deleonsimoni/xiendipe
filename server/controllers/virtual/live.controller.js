@@ -98,8 +98,7 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1,
-          workTitle: 1
+          'worksPainel.workTitle': 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
@@ -152,8 +151,7 @@ async function listScheduleWorkPaginate(req) {
             ]
         })
         .sort({
-          'dates.startTime': 1,
-          workTitle: 1
+          'worksPoster.workTitle': 1
         })
         .skip(pageSize * page - pageSize)
         .limit(pageSize);
