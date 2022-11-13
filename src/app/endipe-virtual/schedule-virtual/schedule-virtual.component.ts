@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 import { ScheduleService } from 'src/app/services/schedule.service';
-import { PageEvent } from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -34,6 +34,7 @@ export class ScheduleVirtualComponent implements OnInit {
   scheduleSelect;
   differ: KeyValueDiffer<string, any>;
   @ViewChild('trabalho', { static: false }) trabalhoId: any;
+  @ViewChild('paginator', { static: false }) paginator: MatPaginator;
 
   linkYoutubeSafe;
 
@@ -103,6 +104,11 @@ export class ScheduleVirtualComponent implements OnInit {
   getSchedulePaginate(event, day, type, autor, eixo, titulo) {
     this.carregandoLista = true;
     let pageChoose = event && event.pageIndex + 1 || 1;
+
+    if (!event && this.paginator) {
+      this.paginator.pageIndex = 0;
+    }
+
     this.http.get(`${this.baseUrl}/live/scheduleWorkPaginate?page=${pageChoose}&date=${day}&type=${type}&eixo=${eixo}&autor=${autor}&titulo=${titulo}`).subscribe(
       (res: any) => {
         this.schedules = res.schedule || [];
@@ -116,6 +122,7 @@ export class ScheduleVirtualComponent implements OnInit {
         }
         this.pager = res.pager;
         this.carregandoLista = false;
+
       },
       (err) => {
         this.toastr.error("Servidor momentâneamente inoperante", "Atenção");
