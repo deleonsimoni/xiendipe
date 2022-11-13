@@ -421,7 +421,7 @@
 
 <div *ngIf="pager.totalItems" class="pagination justify-content-center">
 
-    <mat-paginator [length]="pager.totalItems" [pageSize]="pager.pageSize"
+    <mat-paginator #paginator [length]="pager.totalItems" [pageSize]="pager.pageSize"
         (page)="pageEvent = getSchedulePaginate($event, day, type)">
     </mat-paginator>
 
