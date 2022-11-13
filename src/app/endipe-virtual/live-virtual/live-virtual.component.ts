@@ -94,9 +94,6 @@ export class LiveVirtualComponent implements OnInit {
           element.type = 9;
         });
 
-        res.rodaReunioesEntidadesRedes.forEach(element => {
-          element.type = 11;
-        });
 
         res.sessoesEspeciais.forEach(element => {
           element.type = 10;
@@ -106,7 +103,6 @@ export class LiveVirtualComponent implements OnInit {
 
         this.schedules = [
           ...res.atividadeCultural,
-          ...res.rodaReunioesEntidadesRedes,
           ...res.simposio,
           ...res.sessoesEspeciais,
           ...res.lancamentoDeLivros,

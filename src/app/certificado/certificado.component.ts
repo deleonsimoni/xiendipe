@@ -60,21 +60,21 @@ export class CertificadoComponent implements OnInit {
     this.works.forEach((work) => {
       //MiniCurso
       if (
-        work.modalityId == 4 && (((work.reviewAdmin && work.reviewAdmin.review.icAllow == "Sim") &&
+        work.modalityId == 4 && ((
           (work.reviewReviewer && work.reviewReviewer.review && work.reviewReviewer.review.icAllow != "Nao")) ||
           (work.recurso && work.recurso.icAllow == "Sim"))
       ) {
         this.templateAutomatico.target.value = "MEDIAÇÃO DE MINICURSO";
         this.preencherTemplate(this.templateAutomatico, work.title, "04");
       } else if (
-        work.modalityId == 5 && (((work.reviewAdmin && work.reviewAdmin.review.icAllow == "Sim") &&
+        work.modalityId == 5 && ((
           (work.reviewReviewer && work.reviewReviewer.review && work.reviewReviewer.review.icAllow != "Nao")) ||
           (work.recurso && work.recurso.icAllow == "Sim"))
       ) {
         this.templateAutomatico.target.value = "MEDIAÇÃO DE PAINEL";
         this.preencherTemplate(this.templateAutomatico, work.title, "05");
       } else if (
-        work.modalityId == 3 && (((work.reviewAdmin && work.reviewAdmin.review.icAllow == "Sim") &&
+        work.modalityId == 3 && ((
           (work.reviewReviewer && work.reviewReviewer.review && work.reviewReviewer.review.icAllow != "Nao")) ||
           (work.recurso && work.recurso.icAllow == "Sim"))
       ) {
@@ -89,7 +89,7 @@ export class CertificadoComponent implements OnInit {
     this.inscricoes.forEach((work) => {
       if (this.user.cursosInscritos[control].icModalityId == 4) {
         this.templateAutomatico.target.value = "PARTICIPAÇÃO DE MINICURSO";
-        let horas = 4;
+        let horas = 2;
         this.preencherTemplate(this.templateAutomatico, work.workTitle, horas);
       } else if (this.user.cursosInscritos[control].icModalityId == 5) {
         this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PAINEL";
