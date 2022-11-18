@@ -2,6 +2,7 @@ const Painel = require('../../models/schedule/painel.model');
 const Minicurso = require('../../models/schedule/minicurso.model');
 const Poster = require('../../models/schedule/poster.model');
 const User = require('../../models/user.model');
+const Work = require('../../models/work.model');
 
 module.exports = {
   listSchedule,
@@ -10,7 +11,7 @@ module.exports = {
   deleteSchedule,
   unsubscribePainel,
   subscribePainel,
-
+  fixAuthorsPainel
 }
 
 async function listSchedule(date) {
@@ -241,6 +242,47 @@ async function registerMonitor(workId, email) {
       console.log("erro ao registrar monitor -> " + err);
     }
   });
+}
+
+async function fixAuthorsPainel() {
+  console.log('Corrigia')
+  let posters = await Painel.find({});
+
+  posters.forEach(async poster => {
+    let schedule = await setAuthorsInPainel(poster);
+    let id = schedule._id;
+    delete schedule._id;
+
+    await Painel.findOneAndUpdate({ _id: id }, schedule);
+  });
+
+
+}
+
+async function setAuthorsInPainel(posters) {
+
+  let workWithUser;
+  let namesAuthors = [];
+
+  if (posters.worksPainel) {
+    for (let index = 0; index < posters.worksPainel.length; index++) {
+      if (!posters.worksPainel[index].workTitle) continue;
+      namesAuthors = [];
+      workWithUser = await Work.findById({ _id: posters.worksPainel[index].work }).select('authors');
+      if (workWithUser.authors) {
+
+        for (let autores = 0; autores < workWithUser.authors.length; autores++) {
+          const autoresTrabalho = workWithUser.authors[autores];
+          namesAuthors.push(await User.findById(autoresTrabalho.userId).select('-_id fullname'))
+        }
+
+        posters.worksPainel[index].workAuthor = namesAuthors
+
+      }
+    }
+  }
+
+  return await posters;
 }
 
 

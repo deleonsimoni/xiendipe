@@ -233,6 +233,7 @@ async function updateSchedule(req, res) {
           break;*/
       case 3:
         schedules = await posterCtrl.updateSchedule(req.params.id, req.body);
+        posterCtrl.fixAuthorsPoster();
         res.json(schedules);
         break;
       case 4:
@@ -241,6 +242,7 @@ async function updateSchedule(req, res) {
         break;
       case 5:
         schedules = await painelCtrl.updateSchedule(req.params.id, req.body);
+        painelCtrl.fixAuthorsPainel();
         res.json(schedules);
         break;
       case 7:
