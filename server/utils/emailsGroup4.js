@@ -1725,7 +1725,7 @@ module.exports = Object.freeze({
         'tativil3la@gmail.com',
         'mayara.santos@ifpi.edu.br',
         'lanica@aluno.ueg.br',
-        'adriamartins0906@gmail.com.br',
+        'adriamartins0906@gmail.com',
         'magalisdorneles@gmail.com',
         'ritam.ppgedufrn@gmail.com',
         'renata.barrocas2@gmail.com',

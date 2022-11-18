@@ -24,6 +24,7 @@ export class EmailComponent implements OnInit {
     /*  { id: 5, name: "Todos inscritos em minicurso" },*/
     { id: 6, name: "Todos usuários inscritos" },
     { id: 7, name: "Todos usuários com trabalho aceito" },
+    { id: 8, name: "Todos usuários inscritos sem pagamento valido" },
 
   ]
 

@@ -1348,7 +1348,7 @@ module.exports = Object.freeze({
         'melinabrandt@estudante.ufscar.br',
         'keluff1@hotmail.com',
         'cilesia.carvalho@educacao.mg.gov.br',
-        'adriamartins0906@gmail.com.br',
+        'adriamartins0906@gmail.com',
         'grazi.quimica@gmail.com',
         'christina.carvalho@ifgoiano.edu.br',
         'andrea_del_larovere@ufcat.edu.br',

@@ -15,7 +15,7 @@ const EMAILS_GROUP_2 = require('../utils/emailsGroup2');
 const EMAILS_GROUP_3 = require('../utils/emailsGroup3');
 const EMAILS_GROUP_4 = require('../utils/emailsGroup4');
 const EMAILS_GROUP_7 = require('../utils/emailsGroup7');
-
+const EMAILS_GROUP_8 = require('../utils/emailsGroup8');
 
 const paginate = require("jw-paginate");
 
@@ -600,7 +600,9 @@ async function sendEmail(req) {
     case 7:
       emailsSend = EMAILS_GROUP_7.EMAILS_GROUP_7
       break;
-
+    case 8:
+      emailsSend = EMAILS_GROUP_8.EMAILS_GROUP_8
+      break;
   }
 
   // emailsSend.push('tatiana_sodre@yahoo.com.br,');
