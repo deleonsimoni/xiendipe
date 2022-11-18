@@ -244,15 +244,22 @@ async function getSchedulesDates(mySchedules) {
 
   let schedulesDatesCheck = [];
   for (let index = 0; index < mySchedules.cursosInscritos.length; index++) {
+    let schedule;
     switch (mySchedules.cursosInscritos[index].icModalityId) {
       case 3: //Poster
-        await schedulesDatesCheck.push(await Poster.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        schedule = await Poster.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id');
+        if (schedule) {
+          await schedulesDatesCheck.push(schedule);
+        }
         break;
       case 4: //minicurso
         await schedulesDatesCheck.push(await Minicurso.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
         break;
       case 5: //painel
-        await schedulesDatesCheck.push(await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id'));
+        schedule = await Painel.findById(mySchedules.cursosInscritos[index].idSchedule).select('dates -_id');
+        if (schedule) {
+          await schedulesDatesCheck.push(schedule);
+        }
         break;
     }
   }
