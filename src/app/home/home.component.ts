@@ -41,16 +41,37 @@ export class HomeComponent implements OnInit {
   anais = [];
 
   slides = [
-    { image: '../../assets/img/carrossel/0.png', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/2.jpeg', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/3.jpeg', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/4.jpeg', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/5.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/1.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/2.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/3.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/4.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/5.jpg', text: 'Esquenta ENDIPE' },
     { image: '../../assets/img/carrossel/6.jpg', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/7.jpeg', text: 'Esquenta ENDIPE' },
-    { image: '../../assets/img/carrossel/8.jpeg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/7.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/8.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/9.jpg', text: 'Esquenta ENDIPE' },
+    { image: '../../assets/img/carrossel/0.png', text: 'Esquenta ENDIPE' },
+  ];
 
-
+  simposios = [
+    { image: '../../assets/img/simposios/1.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/2.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/3.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/4.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/5.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/6.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/7.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/8.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/9.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/10.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/11.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/12.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/13.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/14.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/15.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/16.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/17.jpeg', text: 'Simposios' },
+    { image: '../../assets/img/simposios/18.jpeg', text: 'Simposios' },
   ];
   noWrapSlides = false;
   showIndicator = true;

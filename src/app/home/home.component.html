@@ -27,22 +27,15 @@
           de 20 a 27 de novembro de 2022, vem até vocês para convidá-los para o “Projeto: Esquenta Endipe” com a
           seguinte temática “Endipes e a Didática: histórico e embates atuais (evento remoto)” </p>
         <br />
-        <p style="text-align: justify; font-weight: bold;">
-          Quando: 20 de Outubro de 2022<br />
-          Horário: 17 horas<br />
-          Onde: Aqui no site ou pelo canal do Youtube Link: <a target="_blank"
-            href="https://www.youtube.com/watch?v=Q8V4ve_keqg">https://www.youtube.com/watch?v=Q8V4ve_keqg</a><br />
-          <!--Professoras mediadoras: Cristina D`Avila (UFUBA) e Selma Pimenta (USP/Unisantos).-->
-        </p>
+
         <br />
         <p style="text-align: center;">
-          <img src="" class="img-fluid">
-          <img src="../../assets/img/esquentaEndipe.jpg" class="img-fluid" alt="Esquenta Endipe">
+          <!--<img src="../../assets/img/esquentaEndipe.jpg" class="img-fluid" alt="Esquenta Endipe">-->
 
-          <!--<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q8V4ve_keqg?controls=0"
+          <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ILzfKqKHz7I?controls=0"
             title="YouTube video player" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>-->
+            allowfullscreen></iframe>
         </p>
         <br />
         <p style="text-align: justify;">
@@ -145,6 +138,30 @@
 
     </div>
   </section><!-- #about -->
+
+  <section id="escolha" class="wow fadeInUp">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simpósios</h2>
+
+        <div class="row align-items-center">
+          <div class="col">
+
+            <carousel [interval]="3800" [showIndicators]="false" [startFromIndex]="0" [isAnimated]="true">
+              <slide *ngFor="let slide of simposios; let index=index">
+                <img [src]="slide.image" class="img-fluid">
+                <div class="carousel-caption">
+                </div>
+              </slide>
+
+            </carousel>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
   <!--==========================
       Escolha do tema
