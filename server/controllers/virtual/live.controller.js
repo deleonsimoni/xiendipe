@@ -478,10 +478,10 @@ async function getUserMonitors(req) {
 async function listVirtual() {
 
   const dateNow = new Date();
-  //let date = dateNow.getDate().toString() + '/' + (dateNow.getMonth() + 1);
+  let date = dateNow.getDate().toString() + '/' + (dateNow.getMonth() + 1);
 
   //marretando para homologação.
-  const date = '21/11';
+  //const date = '21/11';
 
   if (date.length == 4) {
     date = "0" + date;

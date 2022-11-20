@@ -117,7 +117,7 @@ async function getChatMural(req) {
   if (date.length == 4) {
     date = "0" + date;
   }
-  date = '21/11';
+  //date = '21/11';
 
   try {
     total = await Mural.aggregate([{ $match: { 'date': date } }, { $project: { chat: { $size: '$chat' } } }]);

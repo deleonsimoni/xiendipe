@@ -605,11 +605,6 @@ async function sendEmail(req) {
       break;
   }
 
-  // emailsSend.push('tatiana_sodre@yahoo.com.br,');
-
-  //console.log(emailsSend);
-  //return;
-
   if (req.files) {
     attachment = {};
     attachment.fileName = req.files.fileArray.name;
@@ -633,7 +628,7 @@ async function sendEmail(req) {
           formulario.description,
           attachment
         );
-        console.log(emailsSend);
+        console.log(auxFor);
       }
 
     } else {
