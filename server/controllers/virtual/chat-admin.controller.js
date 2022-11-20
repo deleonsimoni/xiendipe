@@ -109,7 +109,7 @@ async function updateChat(idChat, mensagem, user) {
 async function getChatMural(req) {
 
   const dateNow = new Date();
-  let date = dateNow.getDate().toString() + '/' + '0' + (dateNow.getMonth() + 1);
+  let date = dateNow.getDate().toString() + '/' + (dateNow.getMonth() + 1);
   const pageSize = 6;
   const page = req.query.page || 1;
   let total;
