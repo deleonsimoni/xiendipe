@@ -90,6 +90,11 @@
                                         <hr />
                                         <div *ngIf="schedule?.virtual?.linkYoutube"
                                             class="row col-12 justify-content-center">
+                                            <div class="row clo-12 p-4">
+                                                <a style="color:rgb(59, 59, 238)" target="_blank"
+                                                    href="{{schedule?.virtual?.linkYoutube}}">Clique aqui para assistir
+                                                    direto no YouTube</a>
+                                            </div>
                                             <iframe tabindex="0" alt="clique para assistir" width="75%" height="400"
                                                 [src]='linkYoutubeSafe' frameborder="0" allowfullscreen></iframe>
                                             <iframe width="25%" height="400" [src]='chatYoutubeSafe' frameborder="0"
