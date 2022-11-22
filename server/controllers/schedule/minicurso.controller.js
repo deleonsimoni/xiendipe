@@ -1,6 +1,6 @@
 const minicursoModel = require('../../models/schedule/minicurso.model');
 const Minicurso = require('../../models/schedule/minicurso.model');
-const poster = require('../../models/schedule/poster.model');
+const Poster = require('../../models/schedule/poster.model');
 const Painel = require('../../models/schedule/painel.model');
 
 const User = require('../../models/user.model');

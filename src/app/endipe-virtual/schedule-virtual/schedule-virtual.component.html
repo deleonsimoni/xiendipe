@@ -46,7 +46,7 @@
                         </div>
 
 
-                        <div *ngIf="!carregando && user?.payment?.icPaid">
+                        <div *ngIf="!carregando && user?.payment?.icPaid && type != '4'">
 
                             <ng-container
                                 *ngIf="!isSubscribe(schedule) && schedule.qtdSubscribers - (schedule.subscribers ? schedule.subscribers.length : 0) > 0">
