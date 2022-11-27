@@ -137,7 +137,8 @@ import { LancamentoLivrosComponent } from './lancamento-livros/lancamento-livros
         ProgramacaoModule,
         GlobalComponentsModule,
         PipesModule,
-        CarouselModule
+        CarouselModule,
+
     ],
     entryComponents: [
         ModalInscricaoComponent,

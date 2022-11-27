@@ -49,8 +49,6 @@ export class CertificadoComponent implements OnInit {
         if (this.user.cursosInscritos && this.user.cursosInscritos.length > 0) {
           this.carregarInscricoes();
         }
-      } else {
-        this.carregando = false;
       }
       this.carregando = false;
     });
@@ -87,17 +85,19 @@ export class CertificadoComponent implements OnInit {
   private gerarCertificadosInscricoes() {
     let control = 0;
     this.inscricoes.forEach((work) => {
-      if (this.user.cursosInscritos[control].icModalityId == 4) {
-        this.templateAutomatico.target.value = "PARTICIPAÇÃO DE MINICURSO";
-        let horas = 2;
-        this.preencherTemplate(this.templateAutomatico, work.workTitle, horas);
-      } else if (this.user.cursosInscritos[control].icModalityId == 5) {
-        this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PAINEL";
-        this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
-      }
-      else if (this.user.cursosInscritos[control].icModalityId == 3) {
-        this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PÔSTER";
-        this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
+      if (work) {
+        if (this.user.cursosInscritos[control].icModalityId == 4) {
+          this.templateAutomatico.target.value = "PARTICIPAÇÃO DE MINICURSO";
+          let horas = 2;
+          this.preencherTemplate(this.templateAutomatico, work.workTitle, horas);
+        } else if (this.user.cursosInscritos[control].icModalityId == 5) {
+          this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PAINEL";
+          this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
+        }
+        else if (this.user.cursosInscritos[control].icModalityId == 3) {
+          this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PÔSTER";
+          this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
+        }
       }
       control++;
     });
