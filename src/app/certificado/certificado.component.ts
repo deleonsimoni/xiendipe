@@ -30,6 +30,7 @@ export class CertificadoComponent implements OnInit {
   exibirGT = false;
   certificados = [];
   templateAutomatico = { target: { value: "" } };
+  blacklist = ['ana_adiniz@hotmail.com', 'pauladinizfernandes@gmail.com', 'jonise@ufam.edu.br'];
 
   ngOnInit() {
     this.carregando = true;
@@ -43,7 +44,7 @@ export class CertificadoComponent implements OnInit {
           this.templateAutomatico.target.value = 'PARTICIPAÇÃO GERAL';
           this.preencherTemplate(this.templateAutomatico, null, null);
         }
-        if (this.user.works && this.user.works.length > 0) {
+        if (this.user.works && this.user.works.length > 0 && !this.blacklist.includes(this.user.email)) {
           this.carregarTrabalhosUsuario();
         }
         if (this.user.cursosInscritos && this.user.cursosInscritos.length > 0) {
@@ -86,6 +87,11 @@ export class CertificadoComponent implements OnInit {
     let control = 0;
     this.inscricoes.forEach((work) => {
       if (work) {
+
+        if (!work.workTitle || work.workTitle == 'undefined') {
+          work.workTitle = '';
+        }
+
         if (this.user.cursosInscritos[control].icModalityId == 4) {
           this.templateAutomatico.target.value = "PARTICIPAÇÃO DE MINICURSO";
           let horas = 2;
@@ -204,7 +210,7 @@ export class CertificadoComponent implements OnInit {
         " horas";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE PAINEL") {
-      this.coringa = " participou do Painel " + complementoUm || "______________" + " ";
+      this.coringa = " participou de apresentação de painéis " + complementoUm || "______________" + " ";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "MEDIAÇÃO DE PAINEL") {
       this.coringa = " apresentou o Painel intitulado " + (complementoUm || "______________");
@@ -213,7 +219,7 @@ export class CertificadoComponent implements OnInit {
       this.coringa = " apresentou o trabalho " + (complementoUm || "______________");
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE PÔSTER") {
-      this.coringa = " participou do Pôster " + complementoUm || "______________" + " ";
+      this.coringa = " participou de apresentação de pôster " + complementoUm || "______________" + " ";
       this.exibirGT = true;
     }
 
