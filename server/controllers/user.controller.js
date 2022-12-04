@@ -854,7 +854,7 @@ async function getWorksInscricoes(inscricoes) {
       work = await MiniCurso.findById(inscricoes[i].idSchedule).select('_id workTitle dates');
     }
     else if (inscricoes[i].icModalityId == 5) {
-      work = await Painel.findById(inscricoes[i].idSchedule).select('_id workTitle dates');
+      work = await Painel.findById(inscricoes[i].idSchedule).select('_id worksPainel dates');
     }
     else {
       work = await RodaDeConversa.findById(inscricoes[i].idSchedule).select('_id workTitle dates');

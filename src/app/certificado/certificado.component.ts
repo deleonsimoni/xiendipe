@@ -210,7 +210,7 @@ export class CertificadoComponent implements OnInit {
         " horas";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "PARTICIPAÇÃO DE PAINEL") {
-      this.coringa = " participou de apresentação de painéis " + complementoUm || "______________" + " ";
+      this.coringa = " participou do painel " + complementoUm || "______________" + " ";
       this.exibirGT = true;
     } else if (templateSelecionado.target.value == "MEDIAÇÃO DE PAINEL") {
       this.coringa = " apresentou o Painel intitulado " + (complementoUm || "______________");
