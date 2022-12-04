@@ -31,11 +31,11 @@
                   VIRTUAL</a>
               </li>
 
-              <li *ngIf="isAuth" class="pointer">
+              <!-- <li *ngIf="isAuth" class="pointer">
                 <a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/endipe-virtual']">ENDIPE
                   VIRTUAL</a>
               </li>
-
+-->
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" alt="Sobre" href="#" id="organizacaopMenu" role="button"
@@ -207,8 +207,8 @@
 
                   <div *ngIf="verifyAcess()" class="dropdown-divider"></div>
 
-                  <a class="dropdown-item aoVivo pulse" alt="Meu Endipe" [routerLink]="['/meu-endipe']"
-                    fragment="programacao">Meu Endipe</a>
+                  <!--<a class="dropdown-item aoVivo pulse" alt="Meu Endipe" [routerLink]="['/meu-endipe']"
+                    fragment="programacao">Meu Endipe</a>-->
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" alt="Certificados" [routerLink]="['/certificados']"
                     fragment="certificados">Certificados</a>
@@ -243,12 +243,13 @@
     <mat-sidenav #sidenav mode="over">
       <accordion #accordion [isAnimated]="true" [closeOthers]="true">
 
-        <ul class="child-list">
+        <!-- <ul class="child-list">
           <li>
             <a tabindex="0" accordion-heading class="menu-has-children aoVivo pulse" [routerLink]="['/endipe-virtual']"
               (click)="sidenav.toggle()">ENDIPE VIRTUAL</a>
           </li>
         </ul>
+        -->
 
         <accordion-group>
           <a tabindex="0" accordion-heading>SOBRE <i class="fa "
@@ -368,9 +369,9 @@
           <ul class="child-list">
             <li><a tabindex="0" [routerLink]="['/pagamento']" (click)="sidenav.toggle()">Pagamento</a></li>
             <li><a tabindex="0" [routerLink]="['/meus-trabalhos']" (click)="sidenav.toggle()">Submissão</a></li>
-            <li><a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/meu-endipe']">Meu Endipe</a>
-            </li>
-            <li><a tabindex="0" [routerLink]="['/certificados']" (click)="sidenav.toggle()">Certificados</a></li>
+            <!--<li><a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/meu-endipe']">Meu Endipe</a>
+            </li>-->
+            <!--<li><a tabindex="0" [routerLink]="['/certificados']" (click)="sidenav.toggle()">Certificados</a></li>-->
             <li><a [routerLink]="['/perfil']" (click)="sidenav.toggle()">Perfil</a></li>
             <!-- <li><a href="https://forms.gle/rF7ixeszQcKmMWp19" target="_blank" (click)="sidenav.toggle()">Lançamento de
                 Livros</a></li>

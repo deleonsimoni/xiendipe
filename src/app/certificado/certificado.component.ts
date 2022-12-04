@@ -98,7 +98,7 @@ export class CertificadoComponent implements OnInit {
           this.preencherTemplate(this.templateAutomatico, work.workTitle, horas);
         } else if (this.user.cursosInscritos[control].icModalityId == 5) {
           this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PAINEL";
-          this.preencherTemplate(this.templateAutomatico, work.workTitle, null);
+          this.preencherTemplate(this.templateAutomatico, work.worksPainel[0].workTitle, null);
         }
         else if (this.user.cursosInscritos[control].icModalityId == 3) {
           this.templateAutomatico.target.value = "PARTICIPAÇÃO DE PÔSTER";
