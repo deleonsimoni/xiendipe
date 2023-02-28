@@ -25,11 +25,11 @@
 
           <nav id="nav-menu-container" [hidden]="isMobile == true">
             <ul class="nav-menu">
-              <li *ngIf="!isAuth" class="pointer">
+              <!--<li *ngIf="!isAuth" class="pointer">
                 <a tabindex="0" style="font-size: 12px;" class="menu-has-children aoVivo pulse"
                   [routerLink]="['/endipe-virtual']">ENDIPE
                   VIRTUAL</a>
-              </li>
+              </li>-->
 
               <!-- <li *ngIf="isAuth" class="pointer">
                 <a tabindex="0" class="menu-has-children aoVivo pulse" [routerLink]="['/endipe-virtual']">ENDIPE
@@ -155,7 +155,7 @@
 
                   <div class="dropdown-divider"></div>
 
-                  <!--<a class="dropdown-item" [routerLink]="['/anais-virtual']" fragment="anais">Anais</a>-->
+                  <a class="dropdown-item" [routerLink]="['/anais-virtual']" fragment="anais">Anais</a>
                 </div>
               </li>
 
@@ -330,8 +330,8 @@
 
 
 
-            <!--<li><a tabindex="0" [routerLink]="['/anais-virtual']" fragment="anais" (click)="sidenav.toggle()">Anais</a>
-            </li>-->
+            <li><a tabindex="0" [routerLink]="['/anais-virtual']" fragment="anais" (click)="sidenav.toggle()">Anais</a>
+            </li>
           </ul>
         </accordion-group>
 
